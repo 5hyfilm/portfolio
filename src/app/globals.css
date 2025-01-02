@@ -10,56 +10,54 @@
 }
 
 body {
-  background-color: #1A1A1A;
+  background-color: #FFFFFF;
   background-image: 
-    linear-gradient(45deg, rgba(255, 107, 26, 0.05) 25%, transparent 25%),
-    linear-gradient(-45deg, rgba(255, 107, 26, 0.05) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, rgba(255, 107, 26, 0.05) 75%),
-    linear-gradient(-45deg, transparent 75%, rgba(255, 107, 26, 0.05) 75%);
+    linear-gradient(45deg, rgba(255, 107, 26, 0.03) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255, 107, 26, 0.03) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255, 107, 26, 0.03) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255, 107, 26, 0.03) 75%);
   background-size: 20px 20px;
   background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
 }
 
 /* Custom card styling */
 .bleach-card {
-  @apply bg-gray-900 border border-orange-500/20 rounded-lg shadow-lg hover:border-orange-500/40 
-         transition-all duration-300 hover:shadow-orange-500/20;
-  background: linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(38, 38, 38, 0.9) 100%);
+  @apply bg-white border border-orange-500/20 rounded-lg shadow-md hover:border-orange-500/40 
+         transition-all duration-300 hover:shadow-lg;
 }
 
 /* Glowing effects */
 .glow-text {
-  @apply text-orange-500;
-  text-shadow: 0 0 10px rgba(255, 107, 26, 0.5);
+  @apply text-orange-500 font-bold;
+  text-shadow: 0 0 10px rgba(255, 107, 26, 0.3);
 }
 
 .glow-border {
-  @apply border border-orange-500/50;
-  box-shadow: 0 0 10px rgba(255, 107, 26, 0.2);
+  @apply border border-orange-500/30;
+  box-shadow: 0 0 10px rgba(255, 107, 26, 0.1);
 }
 
 /* Button styling */
 .bleach-button {
   @apply bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600 
-         transition-all duration-300 shadow-lg hover:shadow-orange-500/50;
+         transition-all duration-300 shadow-md hover:shadow-lg;
   background: linear-gradient(135deg, #FF6B1A 0%, #FF8C42 100%);
 }
 
 /* Input styling */
 .bleach-input {
-  @apply bg-gray-800 border border-gray-700 rounded-md px-4 py-2 text-gray-100
+  @apply bg-white border border-gray-200 rounded-md px-4 py-2 text-gray-800
          focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500
          transition-all duration-300;
 }
 
 /* Section headings */
 .section-title {
-  @apply text-2xl font-bold mb-6 text-gray-100 relative;
-  text-shadow: 0 0 10px rgba(255, 107, 26, 0.3);
+  @apply text-2xl font-bold mb-6 text-gray-800 relative;
 }
 
 .section-title::after {
   content: '';
   @apply absolute bottom-0 left-0 w-24 h-1 bg-orange-500 rounded-full;
-  box-shadow: 0 0 10px rgba(255, 107, 26, 0.5);
+  box-shadow: 0 0 10px rgba(255, 107, 26, 0.3);
 }

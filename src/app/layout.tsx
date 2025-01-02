@@ -14,13 +14,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-black text-white">
+      <body className="bg-white text-gray-800">
         <div className="min-h-screen relative">
           {/* Decorative elements */}
-          <div className="fixed top-0 left-0 w-full h-1 bg-[#FF8533]"></div>
-          <div className="fixed top-0 right-0 w-1 h-screen bg-gradient-to-b from-[#FF8533] to-transparent"></div>
-          <div className="fixed bottom-0 left-0 w-full h-1 bg-[#FF8533]"></div>
-          <div className="fixed top-0 left-0 w-1 h-screen bg-gradient-to-b from-[#FF8533] to-transparent"></div>
+          <div className="fixed top-0 left-0 w-full h-0.5 bg-[#FF8533] opacity-50"></div>
+          <div className="fixed top-0 right-0 w-0.5 h-screen bg-gradient-to-b from-[#FF8533] to-transparent opacity-50"></div>
+          <div className="fixed bottom-0 left-0 w-full h-0.5 bg-[#FF8533] opacity-50"></div>
+          <div className="fixed top-0 left-0 w-0.5 h-screen bg-gradient-to-b from-[#FF8533] to-transparent opacity-50"></div>
           
           {/* Background pattern */}
           <div className="fixed inset-0 bg-pattern pointer-events-none"></div>
