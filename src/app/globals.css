@@ -4,60 +4,69 @@
 @tailwind utilities;
 
 :root {
-  --primary: #FF6B1A;    /* Spirit energy orange */
-  --secondary: #4A4A4A;  /* Soul Reaper uniform gray */
-  --accent: #6C3483;     /* Spiritual pressure purple */
+  --background: #E5E5E5;
+  --text: #000000;
+  --accent: #333333;
 }
 
 body {
-  background-color: #FFFFFF;
-  background-image: 
-    linear-gradient(45deg, rgba(255, 107, 26, 0.03) 25%, transparent 25%),
-    linear-gradient(-45deg, rgba(255, 107, 26, 0.03) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, rgba(255, 107, 26, 0.03) 75%),
-    linear-gradient(-45deg, transparent 75%, rgba(255, 107, 26, 0.03) 75%);
-  background-size: 20px 20px;
-  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  background-color: var(--background);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* Custom card styling */
-.bleach-card {
-  @apply bg-white border border-orange-500/20 rounded-lg shadow-md hover:border-orange-500/40 
-         transition-all duration-300 hover:shadow-lg;
+/* Clean table styling */
+.info-table {
+  @apply w-full border-collapse;
 }
 
-/* Glowing effects */
-.glow-text {
-  @apply text-orange-500 font-bold;
-  text-shadow: 0 0 10px rgba(255, 107, 26, 0.3);
+.info-table th,
+.info-table td {
+  @apply border-b border-gray-200 py-4 px-4 text-left;
 }
 
-.glow-border {
-  @apply border border-orange-500/30;
-  box-shadow: 0 0 10px rgba(255, 107, 26, 0.1);
+.info-table th {
+  @apply font-medium text-gray-600;
+}
+
+/* Typography */
+.heading-large {
+  @apply text-3xl md:text-4xl font-bold tracking-tight mb-8;
+}
+
+.heading-medium {
+  @apply text-2xl font-bold mb-6;
+}
+
+/* Navigation */
+.nav-link {
+  @apply px-4 py-2 text-gray-800 hover:text-black transition-colors duration-200;
 }
 
 /* Button styling */
-.bleach-button {
-  @apply bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600 
-         transition-all duration-300 shadow-md hover:shadow-lg;
-  background: linear-gradient(135deg, #FF6B1A 0%, #FF8C42 100%);
+.btn-primary {
+  @apply bg-black text-white px-6 py-2 hover:bg-gray-800 transition-colors;
 }
 
-/* Input styling */
-.bleach-input {
-  @apply bg-white border border-gray-200 rounded-md px-4 py-2 text-gray-800
-         focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500
-         transition-all duration-300;
+.btn-secondary {
+  @apply border border-black px-6 py-2 hover:bg-black hover:text-white transition-colors;
 }
 
-/* Section headings */
-.section-title {
-  @apply text-2xl font-bold mb-6 text-gray-800 relative;
+/* Card styling */
+.content-card {
+  @apply bg-white p-6 shadow-sm hover:shadow-md transition-shadow duration-200;
 }
 
-.section-title::after {
-  content: '';
-  @apply absolute bottom-0 left-0 w-24 h-1 bg-orange-500 rounded-full;
-  box-shadow: 0 0 10px rgba(255, 107, 26, 0.3);
+/* Language selector */
+.lang-switch {
+  @apply text-sm text-gray-600 hover:text-black transition-colors;
+}
+
+/* List styling */
+.clean-list {
+  @apply space-y-4 list-none;
+}
+
+.clean-list li {
+  @apply border-b border-gray-200 pb-4 last:border-0;
 }
