@@ -19,25 +19,97 @@ export default function Projects() {
   const projects: Project[] = [
     {
       id: 1,
-      title: "E-commerce Platform",
+      title: "Artificial Cow Intelligence Milk",
       description: "A full-stack e-commerce platform with user authentication, product management, and payment integration.",
-      image: "/api/placeholder/400/250",
+      image: "public/images/projects/project1.png",
       technologies: ["React", "Node.js", "MongoDB", "Stripe"],
       demoLink: "https://demo-link.com",
-      githubLink: "https://github.com/yourusername/project"
+      githubLink: "https://github.com/5hyfilm/artificial-cow-intelligence-milk-unity"
     },
     {
       id: 2,
-      title: "Task Management App",
+      title: "PATH TO SAVE OUR COUNTRY",
       description: "A collaborative task management application with real-time updates and team features.",
       image: "/api/placeholder/400/250",
       technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
       demoLink: "https://demo-link.com",
-      githubLink: "https://github.com/yourusername/project"
+      githubLink: "https://github.com/5hyfilm/path-to-save-our-country"
     },
     {
       id: 3,
-      title: "Weather Dashboard",
+      title: "ALTER 2030",
+      description: "A weather dashboard that displays current and forecasted weather data with interactive maps.",
+      image: "/api/placeholder/400/250",
+      technologies: ["React", "OpenWeather API", "Mapbox", "Tailwind CSS"],
+      demoLink: "https://demo-link.com",
+      githubLink: "https://github.com/yourusername/project"
+    },
+    {
+      id: 4,
+      title: "Food Waste Controlling Program for Restaurant",
+      description: "A weather dashboard that displays current and forecasted weather data with interactive maps.",
+      image: "/api/placeholder/400/250",
+      technologies: ["React", "OpenWeather API", "Mapbox", "Tailwind CSS"],
+      demoLink: "https://demo-link.com",
+      githubLink: "https://github.com/yourusername/project"
+    },
+    {
+      id: 5,
+      title: "fxlmer-friendship",
+      description: "A weather dashboard that displays current and forecasted weather data with interactive maps.",
+      image: "/api/placeholder/400/250",
+      technologies: ["React", "OpenWeather API", "Mapbox", "Tailwind CSS"],
+      demoLink: "https://demo-link.com",
+      githubLink: "https://github.com/yourusername/project"
+    },
+    {
+      id: 6,
+      title: "YSLC2021 C08 JORDAN",
+      description: "A weather dashboard that displays current and forecasted weather data with interactive maps.",
+      image: "/api/placeholder/400/250",
+      technologies: ["React", "OpenWeather API", "Mapbox", "Tailwind CSS"],
+      demoLink: "https://demo-link.com",
+      githubLink: "https://github.com/yourusername/project"
+    },
+    {
+      id: 7,
+      title: "SkinFine",
+      description: "A weather dashboard that displays current and forecasted weather data with interactive maps.",
+      image: "/api/placeholder/400/250",
+      technologies: ["React", "OpenWeather API", "Mapbox", "Tailwind CSS"],
+      demoLink: "https://demo-link.com",
+      githubLink: "https://github.com/yourusername/project"
+    },
+    {
+      id: 8,
+      title: "ตรวจจับรถควันดำจากต้นตอ",
+      description: "A weather dashboard that displays current and forecasted weather data with interactive maps.",
+      image: "/api/placeholder/400/250",
+      technologies: ["React", "OpenWeather API", "Mapbox", "Tailwind CSS"],
+      demoLink: "https://demo-link.com",
+      githubLink: "https://github.com/yourusername/project"
+    },
+    {
+      id: 9,
+      title: "Sangria",
+      description: "A weather dashboard that displays current and forecasted weather data with interactive maps.",
+      image: "/api/placeholder/400/250",
+      technologies: ["React", "OpenWeather API", "Mapbox", "Tailwind CSS"],
+      demoLink: "https://demo-link.com",
+      githubLink: "https://github.com/yourusername/project"
+    },
+    {
+      id: 10,
+      title: "EiEi Job Fair",
+      description: "A weather dashboard that displays current and forecasted weather data with interactive maps.",
+      image: "/api/placeholder/400/250",
+      technologies: ["React", "OpenWeather API", "Mapbox", "Tailwind CSS"],
+      demoLink: "https://demo-link.com",
+      githubLink: "https://github.com/yourusername/project"
+    },
+    {
+      id: 11,
+      title: "GOROLL",
       description: "A weather dashboard that displays current and forecasted weather data with interactive maps.",
       image: "/api/placeholder/400/250",
       technologies: ["React", "OpenWeather API", "Mapbox", "Tailwind CSS"],

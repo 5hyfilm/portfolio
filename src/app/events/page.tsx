@@ -1,91 +1,121 @@
 // src/app/events/page.tsx
-'use client'
+"use client";
 
-import { useState } from 'react'
+import { useState } from "react";
 
 interface Event {
-  id: number
-  title: string
-  date: string
-  location: string
-  type: 'conference' | 'workshop' | 'hackathon' | 'webinar'
-  description: string
-  image: string
-  role: string
-  highlights: string[]
-  eventLink?: string
+  id: number;
+  title: string;
+  date: string;
+  location: string;
+  type: "conference" | "workshop" | "hackathon" | "webinar";
+  description: string;
+  image: string;
+  role: string;
+  highlights: string[];
+  eventLink?: string;
 }
 
 export default function Events() {
-  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null)
+  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
 
   const events: Event[] = [
     {
       id: 1,
-      title: "Tech Conference 2024",
-      date: "March 15-17, 2024",
+      title:
+        "Week of Build 2020: Classify Images with Azure Cognitive Services",
+      date: "June 28, 2020",
       location: "San Francisco, CA",
       type: "conference",
-      description: "Presented on modern web development practices and led a workshop on React performance optimization.",
+      description:
+        "Presented on modern web development practices and led a workshop on React performance optimization.",
       image: "/api/placeholder/400/250",
       role: "Speaker",
       highlights: [
         "Led a workshop on React performance optimization",
         "Participated in panel discussion on future of web development",
-        "Networked with industry leaders"
+        "Networked with industry leaders",
       ],
-      eventLink: "https://techconf2024.com"
+      eventLink: "https://techconf2024.com",
     },
     {
       id: 2,
-      title: "Web Development Workshop",
-      date: "February 1, 2024",
+      title:
+        "Live Virtual Training: Deploy machine learning API to Azure App Service 💻",
+      date: "July 24, 2021",
+      location: "San Francisco, CA",
+      type: "conference",
+      description:
+        "Presented on modern web development practices and led a workshop on React performance optimization.",
+      image: "/api/placeholder/400/250",
+      role: "Speaker",
+      highlights: [
+        "Led a workshop on React performance optimization",
+        "Participated in panel discussion on future of web development",
+        "Networked with industry leaders",
+      ],
+      eventLink: "https://techconf2024.com",
+    },
+    {
+      id: 3,
+      title:
+        "Live Virtual Training: Create a Discord bot with Python and Azure App Service 🤖",
+      date: "January 16, 2022",
       location: "Virtual",
       type: "workshop",
-      description: "Conducted a hands-on workshop teaching full-stack development using modern technologies.",
+      description:
+        "Conducted a hands-on workshop teaching full-stack development using modern technologies.",
       image: "/api/placeholder/400/250",
       role: "Workshop Leader",
       highlights: [
         "Taught full-stack development concepts",
         "Provided hands-on coding exercises",
-        "Mentored participants through project development"
-      ]
+        "Mentored participants through project development",
+      ],
     },
     {
-      id: 3,
-      title: "Hackathon 2024",
+      id: 4,
+      title:
+        "Live Virtual Training: Build your own AI chatbot with Azure AI Studio 🤖",
       date: "January 20-21, 2024",
       location: "New York, NY",
       type: "hackathon",
-      description: "Led a team of developers in creating an innovative solution for environmental sustainability.",
+      description:
+        "Led a team of developers in creating an innovative solution for environmental sustainability.",
       image: "/api/placeholder/400/250",
       role: "Team Lead",
       highlights: [
         "Won first place in sustainability category",
         "Developed a working prototype in 48 hours",
-        "Presented solution to panel of judges"
+        "Presented solution to panel of judges",
       ],
-      eventLink: "https://hackathon2024.com"
-    }
-  ]
+      eventLink: "https://hackathon2024.com",
+    },
+  ];
 
-  const getEventTypeColor = (type: Event['type']) => {
+  const getEventTypeColor = (type: Event["type"]) => {
     const colors = {
-      conference: 'bg-blue-100 text-blue-800',
-      workshop: 'bg-green-100 text-green-800',
-      hackathon: 'bg-purple-100 text-purple-800',
-      webinar: 'bg-yellow-100 text-yellow-800'
-    }
-    return colors[type]
-  }
+      conference: "bg-blue-100 text-blue-800",
+      workshop: "bg-green-100 text-green-800",
+      hackathon: "bg-purple-100 text-purple-800",
+      webinar: "bg-yellow-100 text-yellow-800",
+    };
+    return colors[type];
+  };
 
-  const EventModal = ({ event, onClose }: { event: Event; onClose: () => void }) => (
+  const EventModal = ({
+    event,
+    onClose,
+  }: {
+    event: Event;
+    onClose: () => void;
+  }) => (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
       <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
         <div className="p-6">
           <div className="flex justify-between items-start mb-4">
             <h2 className="text-2xl font-bold text-gray-800">{event.title}</h2>
-            <button 
+            <button
               onClick={onClose}
               className="text-gray-500 hover:text-gray-700"
             >
@@ -93,8 +123,8 @@ export default function Events() {
             </button>
           </div>
 
-          <img 
-            src={event.image} 
+          <img
+            src={event.image}
             alt={event.title}
             className="w-full rounded-lg mb-4"
           />
@@ -106,7 +136,11 @@ export default function Events() {
           </div>
 
           <div className="mb-4">
-            <span className={`inline-block px-3 py-1 rounded-full text-sm ${getEventTypeColor(event.type)}`}>
+            <span
+              className={`inline-block px-3 py-1 rounded-full text-sm ${getEventTypeColor(
+                event.type
+              )}`}
+            >
               {event.type.charAt(0).toUpperCase() + event.type.slice(1)}
             </span>
           </div>
@@ -117,13 +151,15 @@ export default function Events() {
             <h3 className="font-semibold mb-2">Highlights:</h3>
             <ul className="list-disc list-inside space-y-1">
               {event.highlights.map((highlight, index) => (
-                <li key={index} className="text-gray-600">{highlight}</li>
+                <li key={index} className="text-gray-600">
+                  {highlight}
+                </li>
               ))}
             </ul>
           </div>
 
           {event.eventLink && (
-            <a 
+            <a
               href={event.eventLink}
               target="_blank"
               rel="noopener noreferrer"
@@ -135,13 +171,15 @@ export default function Events() {
         </div>
       </div>
     </div>
-  )
+  );
 
   return (
     <div className="min-h-screen p-8">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8 text-gray-800">Events & Speaking</h1>
-        
+        <h1 className="text-3xl font-bold mb-8 text-gray-800">
+          Events & Speaking
+        </h1>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {events.map((event) => (
             <div
@@ -149,8 +187,8 @@ export default function Events() {
               onClick={() => setSelectedEvent(event)}
               className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transform transition-transform hover:scale-105"
             >
-              <img 
-                src={event.image} 
+              <img
+                src={event.image}
                 alt={event.title}
                 className="w-full h-48 object-cover"
               />
@@ -159,7 +197,11 @@ export default function Events() {
                   <h2 className="text-xl font-semibold text-gray-800">
                     {event.title}
                   </h2>
-                  <span className={`inline-block px-2 py-1 rounded-full text-xs ${getEventTypeColor(event.type)}`}>
+                  <span
+                    className={`inline-block px-2 py-1 rounded-full text-xs ${getEventTypeColor(
+                      event.type
+                    )}`}
+                  >
                     {event.type}
                   </span>
                 </div>
@@ -177,11 +219,11 @@ export default function Events() {
       </div>
 
       {selectedEvent && (
-        <EventModal 
-          event={selectedEvent} 
-          onClose={() => setSelectedEvent(null)} 
+        <EventModal
+          event={selectedEvent}
+          onClose={() => setSelectedEvent(null)}
         />
       )}
     </div>
-  )
+  );
 }

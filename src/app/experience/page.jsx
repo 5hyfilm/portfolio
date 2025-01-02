@@ -2,9 +2,9 @@
 export default function Experience() {
     const experiences = [
       {
-        title: "Business Analyst",
-        company: "Tech Company A",
-        location: "City, Country",
+        title: "Business Analyst (Part-Time)",
+        company: "Pragma and Will Group",
+        location: "Bangkok, Thailand",
         period: "Jan 2022 - Present",
         description: [
           "Led a team of 5 developers in building a scalable e-commerce platform",
@@ -16,21 +16,20 @@ export default function Experience() {
       },
       {
         title: "HR Development Strategist intern",
-        company: "Tech Company B",
-        location: "City, Country",
+        company: "CP Axtra Public Company Limited (Makro)",
+        location: "Bangkok, Thailand",
         period: "Jun 2020 - Dec 2021",
         description: [
-          "Developed and maintained multiple full-stack web applications",
-          "Collaborated with UX designers to implement responsive designs",
-          "Integrated third-party APIs and payment gateways",
-          "Participated in agile development processes"
+          "Led a team of 3 students to innovate and develop a chatbot and dashboard HR analytics solution prototype, resulting in a 49% improvement in performance evaluation metrics and a 40% increase in productivity levels, building business consulting experience",
+          "Executed extensive requirements collection, organizational research, and management analysis presentations for Makro's management team, contributing to informed decision-making processes and strategic planning",
+          "Transitioned an initial HR analytics prototype into a startup project based on CP Axtra Public Company Limited internship experience, utilizing business frameworks to secure a spot as one of the final 10 teams in the Thailand HR Tech 2024 Startup Pitching event"
         ],
         technologies: ["JavaScript", "Python", "SQL", "REST APIs"]
       },
       {
-        title: "Microsoft",
-        company: "Tech Company C",
-        location: "City, Country",
+        title: "Microsoft Learn Student Ambassador",
+        company: "Microsoft",
+        location: "Bangkok, Thailand",
         period: "Jan 2019 - May 2020",
         description: [
           "Assisted in developing user interfaces using React",

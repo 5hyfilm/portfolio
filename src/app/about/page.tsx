@@ -10,14 +10,20 @@ export default function About() {
 
   const education = [
     {
-      degree: "Bachelor's in Computer Science",
-      school: "Your University Name",
+      degree: "Bachelor's in Computer Engineering",
+      school: "Chulalongkorn University",
       year: "2016-2020",
       description: "Core computer science fundamentals and programming",
     },
     {
-      degree: "Bachelor's in Computer Science",
-      school: "Your University Name",
+      degree: "Senior High School",
+      school: "Princess Chulabhorn Science High School Pathum Thani",
+      year: "2016-2020",
+      description: "Core computer science fundamentals and programming",
+    },
+    {
+      degree: "Junior High School",
+      school: "Samsenwittayalai School",
       year: "2016-2020",
       description: "Core computer science fundamentals and programming",
     },
