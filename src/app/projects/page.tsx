@@ -44,8 +44,7 @@ export default function Projects() {
       demoLink: "https://demo-link.com",
       githubLink: "https://github.com/yourusername/project"
     },
-    // Add more projects as needed
-  ]
+  ].reverse() // Reverse the array to show newest projects first
 
   const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => void }) => (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
