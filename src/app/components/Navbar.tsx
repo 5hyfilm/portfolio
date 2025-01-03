@@ -4,18 +4,6 @@
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 
-const MenuIcon = () => (
-  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-  </svg>
-)
-
-const CloseIcon = () => (
-  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-  </svg>
-)
-
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [hoveredItem, setHoveredItem] = useState<string | null>(null)
@@ -43,6 +31,27 @@ export default function Navbar() {
 
   return (
     <>
+      {/* Fixed Hamburger Button */}
+      <button
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        className="fixed top-5 right-4 w-6 h-6 flex flex-col justify-between 
+                   md:hidden z-[100] focus:outline-none"
+        aria-label="Toggle menu"
+      >
+        <span 
+          className={`w-full h-0.5 bg-black transition-transform duration-300 transform
+                     ${isMenuOpen ? 'rotate-45 translate-y-2.5' : ''}`}
+        />
+        <span 
+          className={`w-full h-0.5 bg-black transition-opacity duration-300
+                     ${isMenuOpen ? 'opacity-0' : ''}`}
+        />
+        <span 
+          className={`w-full h-0.5 bg-black transition-transform duration-300 transform
+                     ${isMenuOpen ? '-rotate-45 -translate-y-2.5' : ''}`}
+        />
+      </button>
+
       <nav className="fixed top-0 left-0 right-0 bg-white border-b border-gray-200 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
@@ -76,16 +85,6 @@ export default function Navbar() {
                 </a>
               ))}
             </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 rounded-md text-gray-700 hover:text-gray-900 
-                         hover:bg-gray-100 transition-all duration-200 z-50"
-              aria-label="Toggle menu"
-            >
-              <MenuIcon />
-            </button>
           </div>
         </div>
       </nav>
@@ -103,16 +102,6 @@ export default function Navbar() {
         className={`fixed inset-y-0 right-0 w-full max-w-sm bg-white transform transition-all duration-500 ease-in-out z-50
                     ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
       >
-        {/* Close button for mobile menu */}
-        <button
-          onClick={() => setIsMenuOpen(false)}
-          className="absolute top-4 right-4 p-2 rounded-md text-gray-700 hover:text-gray-900 
-                     hover:bg-gray-100 transition-all duration-200"
-          aria-label="Close menu"
-        >
-          <CloseIcon />
-        </button>
-
         <div className="flex flex-col pt-20 px-6">
           {navItems.map((item, index) => (
             <a
