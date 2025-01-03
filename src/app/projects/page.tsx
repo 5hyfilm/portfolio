@@ -20,53 +20,53 @@ export default function Projects() {
     {
       id: 1,
       title: "Artificial Cow Intelligence Milk",
-      description: "A full-stack e-commerce platform with user authentication, product management, and payment integration.",
+      description: "This project is an innovation that have been to competition in Korea International Youth Olympiad (KIYO4I) 2018 for help ADHD children by using Color Theory.",
       image: "images/projects/project1.png",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      demoLink: "https://demo-link.com",
+      technologies: ["Unity", "C#"],
+      demoLink: "-",
       githubLink: "https://github.com/5hyfilm/artificial-cow-intelligence-milk-unity"
     },
     {
       id: 2,
       title: "PATH TO SAVE OUR COUNTRY",
-      description: "A collaborative task management application with real-time updates and team features.",
-      image: "/api/placeholder/400/250",
-      technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
-      demoLink: "https://demo-link.com",
+      description: "We want to encourage people who play this game to see the importance of garbage separation. This is not difficult. Anyone can do it. By disposing of waste, there are many benefits, such as saving on waste, reducing energy consumption & resources by recycle glass, paper, metal, plastic, etc. or help to reduce pollution to the world.",
+      image: "images/projects/project2.png",
+      technologies: ["Unity", "C#"],
+      demoLink: "-",
       githubLink: "https://github.com/5hyfilm/path-to-save-our-country"
     },
     {
       id: 3,
       title: "ALTER 2030",
-      description: "A weather dashboard that displays current and forecasted weather data with interactive maps.",
-      image: "/api/placeholder/400/250",
-      technologies: ["React", "OpenWeather API", "Mapbox", "Tailwind CSS"],
+      description: "We want to encourage people who play this game to see the importance of the increasing of population & garbage on the world.",
+      image: "images/projects/project3.png",
+      technologies: ["Unity", "C#"],
       demoLink: "https://demo-link.com",
       githubLink: "https://github.com/yourusername/project"
     },
     {
       id: 4,
       title: "Food Waste Controlling Program for Restaurant",
-      description: "A weather dashboard that displays current and forecasted weather data with interactive maps.",
-      image: "/api/placeholder/400/250",
-      technologies: ["React", "OpenWeather API", "Mapbox", "Tailwind CSS"],
-      demoLink: "https://demo-link.com",
-      githubLink: "https://github.com/yourusername/project"
+      description: "Our innovation is the program that helps predict the amount of consumer for calculate ingredients used in cooking in store for reducing food waste problems in restaurants. The working of the program starting with data collection of the amount of ingredients used in a restaurant for a period of time. Then, creating a database of external factors which are temperature ,humidity, precipitation & population density according to the Meteorological Department’s forecasting. Rain may cause less people to eat out & later leads to wasting excess cooking ingredients .The data will be collected as .csv file & extract them to calculate & predict by Machine Learning (ML) which uses Regression perform on environmental variables (temperature, humidity, wind speed & chance of having rain) to predict the number of customers & amount of ingredients needed for later time. The results will help to manage the amount of ingredients used for cooking worthy & efficiently.",
+      image: "images/projects/project4.png",
+      technologies: ["Machine Learning", "Python", "HTML", "CSS", "JavaScript"],
+      demoLink: "https://fwcr-program.herokuapp.com/",
+      githubLink: "https://github.com/5hyfilm/food-waste-controlling-program-for-restaurant"
     },
     {
       id: 5,
       title: "fxlmer-friendship",
-      description: "A weather dashboard that displays current and forecasted weather data with interactive maps.",
-      image: "/api/placeholder/400/250",
-      technologies: ["React", "OpenWeather API", "Mapbox", "Tailwind CSS"],
-      demoLink: "https://demo-link.com",
-      githubLink: "https://github.com/yourusername/project"
+      description: "Writing friendship in paper is not durable. It may become sluggish at any time but making this in an online website will be with us forever.",
+      image: "images/projects/project5.png",
+      technologies: ["Python", "HTML", "CSS", "JavaScript"],
+      demoLink: "https://fxlmer-friendship.herokuapp.com/",
+      githubLink: "https://github.com/5hyfilm/fxlmer-friendship"
     },
     {
       id: 6,
       title: "YSLC2021 C08 JORDAN",
-      description: "A weather dashboard that displays current and forecasted weather data with interactive maps.",
-      image: "/api/placeholder/400/250",
+      description: "Fake News Classification Web App for Thai Language.",
+      image: "images/projects/project6.png",
       technologies: ["React", "OpenWeather API", "Mapbox", "Tailwind CSS"],
       demoLink: "https://demo-link.com",
       githubLink: "https://github.com/yourusername/project"
@@ -74,9 +74,9 @@ export default function Projects() {
     {
       id: 7,
       title: "SkinFine",
-      description: "A weather dashboard that displays current and forecasted weather data with interactive maps.",
-      image: "/api/placeholder/400/250",
-      technologies: ["React", "OpenWeather API", "Mapbox", "Tailwind CSS"],
+      description: "Skin diseases are classified as fatal & non-fatal types. Some non-fatal types do not need doctor consultation because they can be naturally healed, for example, Atopic Dermatitis which is found in 10 - 20% of children & 1 - 3% of adults. However, most patients lack the knowledge of the risk of their skin diseases. For the purpose of precise self-examination of the skin diseases, this project was developed using a deep learning technique. The public data of skin diseases classification were collected from a large collection of multi-sources dermatoscopic images of common pigmented skin diseases, excluding Melanocytic Nevi class. The preprocessing & data augmentation were done using Convolutional Neural Network. The study focused on three model approaches to solve the imbalanced dataset problem which are oversampling utilization, class weights adjustment, & focal loss implementation. In this project, a novel method was proposed. The weights from the previous experiments were transferred to other models, which were subsequently trained with the dataset. The method has dramatically increased F1-score from around 0.65 to 0.99 out of 1. To the best of our knowledge, there was no previous report on weight transfer from one skin disease model to other skin disease model as developed in the present work. The models were later ensembled using the arithmetic mean of each model prediction. The AUC score of 1.00 can be obtained from the test set. Finally, our three model approaches were developed into the web application that can precisely predict the type of skin diseases.",
+      image: "images/projects/project7.png",
+      technologies: ["Deep Learning", "Python", "Mapbox", "Tailwind CSS"],
       demoLink: "https://demo-link.com",
       githubLink: "https://github.com/yourusername/project"
     },
@@ -84,28 +84,28 @@ export default function Projects() {
       id: 8,
       title: "ตรวจจับรถควันดำจากต้นตอ",
       description: "A weather dashboard that displays current and forecasted weather data with interactive maps.",
-      image: "/api/placeholder/400/250",
+      image: "images/projects/project8.png",
       technologies: ["React", "OpenWeather API", "Mapbox", "Tailwind CSS"],
-      demoLink: "https://demo-link.com",
-      githubLink: "https://github.com/yourusername/project"
+      demoLink: "https://witty-glacier-0ed900100.5.azurestaticapps.net/",
+      githubLink: "https://github.com/5hyfilm/embed-lab-project-web"
     },
     {
       id: 9,
       title: "Sangria",
       description: "A weather dashboard that displays current and forecasted weather data with interactive maps.",
-      image: "/api/placeholder/400/250",
+      image: "images/projects/project9.png",
       technologies: ["React", "OpenWeather API", "Mapbox", "Tailwind CSS"],
-      demoLink: "https://demo-link.com",
-      githubLink: "https://github.com/yourusername/project"
+      demoLink: "https://zealous-desert-061b3ff00.5.azurestaticapps.net/",
+      githubLink: "https://github.com/5hyfilm/Sangria"
     },
     {
       id: 10,
       title: "EiEi Job Fair",
       description: "A weather dashboard that displays current and forecasted weather data with interactive maps.",
-      image: "/api/placeholder/400/250",
+      image: "images/projects/project10.png",
       technologies: ["React", "OpenWeather API", "Mapbox", "Tailwind CSS"],
-      demoLink: "https://demo-link.com",
-      githubLink: "https://github.com/yourusername/project"
+      demoLink: "https://eiei-job-fair.vercel.app/",
+      githubLink: "https://github.com/5hyfilm/eiei_JobFair"
     },
     {
       id: 11,

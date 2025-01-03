@@ -15,9 +15,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="min-h-screen bg-[#E5E5E5]">
+        {/* Diagonal background */}
+        <div className="diagonal-background">
+          <div className="diagonal-slice"></div>
+          <div className="diagonal-slice"></div>
+        </div>
+
+        {/* Main content */}
+        <div className="relative z-10">
           <Navbar />
-          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <main className="min-h-screen pt-16">
             {children}
           </main>
         </div>

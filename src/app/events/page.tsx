@@ -47,7 +47,7 @@ export default function Events() {
       type: "conference",
       description:
         "Presented on modern web development practices and led a workshop on React performance optimization.",
-      image: "/api/placeholder/400/250",
+      image: "images/events/event2.jpg",
       role: "Speaker",
       highlights: [
         "Led a workshop on React performance optimization",
@@ -65,7 +65,7 @@ export default function Events() {
       type: "workshop",
       description:
         "Conducted a hands-on workshop teaching full-stack development using modern technologies.",
-      image: "/api/placeholder/400/250",
+      image: "/images/events/event3.jpg",
       role: "Workshop Leader",
       highlights: [
         "Taught full-stack development concepts",
@@ -82,7 +82,7 @@ export default function Events() {
       type: "hackathon",
       description:
         "Led a team of developers in creating an innovative solution for environmental sustainability.",
-      image: "/api/placeholder/400/250",
+      image: "images/events/event4.jpg",
       role: "Team Lead",
       highlights: [
         "Won first place in sustainability category",
@@ -91,7 +91,7 @@ export default function Events() {
       ],
       eventLink: "https://hackathon2024.com",
     },
-  ];
+  ].reverse();
 
   const getEventTypeColor = (type: Event["type"]) => {
     const colors = {

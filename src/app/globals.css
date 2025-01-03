@@ -3,30 +3,37 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #E5E5E5;
-  --text: #000000;
-  --accent: #333333;
-}
-
+/* Base styles */
 body {
-  background-color: var(--background);
-  color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: #E5E5E5;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-/* Clean table styling */
-.info-table {
-  @apply w-full border-collapse;
+/* Diagonal background effect */
+.diagonal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
 }
 
-.info-table th,
-.info-table td {
-  @apply border-b border-gray-200 py-4 px-4 text-left;
+.diagonal-slice {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  background: #E5E5E5;
+  transform: rotate(-30deg) translateX(-50%) translateY(-25%);
+  z-index: -1;
 }
 
-.info-table th {
-  @apply font-medium text-gray-600;
+.diagonal-slice:nth-child(2) {
+  background: #F5F5F5;
+  transform: rotate(-30deg) translateX(0%) translateY(25%);
 }
 
 /* Typography */
@@ -43,68 +50,7 @@ body {
   @apply px-4 py-2 text-gray-800 hover:text-black transition-colors duration-200;
 }
 
-/* Button styling */
-.btn-primary {
-  @apply bg-black text-white px-6 py-2 hover:bg-gray-800 transition-colors;
-}
-
-.btn-secondary {
-  @apply border border-black px-6 py-2 hover:bg-black hover:text-white transition-colors;
-}
-
-/* Card styling */
-.content-card {
-  @apply bg-white p-6 shadow-sm hover:shadow-md transition-shadow duration-200;
-}
-
-/* Language selector */
-.lang-switch {
-  @apply text-sm text-gray-600 hover:text-black transition-colors;
-}
-
-/* List styling */
-.clean-list {
-  @apply space-y-4 list-none;
-}
-
-.clean-list li {
-  @apply border-b border-gray-200 pb-4 last:border-0;
-}
-
-/* Add these animations to your globals.css */
-
-@keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translateX(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.animate-slideIn {
-  animation: slideIn 0.6s ease forwards;
-}
-
-/* Add to your globals.css */
-@keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translateX(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.animate-slideIn {
-  animation: slideIn 0.6s ease forwards;
-}
-
-/* Hover effect styles */
+/* Navigation hover effect */
 .nav-item-hover {
   position: relative;
   overflow: hidden;
@@ -126,4 +72,57 @@ body {
 .nav-item-hover:hover::after {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+/* Buttons */
+.btn-primary {
+  @apply bg-black text-white px-6 py-2 hover:bg-gray-800 transition-colors;
+}
+
+.btn-secondary {
+  @apply border border-black px-6 py-2 hover:bg-black hover:text-white transition-colors;
+}
+
+/* Cards and Content */
+.content-card {
+  @apply bg-white p-6 shadow-sm hover:shadow-md transition-shadow duration-200;
+}
+
+/* Tables */
+.info-table {
+  @apply w-full border-collapse;
+}
+
+.info-table th,
+.info-table td {
+  @apply border-b border-gray-200 py-4 px-4 text-left;
+}
+
+.info-table th {
+  @apply font-medium text-gray-600;
+}
+
+/* Lists */
+.clean-list {
+  @apply space-y-4 list-none;
+}
+
+.clean-list li {
+  @apply border-b border-gray-200 pb-4 last:border-0;
+}
+
+/* Animations */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slideIn {
+  animation: slideIn 0.6s ease forwards;
 }
