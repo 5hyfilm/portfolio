@@ -5,14 +5,14 @@ export default function Home() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-6xl font-bold mb-6 text-orange-500 font-japanese">
-            バンカイ
+            フィルム
           </h1>
           <h2 className="text-4xl font-bold mb-6 text-gray-100">
             Welcome to My Portfolio
           </h2>
           <div className="w-24 h-1 bg-orange-500 mx-auto mb-8"></div>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            "Abandon your fear. Look forward. Move forward and never stop. 
+            "Abandon your fear. Look forward. Move forward and never stop.
             You'll age if you pull back. You'll die if you hesitate."
           </p>
         </div>
@@ -27,13 +27,18 @@ export default function Home() {
         {/* Main content sections */}
         <div className="grid md:grid-cols-2 gap-8 relative z-10">
           <div className="bg-gray-800 p-6 rounded-lg border border-orange-500/20 hover:border-orange-500/40 transition-colors duration-300">
-            <h3 className="text-2xl font-bold mb-4 text-orange-400">Skills & Abilities</h3>
+            <h3 className="text-2xl font-bold mb-4 text-orange-400">
+              Skills & Abilities
+            </h3>
             <p className="text-gray-300">
-              Mastering the art of web development with the precision of a Zanpakutō.
+              Mastering the art of web development with the precision of a
+              Zanpakutō.
             </p>
           </div>
           <div className="bg-gray-800 p-6 rounded-lg border border-orange-500/20 hover:border-orange-500/40 transition-colors duration-300">
-            <h3 className="text-2xl font-bold mb-4 text-orange-400">Latest Projects</h3>
+            <h3 className="text-2xl font-bold mb-4 text-orange-400">
+              Latest Projects
+            </h3>
             <p className="text-gray-300">
               Unleashing creative power through innovative solutions.
             </p>
@@ -41,5 +46,5 @@ export default function Home() {
         </div>
       </div>
     </div>
-  )
+  );
 }
