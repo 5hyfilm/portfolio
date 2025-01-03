@@ -1,7 +1,8 @@
 // src/app/components/Navbar.tsx
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 
 const MenuIcon = () => (
   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -17,6 +18,19 @@ const CloseIcon = () => (
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null)
+  const pathname = usePathname()
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isMenuOpen])
 
   const navItems = [
     { label: 'About', path: '/about' },
@@ -28,57 +42,97 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white border-b border-gray-200 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          {/* Logo */}
-          <div className="flex-shrink-0 flex items-center">
+    <>
+      <nav className="fixed top-0 left-0 right-0 bg-white border-b border-gray-200 z-40">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-16 items-center">
+            {/* Logo */}
             <a href="/" className="text-xl font-bold text-gray-900">
-              死神 PORTFOLIO
+              PORTFOLIO
             </a>
-          </div>
 
-          {/* Desktop menu */}
-          <div className="hidden md:flex items-center">
-            {navItems.map((item) => (
-              <a
-                key={item.path}
-                href={item.path}
-                className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-              >
-                {item.label}
-              </a>
-            ))}
-          </div>
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex space-x-1">
+              {navItems.map((item) => (
+                <a
+                  key={item.path}
+                  href={item.path}
+                  className="relative px-4 py-2 group"
+                  onMouseEnter={() => setHoveredItem(item.path)}
+                  onMouseLeave={() => setHoveredItem(null)}
+                >
+                  <span className={`absolute inset-0 bg-gray-50 transform origin-left transition-transform duration-300 ease-out 
+                                  ${hoveredItem === item.path ? 'scale-x-100' : 'scale-x-0'}`} 
+                  />
+                  <span className={`relative z-10 text-sm font-medium transition-colors duration-300
+                                  ${pathname === item.path ? 'text-gray-900' : 'text-gray-600'}`}>
+                    {item.label}
+                  </span>
+                  <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gray-900 transform origin-left 
+                                  transition-transform duration-300 ease-out
+                                  ${pathname === item.path ? 'scale-x-100' : 'scale-x-0'}
+                                  ${hoveredItem === item.path ? 'scale-x-100' : ''}`} 
+                  />
+                </a>
+              ))}
+            </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none"
+              className="md:hidden p-2 rounded-md text-gray-700 hover:text-gray-900 
+                         hover:bg-gray-100 transition-all duration-200 z-50"
+              aria-label="Toggle menu"
             >
-              {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
+              <MenuIcon />
             </button>
           </div>
         </div>
-      </div>
+      </nav>
 
-      {/* Mobile menu */}
+      {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="md:hidden absolute w-full bg-white">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navItems.map((item) => (
-              <a
-                key={item.path}
-                href={item.path}
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-              >
-                {item.label}
-              </a>
-            ))}
-          </div>
-        </div>
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 z-40"
+          onClick={() => setIsMenuOpen(false)}
+        />
       )}
-    </nav>
+
+      {/* Mobile Menu */}
+      <div 
+        className={`fixed inset-y-0 right-0 w-full max-w-sm bg-white transform transition-all duration-500 ease-in-out z-50
+                    ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+      >
+        {/* Close button for mobile menu */}
+        <button
+          onClick={() => setIsMenuOpen(false)}
+          className="absolute top-4 right-4 p-2 rounded-md text-gray-700 hover:text-gray-900 
+                     hover:bg-gray-100 transition-all duration-200"
+          aria-label="Close menu"
+        >
+          <CloseIcon />
+        </button>
+
+        <div className="flex flex-col pt-20 px-6">
+          {navItems.map((item, index) => (
+            <a
+              key={item.path}
+              href={item.path}
+              onClick={() => setIsMenuOpen(false)}
+              className={`text-lg font-medium py-4 transition-all duration-300
+                         ${pathname === item.path ? 'text-gray-900' : 'text-gray-600'}
+                         hover:pl-6 hover:text-gray-900 border-b border-gray-100`}
+              style={{
+                transitionDelay: `${index * 50}ms`,
+                opacity: isMenuOpen ? 1 : 0,
+                transform: isMenuOpen ? 'translateX(0)' : 'translateX(20px)',
+              }}
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </div>
+    </>
   )
 }

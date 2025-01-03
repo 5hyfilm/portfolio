@@ -29,7 +29,7 @@ export default function Events() {
       type: "conference",
       description:
         "Presented on modern web development practices and led a workshop on React performance optimization.",
-      image: "/api/placeholder/400/250",
+      image: "images/events/event1.png",
       role: "Speaker",
       highlights: [
         "Led a workshop on React performance optimization",

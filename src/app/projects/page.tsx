@@ -21,7 +21,7 @@ export default function Projects() {
       id: 1,
       title: "Artificial Cow Intelligence Milk",
       description: "A full-stack e-commerce platform with user authentication, product management, and payment integration.",
-      image: "public/images/projects/project1.png",
+      image: "images/projects/project1.png",
       technologies: ["React", "Node.js", "MongoDB", "Stripe"],
       demoLink: "https://demo-link.com",
       githubLink: "https://github.com/5hyfilm/artificial-cow-intelligence-milk-unity"
