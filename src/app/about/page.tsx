@@ -5,7 +5,7 @@ export default function About() {
   const skills = {
     frontend: ["HTML", "CSS", "JavaScript", "React", "Next.js", "Tailwind CSS"],
     backend: ["Node.js", "Python", "Java", "SQL", "MongoDB"],
-    tools: ["Git", "Docker", "AWS", "Figma", "VS Code"],
+    tools: ["Git", "Azure", "TensorFlow", "Figma", "VS Code", "Mermaid", "Microsoft Office 365"],
   };
 
   const education = [
