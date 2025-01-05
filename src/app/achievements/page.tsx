@@ -6,7 +6,7 @@ import { useState } from 'react'
 interface Achievement {
   id: number
   title: string
-  category: 'award' | 'certification' | 'recognition' | 'publication'
+  category: 'award' | 'certification' | 'recognition' | 'publication'| 'funding'
   date: string
   organization: string
   description: string
@@ -23,10 +23,142 @@ export default function Achievements() {
   const achievements: Achievement[] = [
     {
       id: 1,
-      title: "AWS Certified Solutions Architect",
-      category: "certification",
-      date: "December 2023",
+      title: "Korean International Youth Olympiad",
+      category: "award",
+      date: "10-12 August 2018",
       organization: "Amazon Web Services",
+      description: "Awarded bronze medal in Korean International Youth Olympiad",
+      image: "/api/placeholder/100/100",
+      validUntil: "December 2026",
+      link: "https://aws.amazon.com/certification/"
+    },
+    {
+      id: 2,
+      title: "Thailand-Japan Hackathon Final Round 2018",
+      category: "award",
+      date: "6-13 December 2018",
+      organization: "Amazon Web Services",
+      description: "Awarded gold medal in Thailand-Japan Hackathon Final Round",
+      image: "/api/placeholder/100/100",
+      validUntil: "December 2026",
+      link: "https://aws.amazon.com/certification/"
+    },
+    {
+      id: 3,
+      title: "Young Inventors Challenge 2019",
+      category: "award",
+      date: "21 September 2019",
+      organization: "Associate of Science, Technology and Innovation (ASTI), Malaysia",
+      description: "Finalist",
+      image: "/api/placeholder/100/100",
+      validUntil: "December 2026",
+      link: "https://aws.amazon.com/certification/"
+    },
+    {
+      id: 4,
+      title: "International Young Inventor Awards 2020",
+      category: "award",
+      date: "28 November 2020",
+      organization: "Indonesian Invention and Innovation Promotion Association (INNOPA)",
+      description: "Awarded gold medal",
+      image: "/api/placeholder/100/100",
+      validUntil: "December 2026",
+      link: "https://aws.amazon.com/certification/"
+    },
+    {
+      id: 4,
+      title: "Thai Young Scientist Festival #16",
+      category: "award",
+      date: "December 2023",
+      organization: "Associate of Science, Technology and Innovation (ASTI), Malaysia",
+      description: "Awarded gold medal and Best of the Best Award",
+      image: "/api/placeholder/100/100",
+      validUntil: "December 2026",
+      link: "https://aws.amazon.com/certification/"
+    },
+    {
+      id: 6,
+      title: "Regeneron International Science and Engineering Fair 2021",
+      category: "award",
+      date: "December 2023",
+      organization: "Associate of Science, Technology and Innovation (ASTI), Malaysia",
+      description: "Finalist",
+      image: "/api/placeholder/100/100",
+      validUntil: "December 2026",
+      link: "https://aws.amazon.com/certification/"
+    },
+    {
+      id: 6,
+      title: "Young Safe Internet Leader Camp Version 3",
+      category: "award",
+      date: "19 September 2021",
+      organization: "Associate of Science, Technology and Innovation (ASTI), Malaysia",
+      description: "Top 10 winner finalist",
+      image: "/api/placeholder/100/100",
+      validUntil: "December 2026",
+      link: "https://aws.amazon.com/certification/"
+    },
+    {
+      id: 6,
+      title: "KATALYST STARTUP LAUNCHPAD 2022",
+      category: "award",
+      date: "December 2023",
+      organization: "KBank and Stanford Thailand Research Consortium",
+      description: "Professional certification for designing distributed systems on AWS",
+      image: "/api/placeholder/100/100",
+      validUntil: "December 2026",
+      link: "https://aws.amazon.com/certification/"
+    },
+    {
+      id: 6,
+      title: "SX2022 Hackathon",
+      category: "award",
+      date: "30 September 2022",
+      organization: "Sustainability Expo",
+      description: "Professional certification for designing distributed systems on AWS",
+      image: "/api/placeholder/100/100",
+      validUntil: "December 2026",
+      link: "https://aws.amazon.com/certification/"
+    },
+    {
+      id: 6,
+      title: "Imagine Cup",
+      category: "award",
+      date: "18 Feburary 2023",
+      organization: "Microsoft",
+      description: "Professional certification for designing distributed systems on AWS",
+      image: "/api/placeholder/100/100",
+      validUntil: "December 2026",
+      link: "https://aws.amazon.com/certification/"
+    },
+    {
+      id: 6,
+      title: "J-MAT",
+      category: "award",
+      date: "December 2023",
+      organization: "Associate of Science, Technology and Innovation (ASTI), Malaysia",
+      description: "Professional certification for designing distributed systems on AWS",
+      image: "/api/placeholder/100/100",
+      validUntil: "December 2026",
+      link: "https://aws.amazon.com/certification/"
+    },
+    {
+      id: 6,
+      title: "J-MAT",
+      category: "award",
+      date: "December 2023",
+      organization: "Associate of Science, Technology and Innovation (ASTI), Malaysia",
+      description: "Professional certification for designing distributed systems on AWS",
+      image: "/api/placeholder/100/100",
+      validUntil: "December 2026",
+      link: "https://aws.amazon.com/certification/"
+    },
+    {
+      id: 6,
+      title: "HealthTech X 2 The Future",
+      category: "award",
+      date: "December 2023",
+      organization: "Associate of Science, Technology and Innovation (ASTI), Malaysia",
       description: "Professional certification for designing distributed systems on AWS",
       image: "/api/placeholder/100/100",
       validUntil: "December 2026",
