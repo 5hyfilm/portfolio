@@ -10,7 +10,8 @@ interface Achievement {
   date: string;
   organization: string;
   description: string;
-  image?: string;
+  thumbnailImage?: string; // This will be shown in the list
+  images?: string[]; // These will be shown in the modal
   link?: string;
   validUntil?: string;
 }
@@ -41,65 +42,133 @@ const AchievementModal = ({
 }: {
   achievement: Achievement;
   onClose: () => void;
-}) => (
-  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-    <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-      <div className="p-6">
-        <div className="flex justify-between items-start mb-4">
-          <h2 className="text-2xl font-bold text-gray-800">
-            {achievement.title}
-          </h2>
-          <button
-            onClick={onClose}
-            className="text-gray-500 hover:text-gray-700"
-          >
-            ✕
-          </button>
-        </div>
+}) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-        {achievement.image && (
-          <img
-            src={achievement.image}
-            alt={achievement.title}
-            className="w-full rounded-lg mb-4 h-64 object-cover"
-          />
-        )}
+  const nextImage = () => {
+    if (achievement.images) {
+      setCurrentImageIndex((prev) =>
+        prev === achievement.images!.length - 1 ? 0 : prev + 1
+      );
+    }
+  };
 
-        <div className="flex flex-wrap gap-4 mb-4">
-          <span className="text-gray-600">📅 {achievement.date}</span>
-          <span className="text-gray-600">🏢 {achievement.organization}</span>
-          <span
-            className={`px-3 py-1 rounded-full text-sm ${getCategoryStyle(
-              achievement.category
-            )}`}
-          >
-            {achievement.category.charAt(0).toUpperCase() +
-              achievement.category.slice(1)}
-          </span>
-        </div>
+  const prevImage = () => {
+    if (achievement.images) {
+      setCurrentImageIndex((prev) =>
+        prev === 0 ? achievement.images!.length - 1 : prev - 1
+      );
+    }
+  };
 
-        <p className="text-gray-600 mb-6">{achievement.description}</p>
-
-        {achievement.validUntil && (
-          <div className="text-gray-600 mb-4">
-            <strong>Valid until:</strong> {achievement.validUntil}
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+      <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div className="p-6">
+          <div className="flex justify-between items-start mb-4">
+            <h2 className="text-2xl font-bold text-gray-800">
+              {achievement.title}
+            </h2>
+            <button
+              onClick={onClose}
+              className="text-gray-500 hover:text-gray-700"
+            >
+              ✕
+            </button>
           </div>
-        )}
 
-        {achievement.link && (
-          <a
-            href={achievement.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors"
-          >
-            View Certificate
-          </a>
-        )}
+          {/* Image Gallery */}
+          {achievement.images && achievement.images.length > 0 && (
+            <div className="relative mb-4">
+              <img
+                src={achievement.images[currentImageIndex]}
+                alt={`${achievement.title} - Image ${currentImageIndex + 1}`}
+                className="w-full rounded-lg h-64 object-cover"
+              />
+
+              {achievement.images.length > 1 && (
+                <>
+                  {/* Navigation Arrows */}
+                  <button
+                    onClick={prevImage}
+                    className="absolute left-2 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all"
+                  >
+                    ←
+                  </button>
+                  <button
+                    onClick={nextImage}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all"
+                  >
+                    →
+                  </button>
+
+                  {/* Image Counter */}
+                  <div className="absolute bottom-2 right-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded-md text-sm">
+                    {currentImageIndex + 1} / {achievement.images.length}
+                  </div>
+                </>
+              )}
+
+              {/* Thumbnail Navigation */}
+              <div className="flex gap-2 mt-2 overflow-x-auto">
+                {achievement.images.map((image, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`flex-shrink-0 w-16 h-16 rounded-md overflow-hidden 
+                              ${
+                                currentImageIndex === index
+                                  ? "ring-2 ring-blue-500"
+                                  : ""
+                              }`}
+                  >
+                    <img
+                      src={image}
+                      alt={`Thumbnail ${index + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div className="flex flex-wrap gap-4 mb-4">
+            <span className="text-gray-600">📅 {achievement.date}</span>
+            <span className="text-gray-600">🏢 {achievement.organization}</span>
+            <span
+              className={`px-3 py-1 rounded-full text-sm ${getCategoryStyle(
+                achievement.category
+              )}`}
+            >
+              {achievement.category.charAt(0).toUpperCase() +
+                achievement.category.slice(1)}
+            </span>
+          </div>
+
+          <p className="text-gray-600 mb-6">{achievement.description}</p>
+
+          {achievement.validUntil && (
+            <div className="text-gray-600 mb-4">
+              <strong>Valid until:</strong> {achievement.validUntil}
+            </div>
+          )}
+
+          {achievement.link && (
+            <a
+              href={achievement.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors"
+            >
+              View Certificate
+            </a>
+          )}
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default function Achievements() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -110,7 +179,6 @@ export default function Achievements() {
   const [selectedAchievement, setSelectedAchievement] =
     useState<Achievement | null>(null);
 
-  // Your achievements array goes here
   const achievements: Achievement[] = [
     {
       id: 1,
@@ -120,11 +188,314 @@ export default function Achievements() {
       organization: "World Women Inventors and Entrepreneurs Association",
       description:
         "Thailand representative Awarded bronze medal in Korean International Youth Olympiad",
-      image: "images/achievements/achievment1.jpg",
+      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      images: [
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+      ],
       validUntil: "December 2026",
       link: "https://aws.amazon.com/certification/",
     },
-    // ... rest of your achievements
+    {
+      id: 2,
+      title: "Thailand-Japan Hackathon Final Round 2018",
+      category: "award",
+      date: "6-13 December 2018",
+      organization: "Princess Chulabhron Science High School and Kosen",
+      description:
+        "Thailand representative Awarded gold medal in Thailand-Japan Hackathon Final Round",
+      thumbnailImage: "images/achievements/achievement1/achievement2.jpg",
+      images: [
+        "images/achievements/achievement1/achievement2.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+      ],
+      validUntil: "December 2026",
+      link: "https://aws.amazon.com/certification/",
+    },
+    {
+      id: 3,
+      title: "Young Inventors Challenge 2019",
+      category: "award",
+      date: "21 September 2019",
+      organization:
+        "Associate of Science, Technology and Innovation (ASTI), Malaysia",
+      description: "Thailand representative",
+      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      images: [
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+      ],
+      validUntil: "December 2026",
+      link: "https://aws.amazon.com/certification/",
+    },
+    {
+      id: 4,
+      title: "YGA 2019",
+      category: "award",
+      date: "25 November 2019",
+      organization:
+        "Associate of Science, Technology and Innovation (ASTI), Malaysia",
+      description: "Thailand representative",
+      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      images: [
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+      ],
+      validUntil: "December 2026",
+      link: "https://aws.amazon.com/certification/",
+    },
+    {
+      id: 5,
+      title: "JSTP",
+      category: "award",
+      date: "21 July 2020",
+      organization:
+        "Associate of Science, Technology and Innovation (ASTI), Malaysia",
+      description: "Thailand representative",
+      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      images: [
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+      ],
+      validUntil: "December 2026",
+      link: "https://aws.amazon.com/certification/",
+    },
+
+    {
+      id: 6,
+      title: "Thai Young Scientist Festival #16",
+      category: "award",
+      date: "20 November 2020",
+      organization: "National Science Museum",
+      description: "Awarded gold medal and Best of the Best Award",
+      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      images: [
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+      ],
+      validUntil: "December 2026",
+      link: "https://aws.amazon.com/certification/",
+    },
+    {
+      id: 7,
+      title: "International Young Inventor Awards 2020",
+      category: "award",
+      date: "28 November 2020",
+      organization:
+        "Indonesian Invention and Innovation Promotion Association (INNOPA)",
+      description: "Thailand representative and Awarded gold medal",
+      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      images: [
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+      ],
+      validUntil: "December 2026",
+      link: "https://aws.amazon.com/certification/",
+    },
+    {
+      id: 8,
+      title: "Regeneron International Science and Engineering Fair 2021",
+      category: "award",
+      date: "16-21 May 2021",
+      organization: "Society for Science",
+      description: "Thailand representative Finalist",
+      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      images: [
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+      ],
+      validUntil: "December 2026",
+      link: "https://aws.amazon.com/certification/",
+    },
+    {
+      id: 9,
+      title: "เยาวชน",
+      category: "award",
+      date: "26 August 2021",
+      organization: "Society for Science",
+      description: "Thailand representative Finalist",
+      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      images: [
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+      ],
+      validUntil: "December 2026",
+      link: "https://aws.amazon.com/certification/",
+    },
+    {
+      id: 10,
+      title: "Young Safe Internet Leader Camp Version 3",
+      category: "award",
+      date: "19 September 2021",
+      organization: "dtac",
+      description: "Top 10 winner finalist",
+      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      images: [
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+      ],
+      validUntil: "December 2026",
+      link: "https://aws.amazon.com/certification/",
+    },
+    {
+      id: 11,
+      title: "Prime Minister Award",
+      category: "award",
+      date: "22 October 2021",
+      organization: "Society for Science",
+      description: "Thailand representative Finalist",
+      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      images: [
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+      ],
+      validUntil: "December 2026",
+      link: "https://aws.amazon.com/certification/",
+    },
+
+    {
+      id: 12,
+      title: "SX2022 Hackathon",
+      category: "award",
+      date: "30 September 2022",
+      organization: "Sustainability Expo",
+      description: "Finalist",
+      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      images: [
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+      ],
+      validUntil: "December 2026",
+      link: "https://aws.amazon.com/certification/",
+    },
+    {
+      id: 13,
+      title: "KATALYST STARTUP LAUNCHPAD 2022",
+      category: "award",
+      date: "22 November 2022",
+      organization: "Kasikorn Bank and Stanford Thailand Research Consortium",
+      description:
+        "Professional certification for designing distributed systems on AWS",
+      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      images: [
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+      ],
+      validUntil: "December 2026",
+      link: "https://aws.amazon.com/certification/",
+    },
+    {
+      id: 14,
+      title: "Microsoft Imagine Cup 2023",
+      category: "award",
+      date: "18 Feburary 2023",
+      organization: "Microsoft",
+      description: "Finalist 6 teams",
+      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      images: [
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+      ],
+      validUntil: "December 2026",
+      link: "https://aws.amazon.com/certification/",
+    },
+    {
+      id: 15,
+      title: "J-MAT Brand Planning Competition #2",
+      category: "award",
+      date: "1 July 2023",
+      organization:
+        "Junior Marketing Association of Thailand (J-MAT) and ThaiPost",
+      description: "ผ่านเข้ารอบ 50 ทีมสุดท้าย",
+      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      images: [
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+      ],
+      validUntil: "December 2026",
+      link: "https://aws.amazon.com/certification/",
+    },
+    {
+      id: 16,
+      title: "J-MAT Brand Planning Competition #3",
+      category: "award",
+      date: "30 June 2024",
+      organization:
+        "Junior Marketing Association of Thailand (J-MAT) and CP Bologna",
+      description: "ผ่านเข้ารอบ 50 ทีมสุดท้าย",
+      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      images: [
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+      ],
+      validUntil: "December 2026",
+      link: "https://aws.amazon.com/certification/",
+    },
+    {
+      id: 17,
+      title: "Thailand HR Tech 2024 Startup Pitching",
+      category: "award",
+      date: "3 July 2024",
+      organization: "Personnel Management Association of Thailand (PMAT)",
+      description: "Final 10 teams",
+      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      images: [
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+      ],
+      validUntil: "December 2026",
+      link: "https://aws.amazon.com/certification/",
+    },
+    {
+      id: 18,
+      title: "BIT Social Scale Up",
+      category: "award",
+      date: "12 August 2024",
+      organization: "EdVISORY",
+      description: "Final 10 teams",
+      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      images: [
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+      ],
+      validUntil: "December 2026",
+      link: "https://aws.amazon.com/certification/",
+    },
+    {
+      id: 19,
+      title: "HealthTech X 2 The Future",
+      category: "award",
+      date: "11 October 2024",
+      organization: "Thaihealth and SYNHUB",
+      description: "final 20 ",
+      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      images: [
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1.jpg",
+      ],
+      validUntil: "December 2026",
+      link: "https://aws.amazon.com/certification/",
+    },
+    // ... Add your other achievements here
   ];
 
   const allCategories: Achievement["category"][] = [
@@ -257,9 +628,9 @@ export default function Achievements() {
                 }}
               >
                 <div className="flex items-start gap-4">
-                  {achievement.image && (
+                  {achievement.thumbnailImage && (
                     <img
-                      src={achievement.image}
+                      src={achievement.thumbnailImage}
                       alt={achievement.title}
                       className="w-16 h-16 rounded-lg object-cover"
                     />
