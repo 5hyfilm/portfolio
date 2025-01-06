@@ -111,7 +111,7 @@ export default function Projects() {
       id: 11,
       title: "GOROLL",
       description: "A weather dashboard that displays current and forecasted weather data with interactive maps.",
-      image: "/api/placeholder/400/250",
+      image: "images/projects/project11.png",
       technologies: ["React", "OpenWeather API", "Mapbox", "Tailwind CSS"],
       demoLink: "https://demo-link.com",
       githubLink: "https://github.com/yourusername/project"
