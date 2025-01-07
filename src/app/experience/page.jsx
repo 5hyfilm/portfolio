@@ -7,12 +7,10 @@ export default function Experience() {
         location: "Bangkok, Thailand",
         period: "Jan 2022 - Present",
         description: [
-          "Led a team of 5 developers in building a scalable e-commerce platform",
-          "Implemented microservices architecture using Node.js and Docker",
-          "Reduced server response time by 40% through optimization",
-          "Mentored junior developers and conducted code reviews"
+          "Assisted in rechecking customer requirements, refining them for accuracy and clarity.",
+          "Supported the creation of application flowcharts to visualize system processes.",
         ],
-        technologies: ["React", "Node.js", "Docker", "AWS"]
+        technologies: ["Mermaid", "Miro"]
       },
       {
         title: "HR Development Strategist intern",
@@ -24,7 +22,7 @@ export default function Experience() {
           "Executed extensive requirements collection, organizational research, and management analysis presentations for Makro's management team, contributing to informed decision-making processes and strategic planning",
           "Transitioned an initial HR analytics prototype into a startup project based on CP Axtra Public Company Limited internship experience, utilizing business frameworks to secure a spot as one of the final 10 teams in the Thailand HR Tech 2024 Startup Pitching event"
         ],
-        technologies: ["JavaScript", "Python", "SQL", "REST APIs"]
+        technologies: ["Azure", "Python", "HTML", "CSS", "JavaScript"]
       },
       {
         title: "Microsoft Learn Student Ambassador",

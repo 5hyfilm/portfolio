@@ -205,7 +205,7 @@ export default function Achievements() {
       organization: "Princess Chulabhron Science High School and Kosen",
       description:
         "Selected as a representative of Thailand to participate in the competition and won a gold medal in the final round.",
-      thumbnailImage: "images/achievements/achievement1/achievement2.jpg",
+      thumbnailImage: "images/achievements/achievement2/achievement2.png",
       images: [
         "images/achievements/achievement1/achievement2.jpg",
         "images/achievements/achievement1/achievement1.jpg",
@@ -222,7 +222,7 @@ export default function Achievements() {
       organization:
         "Associate of Science, Technology and Innovation (ASTI), Malaysia",
       description: "Selected as a representative of Thailand to participate in the competition.",
-      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      thumbnailImage: "images/achievements/achievement3/achievement3.jpg",
       images: [
         "images/achievements/achievement1/achievement1.jpg",
         "images/achievements/achievement1/achievement1.jpg",
@@ -239,7 +239,7 @@ export default function Achievements() {
       organization:
         "Power of Innovation Foundation in collaboration with PTT Group and the Science Society of Thailand under the Patronage of His Majesty the King.",
       description: "Received an honorable mention award.",
-      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      thumbnailImage: "images/achievements/achievement4/achievement4.png",
       images: [
         "images/achievements/achievement1/achievement1.jpg",
         "images/achievements/achievement1/achievement1.jpg",
@@ -256,7 +256,7 @@ export default function Achievements() {
       organization:
         "Associate of Science, Technology and Innovation (ASTI), Malaysia",
       description: "Selected to GENIUS group receiving a long-term scholarship up to the doctoral level",
-      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      thumbnailImage: "images/achievements/achievement5/achievement5.jpg",
       images: [
         "images/achievements/achievement1/achievement1.jpg",
         "images/achievements/achievement1/achievement1.jpg",
@@ -273,7 +273,7 @@ export default function Achievements() {
       date: "20 November 2020",
       organization: "National Science Museum",
       description: "Awarded a gold medal and best of the best award in applied science category.",
-      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      thumbnailImage: "images/achievements/achievement6/achievement6.jpg",
       images: [
         "images/achievements/achievement1/achievement1.jpg",
         "images/achievements/achievement1/achievement1.jpg",
@@ -306,7 +306,7 @@ export default function Achievements() {
       date: "16-21 May 2021",
       organization: "Society for Science",
       description: "Selected as a representative of Thailand to participate in the competition.",
-      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      thumbnailImage: "images/achievements/achievement8/achievement8.jpg",
       images: [
         "images/achievements/achievement1/achievement1.jpg",
         "images/achievements/achievement1/achievement1.jpg",
@@ -338,7 +338,7 @@ export default function Achievements() {
       date: "19 September 2021",
       organization: "dtac",
       description: "Top 10 winner finalist",
-      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      thumbnailImage: "images/achievements/achievement10/achievement10.jpg",
       images: [
         "images/achievements/achievement1/achievement1.jpg",
         "images/achievements/achievement1/achievement1.jpg",
@@ -354,7 +354,7 @@ export default function Achievements() {
       date: "22 October 2021",
       organization: "Society for Science",
       description: "Thailand representative Finalist",
-      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      thumbnailImage: "images/achievements/achievement11/achievement11.png",
       images: [
         "images/achievements/achievement1/achievement1.jpg",
         "images/achievements/achievement1/achievement1.jpg",
@@ -371,7 +371,7 @@ export default function Achievements() {
       date: "30 September 2022",
       organization: "Sustainability Expo",
       description: "Finalist",
-      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      thumbnailImage: "images/achievements/achievement12/achievement12.jpg",
       images: [
         "images/achievements/achievement1/achievement1.jpg",
         "images/achievements/achievement1/achievement1.jpg",
@@ -388,7 +388,7 @@ export default function Achievements() {
       organization: "Kasikorn Bank and Stanford Thailand Research Consortium",
       description:
         "Professional certification for designing distributed systems on AWS",
-      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      thumbnailImage: "images/achievements/achievement13/achievement13.jpg",
       images: [
         "images/achievements/achievement1/achievement1.jpg",
         "images/achievements/achievement1/achievement1.jpg",
@@ -404,7 +404,7 @@ export default function Achievements() {
       date: "18 Feburary 2023",
       organization: "Microsoft",
       description: "Finalist 6 teams",
-      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      thumbnailImage: "images/achievements/achievement14/achievement14.jpg",
       images: [
         "images/achievements/achievement1/achievement1.jpg",
         "images/achievements/achievement1/achievement1.jpg",
@@ -421,7 +421,7 @@ export default function Achievements() {
       organization:
         "Junior Marketing Association of Thailand (J-MAT) and ThaiPost",
       description: "ผ่านเข้ารอบ 50 ทีมสุดท้าย",
-      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      thumbnailImage: "images/achievements/achievement15/achievement15.jpg",
       images: [
         "images/achievements/achievement1/achievement1.jpg",
         "images/achievements/achievement1/achievement1.jpg",
@@ -438,7 +438,7 @@ export default function Achievements() {
       organization:
         "Junior Marketing Association of Thailand (J-MAT) and CP Bologna",
       description: "ผ่านเข้ารอบ 50 ทีมสุดท้าย",
-      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      thumbnailImage: "images/achievements/achievement16/achievement16.jpg",
       images: [
         "images/achievements/achievement1/achievement1.jpg",
         "images/achievements/achievement1/achievement1.jpg",
@@ -453,8 +453,8 @@ export default function Achievements() {
       category: "award",
       date: "3 July 2024",
       organization: "Personnel Management Association of Thailand (PMAT)",
-      description: "Final 10 teams",
-      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      description: "Selected as finalist 10 teams",
+      thumbnailImage: "images/achievements/achievement17/achievement17.png",
       images: [
         "images/achievements/achievement1/achievement1.jpg",
         "images/achievements/achievement1/achievement1.jpg",
@@ -470,7 +470,7 @@ export default function Achievements() {
       date: "12 August 2024",
       organization: "EdVISORY",
       description: "Final 10 teams",
-      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      thumbnailImage: "images/achievements/achievement18/achievement18.jpg",
       images: [
         "images/achievements/achievement1/achievement1.jpg",
         "images/achievements/achievement1/achievement1.jpg",
@@ -485,8 +485,8 @@ export default function Achievements() {
       category: "award",
       date: "11 October 2024",
       organization: "Thaihealth and SYNHUB",
-      description: "final 20 ",
-      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      description: "Finalist in the top 22 teams, received a fund for development",
+      thumbnailImage: "images/achievements/achievement19/achievement19.jpg",
       images: [
         "images/achievements/achievement1/achievement1.jpg",
         "images/achievements/achievement1/achievement1.jpg",
