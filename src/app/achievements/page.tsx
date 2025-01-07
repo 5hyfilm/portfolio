@@ -187,7 +187,7 @@ export default function Achievements() {
       date: "10-12 August 2018",
       organization: "World Women Inventors and Entrepreneurs Association",
       description:
-        "Thailand representative Awarded bronze medal in Korean International Youth Olympiad",
+        "Selected as a representative of Thailand to participate in the competition and won a bronze medal.",
       thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
       images: [
         "images/achievements/achievement1/achievement1.jpg",
@@ -204,7 +204,7 @@ export default function Achievements() {
       date: "6-13 December 2018",
       organization: "Princess Chulabhron Science High School and Kosen",
       description:
-        "Thailand representative Awarded gold medal in Thailand-Japan Hackathon Final Round",
+        "Selected as a representative of Thailand to participate in the competition and won a gold medal in the final round.",
       thumbnailImage: "images/achievements/achievement1/achievement2.jpg",
       images: [
         "images/achievements/achievement1/achievement2.jpg",
@@ -221,7 +221,7 @@ export default function Achievements() {
       date: "21 September 2019",
       organization:
         "Associate of Science, Technology and Innovation (ASTI), Malaysia",
-      description: "Thailand representative",
+      description: "Selected as a representative of Thailand to participate in the competition.",
       thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
       images: [
         "images/achievements/achievement1/achievement1.jpg",
@@ -233,12 +233,12 @@ export default function Achievements() {
     },
     {
       id: 4,
-      title: "YGA 2019",
+      title: "Youth Greenovation Awards 2019",
       category: "award",
       date: "25 November 2019",
       organization:
-        "Associate of Science, Technology and Innovation (ASTI), Malaysia",
-      description: "Thailand representative",
+        "Power of Innovation Foundation in collaboration with PTT Group and the Science Society of Thailand under the Patronage of His Majesty the King.",
+      description: "Received an honorable mention award.",
       thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
       images: [
         "images/achievements/achievement1/achievement1.jpg",
@@ -250,12 +250,12 @@ export default function Achievements() {
     },
     {
       id: 5,
-      title: "JSTP",
+      title: "Junior Science Talent Project",
       category: "award",
       date: "21 July 2020",
       organization:
         "Associate of Science, Technology and Innovation (ASTI), Malaysia",
-      description: "Thailand representative",
+      description: "Selected to GENIUS group receiving a long-term scholarship up to the doctoral level",
       thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
       images: [
         "images/achievements/achievement1/achievement1.jpg",
@@ -272,7 +272,7 @@ export default function Achievements() {
       category: "award",
       date: "20 November 2020",
       organization: "National Science Museum",
-      description: "Awarded gold medal and Best of the Best Award",
+      description: "Awarded a gold medal and best of the best award in applied science category.",
       thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
       images: [
         "images/achievements/achievement1/achievement1.jpg",
@@ -289,7 +289,7 @@ export default function Achievements() {
       date: "28 November 2020",
       organization:
         "Indonesian Invention and Innovation Promotion Association (INNOPA)",
-      description: "Thailand representative and Awarded gold medal",
+      description: "Selected as a representative of Thailand to participate in the competition and won a gold medal.",
       thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
       images: [
         "images/achievements/achievement1/achievement1.jpg",
@@ -305,7 +305,7 @@ export default function Achievements() {
       category: "award",
       date: "16-21 May 2021",
       organization: "Society for Science",
-      description: "Thailand representative Finalist",
+      description: "Selected as a representative of Thailand to participate in the competition.",
       thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
       images: [
         "images/achievements/achievement1/achievement1.jpg",
