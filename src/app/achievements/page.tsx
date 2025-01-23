@@ -428,7 +428,7 @@ export default function Achievements() {
         "images/achievements/achievement1/achievement1.jpg",
       ],
       validUntil: "December 2026",
-      link: "https://aws.amazon.com/certification/",
+      link: "images/achievements/achievement16/achievement16_cer.pdf",
     },
     {
       id: 16,
@@ -445,7 +445,7 @@ export default function Achievements() {
         "images/achievements/achievement1/achievement1.jpg",
       ],
       validUntil: "December 2026",
-      link: "https://aws.amazon.com/certification/",
+      link: "images/achievements/achievement16/achievement16_cer.pdf",
     },
     {
       id: 17,
