@@ -22,11 +22,10 @@ export default function Events() {
   const events: Event[] = [
     {
       id: 1,
-      title:
-        "Week of Build 2020: Classify Images with Azure Cognitive Services",
+      title: "Week of Build 2020: Classify Images with Azure Cognitive Services",
       date: "June 28, 2020",
       location: "San Francisco, CA",
-      type: "conference",
+      type: "conference", // Matches the union type
       description:
         "Presented on modern web development practices and led a workshop on React performance optimization.",
       image: "images/events/event1.png",
@@ -44,7 +43,7 @@ export default function Events() {
         "Live Virtual Training: Deploy machine learning API to Azure App Service 💻",
       date: "July 24, 2021",
       location: "San Francisco, CA",
-      type: "conference",
+      type: "conference", // Matches the union type
       description:
         "Presented on modern web development practices and led a workshop on React performance optimization.",
       image: "images/events/event2.jpg",
@@ -62,7 +61,7 @@ export default function Events() {
         "Live Virtual Training: Create a Discord bot with Python and Azure App Service 🤖",
       date: "January 16, 2022",
       location: "Virtual",
-      type: "workshop",
+      type: "workshop", // Matches the union type
       description:
         "Conducted a hands-on workshop teaching full-stack development using modern technologies.",
       image: "/images/events/event3.jpg",
@@ -79,7 +78,7 @@ export default function Events() {
         "Live Virtual Training: Build your own AI chatbot with Azure AI Studio 🤖",
       date: "January 20-21, 2024",
       location: "New York, NY",
-      type: "hackathon",
+      type: "hackathon", // Matches the union type
       description:
         "Led a team of developers in creating an innovative solution for environmental sustainability.",
       image: "images/events/event4.jpg",
@@ -91,7 +90,9 @@ export default function Events() {
       ],
       eventLink: "https://hackathon2024.com",
     },
-  ].reverse();
+  ];
+  
+  
 
   const getEventTypeColor = (type: Event["type"]) => {
     const colors = {
