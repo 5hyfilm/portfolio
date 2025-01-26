@@ -5,27 +5,35 @@ export default function About() {
   const skills = {
     frontend: ["HTML", "CSS", "JavaScript", "React", "Next.js", "Tailwind CSS"],
     backend: ["Node.js", "Python", "Java", "SQL", "MongoDB"],
-    tools: ["Git", "Azure", "TensorFlow", "Figma", "VS Code", "Mermaid", "Microsoft Office 365"],
+    tools: [
+      "Git",
+      "Azure",
+      "TensorFlow",
+      "Figma",
+      "VS Code",
+      "Mermaid",
+      "Microsoft Office 365",
+    ],
   };
 
   const education = [
     {
       degree: "Bachelor in Computer Engineering",
       school: "Chulalongkorn University",
-      year: "2016-2020",
+      year: "2021-present",
       description: "Core computer science fundamentals and programming",
     },
     {
       degree: "Senior High School",
       school: "Princess Chulabhorn Science High School Pathum Thani",
-      year: "2016-2020",
-      description: "Core computer science fundamentals and programming",
+      year: "2018-2021",
+      description: "With a full scholarship",
     },
     {
       degree: "Junior High School",
       school: "Samsenwittayalai School",
-      year: "2016-2020",
-      description: "Core computer science fundamentals and programming",
+      year: "2015-2018",
+      description: "Enrichement Science Classroom: ESC",
     },
   ];
 
@@ -39,15 +47,11 @@ export default function About() {
           </h2>
           <div className="prose max-w-none">
             <p className="text-gray-600 leading-relaxed">
-              Hello! I am [Your Name], a passionate software developer with a
-              focus on creating elegant solutions to complex problems. With [X]
-              years of experience in software development, I specialize in
-              building responsive web applications and scalable backend systems.
-            </p>
-            <p className="text-gray-600 leading-relaxed mt-4">
-              My journey in technology began with [your story]. I am particularly
-              interested in [your interests/specializations], and I am always
-              excited to learn new technologies and tackle challenging projects.
+              A dynamic computer engineer with a diverse background in
+              technologies and a passion for solving business challenges.
+              Looking for a business analyst role to leverage technical ability
+              and innovative problem-solving skills to drive business success
+              and deliver impactful results.
             </p>
           </div>
         </section>

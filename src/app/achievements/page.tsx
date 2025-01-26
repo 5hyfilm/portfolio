@@ -188,13 +188,12 @@ export default function Achievements() {
       organization: "World Women Inventors and Entrepreneurs Association",
       description:
         "Selected as a representative of Thailand to participate in the competition and won a bronze medal.",
-      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      thumbnailImage: "images/achievements/achievement1/achievement1_0.jpg",
       images: [
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement1/achievement1_1.jpg",
+        "images/achievements/achievement1/achievement1_2.jpg",
       ],
-      validUntil: "December 2026",
+      validUntil: "",
       link: "https://aws.amazon.com/certification/",
     },
     {
@@ -211,7 +210,7 @@ export default function Achievements() {
         "images/achievements/achievement1/achievement1.jpg",
         "images/achievements/achievement1/achievement1.jpg",
       ],
-      validUntil: "December 2026",
+      validUntil: "",
       link: "https://aws.amazon.com/certification/",
     },
     {
@@ -221,7 +220,8 @@ export default function Achievements() {
       date: "21 September 2019",
       organization:
         "Associate of Science, Technology and Innovation (ASTI), Malaysia",
-      description: "Selected as a representative of Thailand to participate in the competition.",
+      description:
+        "Selected as a representative of Thailand to participate in the competition.",
       thumbnailImage: "images/achievements/achievement3/achievement3.jpg",
       images: [
         "images/achievements/achievement1/achievement1.jpg",
@@ -255,15 +255,16 @@ export default function Achievements() {
       date: "21 July 2020",
       organization:
         "Associate of Science, Technology and Innovation (ASTI), Malaysia",
-      description: "Selected to GENIUS group receiving a long-term scholarship up to the doctoral level",
+      description:
+        "Selected to GENIUS group receiving a long-term scholarship up to the doctoral level",
       thumbnailImage: "images/achievements/achievement5/achievement5.jpg",
       images: [
         "images/achievements/achievement1/achievement1.jpg",
         "images/achievements/achievement1/achievement1.jpg",
         "images/achievements/achievement1/achievement1.jpg",
       ],
-      validUntil: "December 2026",
-      link: "https://aws.amazon.com/certification/",
+      validUntil: "",
+      link: "",
     },
 
     {
@@ -272,14 +273,15 @@ export default function Achievements() {
       category: "award",
       date: "20 November 2020",
       organization: "National Science Museum",
-      description: "Awarded a gold medal and best of the best award in applied science category.",
-      thumbnailImage: "images/achievements/achievement6/achievement6.jpg",
+      description:
+        "Awarded a gold medal and best of the best award in applied science category.",
+      thumbnailImage: "images/achievements/achievement6/achievement6_0.jpg",
       images: [
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement6/achievement6_1.jpg",
+        "images/achievements/achievement6/achievement6_2.jpg",
+        "images/achievements/achievement6/achievement6_3.jpg",
       ],
-      validUntil: "December 2026",
+      validUntil: "",
       link: "https://aws.amazon.com/certification/",
     },
     {
@@ -289,7 +291,8 @@ export default function Achievements() {
       date: "28 November 2020",
       organization:
         "Indonesian Invention and Innovation Promotion Association (INNOPA)",
-      description: "Selected as a representative of Thailand to participate in the competition and won a gold medal.",
+      description:
+        "Selected as a representative of Thailand to participate in the competition and won a gold medal.",
       thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
       images: [
         "images/achievements/achievement1/achievement1.jpg",
@@ -305,15 +308,16 @@ export default function Achievements() {
       category: "award",
       date: "16-21 May 2021",
       organization: "Society for Science",
-      description: "Selected as a representative of Thailand to participate in the competition.",
-      thumbnailImage: "images/achievements/achievement8/achievement8.jpg",
+      description:
+        "Selected as a representative of Thailand to participate in the competition.",
+      thumbnailImage: "images/achievements/achievement8/achievement8_0.jpg",
       images: [
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement8/achievement8_1.jpg",
+        "images/achievements/achievement8/achievement8_2.jpg",
+        "images/achievements/achievement8/achievement8_3.jpg",
       ],
-      validUntil: "December 2026",
-      link: "https://aws.amazon.com/certification/",
+      validUntil: "",
+      link: "images/achievements/achievement8/achievement8_cer.jpg",
     },
     {
       id: 9,
@@ -338,14 +342,12 @@ export default function Achievements() {
       date: "19 September 2021",
       organization: "dtac",
       description: "Top 10 winner finalist",
-      thumbnailImage: "images/achievements/achievement10/achievement10.jpg",
+      thumbnailImage: "images/achievements/achievement10/achievement10_0.jpg",
       images: [
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement10/achievement10_1.jpg",
       ],
-      validUntil: "December 2026",
-      link: "https://aws.amazon.com/certification/",
+      validUntil: "",
+      link: "images/achievements/achievement10/achievement10_cer.jpg",
     },
     {
       id: 11,
@@ -371,14 +373,11 @@ export default function Achievements() {
       date: "30 September 2022",
       organization: "Sustainability Expo",
       description: "Finalist",
-      thumbnailImage: "images/achievements/achievement12/achievement12.jpg",
+      thumbnailImage: "images/achievements/achievement12/achievement12_0.jpg",
       images: [
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
       ],
-      validUntil: "December 2026",
-      link: "https://aws.amazon.com/certification/",
+      validUntil: "",
+      link: "/images/achievements/achievement12/achievement12_cer.jpg",
     },
     {
       id: 13,
@@ -388,14 +387,12 @@ export default function Achievements() {
       organization: "Kasikorn Bank and Stanford Thailand Research Consortium",
       description:
         "Professional certification for designing distributed systems on AWS",
-      thumbnailImage: "images/achievements/achievement13/achievement13.jpg",
+      thumbnailImage: "images/achievements/achievement13/achievement13_0.jpg",
       images: [
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement13/achievement13_1.jpg",
       ],
-      validUntil: "December 2026",
-      link: "https://aws.amazon.com/certification/",
+      validUntil: "",
+      link: "",
     },
     {
       id: 14,
@@ -404,14 +401,13 @@ export default function Achievements() {
       date: "18 Feburary 2023",
       organization: "Microsoft",
       description: "Finalist 6 teams",
-      thumbnailImage: "images/achievements/achievement14/achievement14.jpg",
+      thumbnailImage: "images/achievements/achievement14/achievement14_0.jpg",
       images: [
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement14/achievement14_1.jpg",
+        "images/achievements/achievement14/achievement14_2.png",
       ],
-      validUntil: "December 2026",
-      link: "https://aws.amazon.com/certification/",
+      validUntil: "",
+      link: "",
     },
     {
       id: 15,
@@ -422,12 +418,8 @@ export default function Achievements() {
         "Junior Marketing Association of Thailand (J-MAT) and ThaiPost",
       description: "ผ่านเข้ารอบ 50 ทีมสุดท้าย",
       thumbnailImage: "images/achievements/achievement15/achievement15.jpg",
-      images: [
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
-      ],
-      validUntil: "December 2026",
+      images: [],
+      validUntil: "",
       link: "images/achievements/achievement16/achievement16_cer.pdf",
     },
     {
@@ -439,12 +431,8 @@ export default function Achievements() {
         "Junior Marketing Association of Thailand (J-MAT) and CP Bologna",
       description: "ผ่านเข้ารอบ 50 ทีมสุดท้าย",
       thumbnailImage: "images/achievements/achievement16/achievement16.jpg",
-      images: [
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
-      ],
-      validUntil: "December 2026",
+      images: [],
+      validUntil: "",
       link: "images/achievements/achievement16/achievement16_cer.pdf",
     },
     {
@@ -454,14 +442,15 @@ export default function Achievements() {
       date: "3 July 2024",
       organization: "Personnel Management Association of Thailand (PMAT)",
       description: "Selected as finalist 10 teams",
-      thumbnailImage: "images/achievements/achievement17/achievement17.png",
+      thumbnailImage: "images/achievements/achievement17/achievement17_0.png",
       images: [
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement17/achievement17_1.jpg",
+        "images/achievements/achievement17/achievement17_2.jpg",
+        "images/achievements/achievement17/achievement17_3.jpg",
+        "images/achievements/achievement17/achievement17_4.jpg",
       ],
-      validUntil: "December 2026",
-      link: "https://aws.amazon.com/certification/",
+      validUntil: "",
+      link: "",
     },
     {
       id: 18,
@@ -470,14 +459,13 @@ export default function Achievements() {
       date: "12 August 2024",
       organization: "EdVISORY",
       description: "Final 10 teams",
-      thumbnailImage: "images/achievements/achievement18/achievement18.jpg",
+      thumbnailImage: "images/achievements/achievement18/achievement18_0.jpg",
       images: [
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement18/achievement18_1.png",
+        "images/achievements/achievement18/achievement18_2.png",
       ],
-      validUntil: "December 2026",
-      link: "https://aws.amazon.com/certification/",
+      validUntil: "",
+      link: "images/achievements/achievement18/achievement18_cer.pdf",
     },
     {
       id: 19,
@@ -485,15 +473,12 @@ export default function Achievements() {
       category: "award",
       date: "11 October 2024",
       organization: "Thaihealth and SYNHUB",
-      description: "Finalist in the top 22 teams, received a fund for development",
-      thumbnailImage: "images/achievements/achievement19/achievement19.jpg",
-      images: [
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
-      ],
-      validUntil: "December 2026",
-      link: "https://aws.amazon.com/certification/",
+      description:
+        "Finalist in the top 22 teams, received a fund for development",
+      thumbnailImage: "images/achievements/achievement19/achievement19_0.jpg",
+      images: ["images/achievements/achievement19/achievement19_1.png"],
+      validUntil: "",
+      link: "",
     },
     // ... Add your other achievements here
   ];
