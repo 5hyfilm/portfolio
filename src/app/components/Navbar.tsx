@@ -1,8 +1,8 @@
-// src/app/components/Navbar.tsx
 'use client'
 
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
+import Link from 'next/link'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -31,7 +31,6 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Fixed Hamburger Button */}
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)}
         className="fixed top-5 right-4 w-6 h-6 flex flex-col justify-between 
@@ -55,15 +54,13 @@ export default function Navbar() {
       <nav className="fixed top-0 left-0 right-0 bg-white border-b border-gray-200 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
-            {/* Logo */}
-            <a href="/" className="text-xl font-bold text-gray-900">
+            <Link href="/" className="text-xl font-bold text-gray-900">
               PORTFOLIO
-            </a>
+            </Link>
 
-            {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-1">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.path}
                   href={item.path}
                   className="relative px-4 py-2 group"
@@ -82,14 +79,13 @@ export default function Navbar() {
                                   ${pathname === item.path ? 'scale-x-100' : 'scale-x-0'}
                                   ${hoveredItem === item.path ? 'scale-x-100' : ''}`} 
                   />
-                </a>
+                </Link>
               ))}
             </div>
           </div>
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
       {isMenuOpen && (
         <div 
           className="fixed inset-0 bg-black bg-opacity-50 z-40"
@@ -97,14 +93,13 @@ export default function Navbar() {
         />
       )}
 
-      {/* Mobile Menu */}
       <div 
         className={`fixed inset-y-0 right-0 w-full max-w-sm bg-white transform transition-all duration-500 ease-in-out z-50
                     ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
       >
         <div className="flex flex-col pt-20 px-6">
           {navItems.map((item, index) => (
-            <a
+            <Link
               key={item.path}
               href={item.path}
               onClick={() => setIsMenuOpen(false)}
@@ -118,7 +113,7 @@ export default function Navbar() {
               }}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
       </div>

@@ -12,8 +12,8 @@ export default function Home() {
           </h2>
           <div className="w-24 h-1 bg-orange-500 mx-auto mb-8"></div>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            "Abandon your fear. Look forward. Move forward and never stop.
-            You will age if you pull back. You will die if you hesitate."
+            Abandon your fear. Look forward. Move forward and never stop.
+            You will age if you pull back. You will die if you hesitate.
           </p>
         </div>
 
