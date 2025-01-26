@@ -10,7 +10,7 @@ export default function About() {
 
   const education = [
     {
-      degree: "Bachelor's in Computer Engineering",
+      degree: "Bachelor in Computer Engineering",
       school: "Chulalongkorn University",
       year: "2016-2020",
       description: "Core computer science fundamentals and programming",
@@ -39,14 +39,14 @@ export default function About() {
           </h2>
           <div className="prose max-w-none">
             <p className="text-gray-600 leading-relaxed">
-              Hello! I'm [Your Name], a passionate software developer with a
+              Hello! I am [Your Name], a passionate software developer with a
               focus on creating elegant solutions to complex problems. With [X]
               years of experience in software development, I specialize in
               building responsive web applications and scalable backend systems.
             </p>
             <p className="text-gray-600 leading-relaxed mt-4">
-              My journey in technology began with [your story]. I'm particularly
-              interested in [your interests/specializations], and I'm always
+              My journey in technology began with [your story]. I am particularly
+              interested in [your interests/specializations], and I am always
               excited to learn new technologies and tackle challenging projects.
             </p>
           </div>
