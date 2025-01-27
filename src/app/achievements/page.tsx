@@ -194,7 +194,7 @@ export default function Achievements() {
         "images/achievements/achievement1/achievement1_2.jpg",
       ],
       validUntil: "",
-      link: "https://aws.amazon.com/certification/",
+      link: "images/achievements/achievement1/achievement1_cer.png",
     },
     {
       id: 2,
@@ -204,14 +204,14 @@ export default function Achievements() {
       organization: "Princess Chulabhron Science High School and Kosen",
       description:
         "Selected as a representative of Thailand to participate in the competition and won a gold medal in the final round.",
-      thumbnailImage: "images/achievements/achievement2/achievement2.png",
+      thumbnailImage: "images/achievements/achievement2/achievement2_0.png",
       images: [
-        "images/achievements/achievement1/achievement2.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement2/achievement2_1.jpg",
+        "images/achievements/achievement2/achievement2_2.jpg",
+        "images/achievements/achievement2/achievement2_3.jpg",
       ],
       validUntil: "",
-      link: "https://aws.amazon.com/certification/",
+      link: "images/achievements/achievement2/achievement2_cer.png",
     },
     {
       id: 3,
@@ -222,14 +222,12 @@ export default function Achievements() {
         "Associate of Science, Technology and Innovation (ASTI), Malaysia",
       description:
         "Selected as a representative of Thailand to participate in the competition.",
-      thumbnailImage: "images/achievements/achievement3/achievement3.jpg",
+      thumbnailImage: "images/achievements/achievement3/achievement3_0.jpg",
       images: [
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement3/achievement3_1.jpg",
       ],
-      validUntil: "December 2026",
-      link: "https://aws.amazon.com/certification/",
+      validUntil: "",
+      link: "images/achievements/achievement3/achievement3_cer.png",
     },
     {
       id: 4,
@@ -239,14 +237,13 @@ export default function Achievements() {
       organization:
         "Power of Innovation Foundation in collaboration with PTT Group and the Science Society of Thailand under the Patronage of His Majesty the King.",
       description: "Received an honorable mention award.",
-      thumbnailImage: "images/achievements/achievement4/achievement4.png",
+      thumbnailImage: "images/achievements/achievement4/achievement4_0.png",
       images: [
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement4/achievement4_1.jpg",
+        "images/achievements/achievement4/achievement4_2.jpg",
       ],
-      validUntil: "December 2026",
-      link: "https://aws.amazon.com/certification/",
+      validUntil: "",
+      link: "images/achievements/achievement4/achievement4_cer.jpg",
     },
     {
       id: 5,
@@ -257,11 +254,11 @@ export default function Achievements() {
         "Associate of Science, Technology and Innovation (ASTI), Malaysia",
       description:
         "Selected to GENIUS group receiving a long-term scholarship up to the doctoral level",
-      thumbnailImage: "images/achievements/achievement5/achievement5.jpg",
+      thumbnailImage: "images/achievements/achievement5/achievement5_0.jpg",
       images: [
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement5/achievement5_1.jpg",
+        "images/achievements/achievement5/achievement5_2.jpg",
+        "images/achievements/achievement5/achievement5_3.jpg",
       ],
       validUntil: "",
       link: "",
@@ -293,14 +290,11 @@ export default function Achievements() {
         "Indonesian Invention and Innovation Promotion Association (INNOPA)",
       description:
         "Selected as a representative of Thailand to participate in the competition and won a gold medal.",
-      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      thumbnailImage: "images/achievements/achievement7/achievement7_0.png",
       images: [
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
       ],
-      validUntil: "December 2026",
-      link: "https://aws.amazon.com/certification/",
+      validUntil: "",
+      link: "images/achievements/achievement7/achievement7_cer.png",
     },
     {
       id: 8,
@@ -321,19 +315,16 @@ export default function Achievements() {
     },
     {
       id: 9,
-      title: "เยาวชน",
+      title: "เยาวชนดีเด่นแห่งชาติ",
       category: "award",
       date: "26 August 2021",
-      organization: "Society for Science",
-      description: "Thailand representative Finalist",
-      thumbnailImage: "images/achievements/achievement1/achievement1.jpg",
+      organization: "เยาวชนดีเด่นแห่งชาติ",
+      description: "เยาวชนดีเด่นแห่งชาติ",
+      thumbnailImage: "",
       images: [
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
       ],
-      validUntil: "December 2026",
-      link: "https://aws.amazon.com/certification/",
+      validUntil: "",
+      link: "",
     },
     {
       id: 10,
@@ -356,14 +347,14 @@ export default function Achievements() {
       date: "22 October 2021",
       organization: "Society for Science",
       description: "Thailand representative Finalist",
-      thumbnailImage: "images/achievements/achievement11/achievement11.png",
+      thumbnailImage: "images/achievements/achievement11/achievement11_0.png",
       images: [
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
-        "images/achievements/achievement1/achievement1.jpg",
+        "images/achievements/achievement11/achievement11_1.jpg",
+        "images/achievements/achievement11/achievement11_2.jpg",
+        "images/achievements/achievement11/achievement11_3.jpg",
       ],
       validUntil: "December 2026",
-      link: "https://aws.amazon.com/certification/",
+      link: "images/achievements/achievement11/achievement11_cer.png",
     },
 
     {
@@ -386,7 +377,7 @@ export default function Achievements() {
       date: "22 November 2022",
       organization: "Kasikorn Bank and Stanford Thailand Research Consortium",
       description:
-        "Professional certification for designing distributed systems on AWS",
+        "Finalist",
       thumbnailImage: "images/achievements/achievement13/achievement13_0.jpg",
       images: [
         "images/achievements/achievement13/achievement13_1.jpg",
@@ -416,7 +407,7 @@ export default function Achievements() {
       date: "1 July 2023",
       organization:
         "Junior Marketing Association of Thailand (J-MAT) and ThaiPost",
-      description: "ผ่านเข้ารอบ 50 ทีมสุดท้าย",
+      description: "Selected as finalist 50 teams",
       thumbnailImage: "images/achievements/achievement15/achievement15.jpg",
       images: [],
       validUntil: "",
@@ -429,7 +420,7 @@ export default function Achievements() {
       date: "30 June 2024",
       organization:
         "Junior Marketing Association of Thailand (J-MAT) and CP Bologna",
-      description: "ผ่านเข้ารอบ 50 ทีมสุดท้าย",
+      description: "Selected as finalist 50 teams",
       thumbnailImage: "images/achievements/achievement16/achievement16.jpg",
       images: [],
       validUntil: "",

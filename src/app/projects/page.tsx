@@ -76,45 +76,45 @@ export default function Projects() {
       title: "SkinFine",
       description: "Skin diseases are classified as fatal & non-fatal types. Some non-fatal types do not need doctor consultation because they can be naturally healed, for example, Atopic Dermatitis which is found in 10 - 20% of children & 1 - 3% of adults. However, most patients lack the knowledge of the risk of their skin diseases. For the purpose of precise self-examination of the skin diseases, this project was developed using a deep learning technique. The public data of skin diseases classification were collected from a large collection of multi-sources dermatoscopic images of common pigmented skin diseases, excluding Melanocytic Nevi class. The preprocessing & data augmentation were done using Convolutional Neural Network. The study focused on three model approaches to solve the imbalanced dataset problem which are oversampling utilization, class weights adjustment, & focal loss implementation. In this project, a novel method was proposed. The weights from the previous experiments were transferred to other models, which were subsequently trained with the dataset. The method has dramatically increased F1-score from around 0.65 to 0.99 out of 1. To the best of our knowledge, there was no previous report on weight transfer from one skin disease model to other skin disease model as developed in the present work. The models were later ensembled using the arithmetic mean of each model prediction. The AUC score of 1.00 can be obtained from the test set. Finally, our three model approaches were developed into the web application that can precisely predict the type of skin diseases.",
       image: "images/projects/project7.png",
-      technologies: ["Deep Learning", "Python", "Mapbox", "Tailwind CSS"],
+      technologies: ["Deep Learning", "Python", "HTML", "CSS", "JavaScript"],
       demoLink: "https://demo-link.com",
       githubLink: "https://github.com/yourusername/project"
     },
     {
       id: 8,
       title: "ตรวจจับรถควันดำจากต้นตอ",
-      description: "A weather dashboard that displays current and forecasted weather data with interactive maps.",
+      description: "A project in Embedded System",
       image: "images/projects/project8.png",
-      technologies: ["React", "OpenWeather API", "Mapbox", "Tailwind CSS"],
+      technologies: ["HTML", "CSS", "JavaScript", "Firebase"],
       demoLink: "https://witty-glacier-0ed900100.5.azurestaticapps.net/",
       githubLink: "https://github.com/5hyfilm/embed-lab-project-web"
     },
     {
       id: 9,
       title: "Sangria",
-      description: "A weather dashboard that displays current and forecasted weather data with interactive maps.",
+      description: "An end-to-end HR analytics solution",
       image: "images/projects/project9.png",
-      technologies: ["React", "OpenWeather API", "Mapbox", "Tailwind CSS"],
+      technologies: ["Azure AI Studio", "PowerBI", "Microsoft Power Automate", "Web Development"],
       demoLink: "https://zealous-desert-061b3ff00.5.azurestaticapps.net/",
       githubLink: "https://github.com/5hyfilm/Sangria"
     },
     {
       id: 10,
       title: "EiEi Job Fair",
-      description: "A weather dashboard that displays current and forecasted weather data with interactive maps.",
+      description: "A project in SW Dev Prac 2",
       image: "images/projects/project10.png",
-      technologies: ["React", "OpenWeather API", "Mapbox", "Tailwind CSS"],
+      technologies: ["React", "Next.js", "Tailwind CSS", "MongoDB"],
       demoLink: "https://eiei-job-fair.vercel.app/",
       githubLink: "https://github.com/5hyfilm/eiei_JobFair"
     },
     {
       id: 11,
       title: "GOROLL",
-      description: "A weather dashboard that displays current and forecasted weather data with interactive maps.",
+      description: "A platform for accessible journeys and inclusive communities.",
       image: "images/projects/project11.png",
-      technologies: ["React", "OpenWeather API", "Mapbox", "Tailwind CSS"],
+      technologies: ["React", "Next.js", "Tailwind CSS"],
       demoLink: "https://demo-link.com",
-      githubLink: "https://github.com/yourusername/project"
+      githubLink: ""
     },
   ].reverse() // Reverse the array to show newest projects first
 
