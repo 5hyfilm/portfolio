@@ -4,10 +4,10 @@ import { FaGraduationCap } from "react-icons/fa";
 export default function About() {
   const skills = {
     frontend: ["HTML", "CSS", "JavaScript", "React", "Next.js", "Tailwind CSS"],
-    backend: ["Node.js", "Python", "Java", "SQL", "MongoDB"],
+    backend: ["Node.js", "Python", "SQL", "MongoDB"],
     tools: [
       "Git",
-      "Azure",
+      "Microsoft Azure",
       "TensorFlow",
       "Figma",
       "VS Code",
