@@ -223,9 +223,7 @@ export default function Achievements() {
       description:
         "Selected as a representative of Thailand to participate in the competition.",
       thumbnailImage: "images/achievements/achievement3/achievement3_0.jpg",
-      images: [
-        "images/achievements/achievement3/achievement3_1.jpg",
-      ],
+      images: ["images/achievements/achievement3/achievement3_1.jpg"],
       validUntil: "",
       link: "images/achievements/achievement3/achievement3_cer.png",
     },
@@ -291,8 +289,7 @@ export default function Achievements() {
       description:
         "Selected as a representative of Thailand to participate in the competition and won a gold medal.",
       thumbnailImage: "images/achievements/achievement7/achievement7_0.png",
-      images: [
-      ],
+      images: [],
       validUntil: "",
       link: "images/achievements/achievement7/achievement7_cer.png",
     },
@@ -321,8 +318,7 @@ export default function Achievements() {
       organization: "เยาวชนดีเด่นแห่งชาติ",
       description: "เยาวชนดีเด่นแห่งชาติ",
       thumbnailImage: "",
-      images: [
-      ],
+      images: [],
       validUntil: "",
       link: "",
     },
@@ -334,9 +330,7 @@ export default function Achievements() {
       organization: "dtac",
       description: "Top 10 winner finalist",
       thumbnailImage: "images/achievements/achievement10/achievement10_0.jpg",
-      images: [
-        "images/achievements/achievement10/achievement10_1.jpg",
-      ],
+      images: ["images/achievements/achievement10/achievement10_1.jpg"],
       validUntil: "",
       link: "images/achievements/achievement10/achievement10_cer.jpg",
     },
@@ -365,8 +359,7 @@ export default function Achievements() {
       organization: "Sustainability Expo",
       description: "Finalist",
       thumbnailImage: "images/achievements/achievement12/achievement12_0.jpg",
-      images: [
-      ],
+      images: [],
       validUntil: "",
       link: "/images/achievements/achievement12/achievement12_cer.jpg",
     },
@@ -376,12 +369,9 @@ export default function Achievements() {
       category: "award",
       date: "22 November 2022",
       organization: "Kasikorn Bank and Stanford Thailand Research Consortium",
-      description:
-        "Finalist",
+      description: "Finalist",
       thumbnailImage: "images/achievements/achievement13/achievement13_0.jpg",
-      images: [
-        "images/achievements/achievement13/achievement13_1.jpg",
-      ],
+      images: ["images/achievements/achievement13/achievement13_1.jpg"],
       validUntil: "",
       link: "",
     },

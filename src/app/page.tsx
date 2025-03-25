@@ -11,9 +11,9 @@ export default function Home() {
             Welcome to My Portfolio
           </h2>
           <div className="w-24 h-1 bg-orange-500 mx-auto mb-8"></div>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            Abandon your fear. Look forward. Move forward and never stop.
-            You will age if you pull back. You will die if you hesitate.
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Abandon your fear. Look forward. Move forward and never stop. You
+            will age if you pull back. You will die if you hesitate.
           </p>
         </div>
 
@@ -31,13 +31,13 @@ export default function Home() {
               Skills & Abilities
             </h3>
             <p className="text-gray-300">
-              Mastering the art of web development with the precision of a
-              Zanpakutō.
+              Combining technical expertise and creative problem-solving for
+              outstanding results.
             </p>
           </div>
           <div className="bg-gray-800 p-6 rounded-lg border border-orange-500/20 hover:border-orange-500/40 transition-colors duration-300">
             <h3 className="text-2xl font-bold mb-4 text-orange-400">
-              Latest Projects
+              My Projects
             </h3>
             <p className="text-gray-300">
               Unleashing creative power through innovative solutions.
