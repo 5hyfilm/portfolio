@@ -11,10 +11,13 @@ export default function Home() {
             Welcome to My Portfolio
           </h2>
           <div className="w-24 h-1 bg-orange-500 mx-auto mb-8"></div>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-6xl font-bold mb-6 text-orange-500 font-japanese">
+            Compromise is death
+          </p>
+          {/* <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Abandon your fear. Look forward. Move forward and never stop. You
             will age if you pull back. You will die if you hesitate.
-          </p>
+          </p> */}
         </div>
 
         {/* Decorative kanji background */}
