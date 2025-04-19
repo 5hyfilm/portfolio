@@ -1,16 +1,17 @@
 // src/app/layout.tsx
-import './globals.css'
-import Navbar from './components/Navbar'
+import "./globals.css";
+import Navbar from "./components/Navbar";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
-  title: 'Portfolio',
-  description: 'Professional portfolio website',
-}
+  title: "Portfolio",
+  description: "Professional portfolio website",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -24,11 +25,10 @@ export default function RootLayout({
         {/* Main content */}
         <div className="relative z-10">
           <Navbar />
-          <main className="min-h-screen pt-16">
-            {children}
-          </main>
+          <main className="min-h-screen pt-16">{children}</main>
         </div>
       </body>
+      <Analytics />
     </html>
-  )
+  );
 }
