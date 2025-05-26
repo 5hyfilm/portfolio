@@ -192,6 +192,7 @@ export default function Achievements() {
       images: [
         "images/achievements/achievement1/achievement1_1.jpg",
         "images/achievements/achievement1/achievement1_2.jpg",
+        "images/achievements/achievement1/achievement1_3.jpg",
       ],
       validUntil: "",
       link: "images/achievements/achievement1/achievement1_cer.png",
