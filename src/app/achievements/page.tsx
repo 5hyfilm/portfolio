@@ -462,6 +462,19 @@ export default function Achievements() {
       validUntil: "",
       link: "",
     },
+
+    {
+      id: 20,
+      title: "Social Case Competition 2025",
+      category: "award",
+      date: "9 July 2025",
+      organization: "Thailand Social Case Competition & Pandora",
+      description: "Winner of the competition",
+      thumbnailImage: "images/achievements/achievement20/achievement20_0.png",
+      images: ["images/achievements/achievement20/achievement20_1.jpg"],
+      validUntil: "",
+      link: "",
+    },
     // ... Add your other achievements here
   ];
 
