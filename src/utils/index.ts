@@ -2,3 +2,4 @@
 export * from "./achievementHelpers";
 export * from "./experienceHelpers";
 export * from "./eventHelpers";
+export * from "./projectHelpers";
