@@ -2,124 +2,12 @@
 "use client";
 
 import { useState } from "react";
-
-interface Event {
-  id: number;
-  title: string;
-  date: string;
-  location: string;
-  type: "conference" | "workshop" | "hackathon" | "webinar";
-  description: string;
-  image: string;
-  role: string;
-  highlights: string[];
-  eventLink?: string;
-}
+import { eventsData } from "../../data/events";
+import { getEventTypeColor } from "../../utils/eventHelpers";
+import { Event } from "../../types/events";
 
 export default function Events() {
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
-
-  const events: Event[] = [
-    {
-      id: 1,
-      title:
-        "Week of Build 2020: Classify Images with Azure Cognitive Services",
-      date: "June 28, 2020",
-      location: "Online",
-      type: "workshop", // Matches the union type
-      description:
-        "สร้าง AI จำแนกรูปภาพโดยไม่ต้องเขียนโค้ด ด้วย Azure Cognitive Services",
-      image: "images/events/event1.png",
-      role: "Speaker",
-      highlights: [],
-      eventLink: "https://www.facebook.com/share/p/1A1vVHz8si/",
-    },
-    {
-      id: 2,
-      title: "Coding School Champions 2020",
-      date: "December 9, 2020",
-      location: "Anuban Wat Nong Khun Chat (Uthit Phitthayakhan).",
-      type: "workshop", // Matches the union type
-      description:
-        "Presented on modern web development practices and led a workshop on React performance optimization.",
-      image: "images/events/event2.jpg",
-      role: "Speaker",
-      highlights: [
-        "Led a workshop on React performance optimization",
-        "Participated in panel discussion on future of web development",
-        "Networked with industry leaders",
-      ],
-      eventLink: "https://techconf2024.com",
-    },
-    {
-      id: 3,
-      title:
-        "Live Virtual Training: Deploy machine learning API to Azure App Service 💻",
-      date: "July 24, 2021",
-      location: "Online",
-      type: "workshop", // Matches the union type
-      description:
-        "In this session, Waranthorn Chansawang and Sirasit Boonklang, Microsoft Learn Student Ambassadors, will share knowledge about how to develop and deploy machine learning API to Azure App Service.",
-      image: "images/events/event3.jpg",
-      role: "Speaker",
-      highlights: [
-        "Develop machine learning model with python",
-        "Introduction to Application Programming Interface (API)",
-        "Develop machine learning API using Flask",
-        "Introduction to Azure App Service",
-        "Deploy machine learning API to Azure",
-      ],
-      eventLink: "https://fb.me/e/2iHck3rNu",
-    },
-    {
-      id: 4,
-      title:
-        "Live Virtual Training: Create a Discord bot with Python and Azure App Service 🤖",
-      date: "January 16, 2022",
-      location: "Online",
-      type: "workshop", // Matches the union type
-      description:
-        "Conducted a hands-on workshop teaching full-stack development using modern technologies.",
-      image: "/images/events/event4.jpg",
-      role: "Workshop Leader",
-      highlights: [
-        "What is Discord?",
-        "Create a Discord bot using Python",
-        "Introduction to Azure App Service",
-        "Deploy a Discord bot to Azure App Service",
-      ],
-      eventLink: "https://fb.me/e/1yIFiYaEp",
-    },
-    {
-      id: 5,
-      title:
-        "Live Virtual Training: Build your own AI chatbot with Azure AI Studio 🤖",
-      date: "January 20-21, 2024",
-      location: "Online",
-      type: "workshop", // Matches the union type
-      description:
-        "Led a team of developers in creating an innovative solution for environmental sustainability.",
-      image: "images/events/event5.jpg",
-      role: "Team Lead",
-      highlights: [
-        "Introduction to Microsoft Learn Student Ambassadors",
-        "Introduction to Azure AI Studio",
-        "Deploy Azure AI Studio to Azure App Service",
-        "Q&A",
-      ],
-      eventLink: "https://fb.me/e/2aLhOVwYD",
-    },
-  ];
-
-  const getEventTypeColor = (type: Event["type"]) => {
-    const colors = {
-      conference: "bg-blue-100 text-blue-800",
-      workshop: "bg-green-100 text-green-800",
-      hackathon: "bg-purple-100 text-purple-800",
-      webinar: "bg-yellow-100 text-yellow-800",
-    };
-    return colors[type];
-  };
 
   const EventModal = ({
     event,
@@ -199,7 +87,7 @@ export default function Events() {
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {events.map((event) => (
+          {eventsData.map((event) => (
             <div
               key={event.id}
               onClick={() => setSelectedEvent(event)}
