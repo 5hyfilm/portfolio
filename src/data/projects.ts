@@ -157,7 +157,7 @@ export const projectsData: Project[] = [
       "A platform for accessible journeys and inclusive communities.",
     image: "images/projects/project11.png",
     technologies: ["React", "Next.js", "Tailwind CSS"],
-    demoLink: "https://goroll.vercel.app/",
+    demoLink: "https://goroll.co/",
     githubLink: "",
     category: "web-app" as ProjectCategory,
     status: "completed" as ProjectStatus,

@@ -1,7 +1,7 @@
 // ./src/app/projects/page.tsx
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Image from "next/image";
 import { projectsData } from "../../data/projects";
 import { Project } from "../../types/projects";
@@ -16,6 +16,11 @@ const getImagePath = (imagePath: string): string => {
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  // เรียงลำดับโปรเจ็กต์แบบ desc ตาม id (ใหม่ล่าสุดขึ้นก่อน)
+  const sortedProjects = useMemo(() => {
+    return [...projectsData].sort((a, b) => b.id - a.id);
+  }, []);
 
   const ProjectModal = ({
     project,
@@ -99,7 +104,7 @@ export default function Projects() {
         <h1 className="text-3xl font-bold mb-8 text-gray-800">My Projects</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projectsData.map((project) => (
+          {sortedProjects.map((project) => (
             <div
               key={project.id}
               onClick={() => setSelectedProject(project)}
