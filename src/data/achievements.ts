@@ -59,21 +59,23 @@ export const achievementsData: Achievement[] = [
     organization:
       "Power of Innovation Foundation in collaboration with PTT Group and the Science Society of Thailand under the Patronage of His Majesty the King.",
     description: "Received an honorable mention award.",
-    thumbnailImage: "images/achievements/achievement4/achievement4_0.jpg",
+    thumbnailImage: "images/achievements/achievement4/achievement4_0.png",
     images: [
       "images/achievements/achievement4/achievement4_1.jpg",
       "images/achievements/achievement4/achievement4_2.jpg",
     ],
     validUntil: "",
-    link: "images/achievements/achievement4/achievement4_cer.png",
+    link: "images/achievements/achievement4/achievement4_cer.jpg",
   },
   {
     id: 5,
-    title: "Thailand Science Fair 2020",
+    title: "Junior Science Talent Project",
     category: "award",
-    date: "20-22 February 2020",
-    organization: "Princess Chulabhron Science High School and Kosen",
-    description: "Received 2nd place in the competition.",
+    date: "21 July 2020",
+    organization:
+      "Associate of Science, Technology and Innovation (ASTI), Malaysia",
+    description:
+      "Selected to GENIUS group receiving a long-term scholarship up to the doctoral level",
     thumbnailImage: "images/achievements/achievement5/achievement5_0.jpg",
     images: [
       "images/achievements/achievement5/achievement5_1.jpg",
@@ -81,33 +83,34 @@ export const achievementsData: Achievement[] = [
       "images/achievements/achievement5/achievement5_3.jpg",
     ],
     validUntil: "",
-    link: "images/achievements/achievement5/achievement5_cer.png",
+    link: "",
   },
   {
     id: 6,
-    title: "Microsoft Learn Student Ambassador",
-    category: "recognition",
-    date: "10 November 2020",
-    organization: "Microsoft",
+    title: "Thai Young Scientist Festival #16",
+    category: "award",
+    date: "20 November 2020",
+    organization: "National Science Museum",
     description:
-      "Selected to be a Microsoft Learn Student Ambassador for the BETA program.",
-    thumbnailImage: "images/achievements/achievement6/achievement6_0.png",
+      "Awarded a gold medal and best of the best award in applied science category.",
+    thumbnailImage: "images/achievements/achievement6/achievement6_0.jpg",
     images: [
       "images/achievements/achievement6/achievement6_1.jpg",
       "images/achievements/achievement6/achievement6_2.jpg",
       "images/achievements/achievement6/achievement6_3.jpg",
-      "images/achievements/achievement6/achievement6_4.jpg",
     ],
-    validUntil: "November 2024",
-    link: "images/achievements/achievement6/achievement6_cer.png",
+    validUntil: "",
+    link: "https://aws.amazon.com/certification/",
   },
   {
     id: 7,
-    title: "Thailand Science Fair 2021",
+    title: "International Young Inventor Awards 2020",
     category: "award",
-    date: "18-20 February 2021",
-    organization: "Princess Chulabhron Science High School and Kosen",
-    description: "Received 1st place in the competition.",
+    date: "28 November 2020",
+    organization:
+      "Indonesian Invention and Innovation Promotion Association (INNOPA)",
+    description:
+      "Selected as a representative of Thailand to participate in the competition and won a gold medal.",
     thumbnailImage: "images/achievements/achievement7/achievement7_0.png",
     images: [],
     validUntil: "",
@@ -214,48 +217,49 @@ export const achievementsData: Achievement[] = [
     title: "J-MAT Brand Planning Competition #2",
     category: "award",
     date: "1 July 2023",
-    organization: "Japan Marketing Association of Thailand",
-    description: "2nd Runner Up",
-    thumbnailImage: "images/achievements/achievement15/achievement15_0.jpg",
-    images: ["images/achievements/achievement15/achievement15_1.jpg"],
+    organization:
+      "Junior Marketing Association of Thailand (J-MAT) and ThaiPost",
+    description: "Selected as finalist 50 teams",
+    thumbnailImage: "images/achievements/achievement15/achievement15.jpg",
+    images: [],
     validUntil: "",
-    link: "",
+    link: "images/achievements/achievement16/achievement16_cer.pdf",
   },
   {
     id: 16,
-    title: "Huawei ICT Competition Thailand 2023",
+    title: "J-MAT Brand Planning Competition #3",
     category: "award",
-    date: "9 December 2023",
-    organization: "Huawei",
-    description: "2nd Runner Up",
-    thumbnailImage: "images/achievements/achievement16/achievement16_0.jpg",
-    images: [
-      "images/achievements/achievement16/achievement16_1.jpg",
-      "images/achievements/achievement16/achievement16_2.jpg",
-    ],
+    date: "30 June 2024",
+    organization:
+      "Junior Marketing Association of Thailand (J-MAT) and CP Bologna",
+    description: "Selected as finalist 50 teams",
+    thumbnailImage: "images/achievements/achievement16/achievement16.jpg",
+    images: [],
     validUntil: "",
-    link: "",
+    link: "images/achievements/achievement16/achievement16_cer.pdf",
   },
   {
     id: 17,
-    title: "Digital Thailand Big Bang 2024",
+    title: "Thailand HR Tech 2024 Startup Pitching",
     category: "award",
-    date: "9 February 2024",
-    organization: "DEPA and Partners",
-    description: "1st Runner Up",
-    thumbnailImage: "images/achievements/achievement17/achievement17_0.jpg",
+    date: "3 July 2024",
+    organization: "Personnel Management Association of Thailand (PMAT)",
+    description: "Selected as finalist 10 teams",
+    thumbnailImage: "images/achievements/achievement17/achievement17_0.png",
     images: [
       "images/achievements/achievement17/achievement17_1.jpg",
       "images/achievements/achievement17/achievement17_2.jpg",
+      "images/achievements/achievement17/achievement17_3.jpg",
+      "images/achievements/achievement17/achievement17_4.jpg",
     ],
     validUntil: "",
     link: "",
   },
   {
     id: 18,
-    title: "EdVISORY Student Challenge 2024",
+    title: "BIT Social Scale Up",
     category: "award",
-    date: "10 May 2024",
+    date: "12 August 2024",
     organization: "EdVISORY",
     description: "Final 10 teams",
     thumbnailImage: "images/achievements/achievement18/achievement18_0.jpg",
@@ -300,3 +304,33 @@ export const ACHIEVEMENT_CATEGORIES: Achievement["category"][] = [
   "recognition",
   "publication",
 ];
+
+// Export achievements count
+export const getAchievementsCount = (): number => achievementsData.length;
+
+// Export achievements by category
+export const getAchievementsByCategory = (
+  category: Achievement["category"]
+): Achievement[] => {
+  return achievementsData.filter(
+    (achievement) => achievement.category === category
+  );
+};
+
+// Export featured achievements (achievements with images)
+export const getFeaturedAchievements = (): Achievement[] => {
+  return achievementsData.filter(
+    (achievement) => achievement.images && achievement.images.length > 0
+  );
+};
+
+// Export recent achievements (last 2 years)
+export const getRecentAchievements = (): Achievement[] => {
+  const currentYear = new Date().getFullYear();
+  const twoYearsAgo = currentYear - 2;
+
+  return achievementsData.filter((achievement) => {
+    const year = parseInt(achievement.date.split(" ").pop() || "0");
+    return year >= twoYearsAgo;
+  });
+};
