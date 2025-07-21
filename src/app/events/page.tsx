@@ -18,6 +18,9 @@ const getImagePath = (imagePath: string): string => {
 export default function Events() {
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
 
+  // เรียง events ตาม id แบบ reverse (จากมากไปน้อย)
+  const sortedEventsData = [...eventsData].sort((a, b) => b.id - a.id);
+
   const EventModal = ({
     event,
     onClose,
@@ -102,7 +105,7 @@ export default function Events() {
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {eventsData.map((event) => (
+          {sortedEventsData.map((event) => (
             <div
               key={event.id}
               onClick={() => setSelectedEvent(event)}
