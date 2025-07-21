@@ -4,6 +4,9 @@
 import { experiencesData } from "../../data/experiences";
 
 export default function Experience() {
+  // Sort experiences by id in descending order (highest id first)
+  const sortedExperiences = [...experiencesData].sort((a, b) => b.id - a.id);
+
   return (
     <div className="min-h-screen p-8">
       <div className="max-w-4xl mx-auto">
@@ -12,7 +15,7 @@ export default function Experience() {
         </h1>
 
         <div className="space-y-12">
-          {experiencesData.map((exp) => (
+          {sortedExperiences.map((exp) => (
             <div
               key={exp.id}
               className="bg-white rounded-lg shadow-md p-6 relative"
