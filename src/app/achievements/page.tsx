@@ -2,6 +2,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import {
   Achievement,
   AchievementCategory,
@@ -17,6 +18,14 @@ import {
   getCategoryBorderColor,
   processAchievements,
 } from "../../utils/achievementHelpers";
+
+// Helper function เพื่อจัดการ image path ให้ถูกต้องสำหรับ Next.js Image
+const getImagePath = (imagePath: string): string => {
+  if (!imagePath) return "";
+  if (imagePath.startsWith("http")) return imagePath; // absolute URL
+  if (imagePath.startsWith("/")) return imagePath; // already absolute path
+  return `/${imagePath}`; // add leading slash for relative path
+};
 
 // Achievement Modal Component
 const AchievementModal = ({ achievement, onClose }: AchievementModalProps) => {
@@ -54,14 +63,19 @@ const AchievementModal = ({ achievement, onClose }: AchievementModalProps) => {
             </button>
           </div>
 
-          {/* Image Gallery */}
+          {/* Image Gallery - แก้ไขจาก <img> เป็น <Image /> */}
           {achievement.images && achievement.images.length > 0 && (
             <div className="relative mb-4">
-              <img
-                src={achievement.images[currentImageIndex]}
-                alt={`${achievement.title} - Image ${currentImageIndex + 1}`}
-                className="w-full rounded-lg h-64 object-cover"
-              />
+              <div className="relative w-full h-64 rounded-lg overflow-hidden">
+                <Image
+                  src={getImagePath(achievement.images[currentImageIndex])}
+                  alt={`${achievement.title} - Image ${currentImageIndex + 1}`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover"
+                  priority={currentImageIndex === 0}
+                />
+              </div>
 
               {achievement.images.length > 1 && (
                 <>
@@ -86,7 +100,7 @@ const AchievementModal = ({ achievement, onClose }: AchievementModalProps) => {
                 </>
               )}
 
-              {/* Thumbnail Navigation */}
+              {/* Thumbnail Navigation - แก้ไขจาก <img> เป็น <Image /> */}
               {achievement.images.length > 1 && (
                 <div className="flex gap-2 mt-2 overflow-x-auto">
                   {achievement.images.map((image, index) => (
@@ -100,11 +114,15 @@ const AchievementModal = ({ achievement, onClose }: AchievementModalProps) => {
                                     : ""
                                 }`}
                     >
-                      <img
-                        src={image}
-                        alt={`Thumbnail ${index + 1}`}
-                        className="w-full h-full object-cover"
-                      />
+                      <div className="relative w-full h-full">
+                        <Image
+                          src={getImagePath(image)}
+                          alt={`Thumbnail ${index + 1}`}
+                          fill
+                          sizes="64px"
+                          className="object-cover"
+                        />
+                      </div>
                     </button>
                   ))}
                 </div>
@@ -169,7 +187,7 @@ export default function Achievements() {
     );
   };
 
-  // Process achievements with filters and sorting
+  // Filter and sort achievements
   const filteredAchievements = processAchievements(
     achievementsData,
     searchTerm,
@@ -178,36 +196,39 @@ export default function Achievements() {
   );
 
   return (
-    <div className="min-h-screen p-8">
+    <div className="min-h-screen p-8 bg-gray-50">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-3xl font-bold mb-8 text-gray-800">Achievements</h1>
 
-        {/* Filters and Search */}
-        <div className="bg-white p-6 rounded-lg shadow-md mb-8">
+        {/* Search and Filter Controls */}
+        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
           {/* Search Bar */}
-          <div className="mb-6">
+          <div className="mb-4">
             <input
               type="text"
               placeholder="Search achievements..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
 
-          {/* Category Filters */}
+          {/* Category Filter */}
           <div className="mb-4">
-            <h3 className="font-semibold mb-2">Filter by Category:</h3>
+            <h3 className="text-sm font-medium text-gray-700 mb-2">
+              Filter by Category:
+            </h3>
             <div className="flex flex-wrap gap-2">
               {ACHIEVEMENT_CATEGORIES.map((category) => (
                 <button
                   key={category}
                   onClick={() => toggleCategory(category)}
-                  className={`px-3 py-1 rounded-full text-sm border-2 transition-colors ${
-                    selectedCategories.includes(category)
-                      ? getCategoryStyle(category)
-                      : "bg-gray-100 text-gray-600 border-gray-200 hover:bg-gray-200"
-                  }`}
+                  className={`px-3 py-1 rounded-full text-sm transition-colors
+                    ${
+                      selectedCategories.includes(category)
+                        ? getCategoryStyle(category)
+                        : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                    }`}
                 >
                   {getCategoryIcon(category)}{" "}
                   {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -217,12 +238,12 @@ export default function Achievements() {
           </div>
 
           {/* Sort Options */}
-          <div className="flex gap-4 items-center">
-            <span className="font-semibold">Sort by:</span>
+          <div>
+            <h3 className="text-sm font-medium text-gray-700 mb-2">Sort by:</h3>
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as "date" | "title")}
-              className="px-3 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="px-3 py-1 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
               <option value="date">Date (Newest First)</option>
               <option value="title">Title (A-Z)</option>
@@ -230,16 +251,8 @@ export default function Achievements() {
           </div>
         </div>
 
-        {/* Results Count */}
-        <div className="mb-4">
-          <p className="text-gray-600">
-            Showing {filteredAchievements.length} of {achievementsData.length}{" "}
-            achievements
-          </p>
-        </div>
-
         {/* Achievements Grid */}
-        <div className="grid gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           {filteredAchievements.length > 0 ? (
             filteredAchievements.map((achievement) => (
               <div
@@ -252,12 +265,17 @@ export default function Achievements() {
                 }}
               >
                 <div className="flex items-start gap-4">
+                  {/* Thumbnail Image - แก้ไขจาก <img> เป็น <Image /> */}
                   {achievement.thumbnailImage && (
-                    <img
-                      src={achievement.thumbnailImage}
-                      alt={achievement.title}
-                      className="w-16 h-16 rounded-lg object-cover"
-                    />
+                    <div className="relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                      <Image
+                        src={getImagePath(achievement.thumbnailImage)}
+                        alt={achievement.title}
+                        fill
+                        sizes="64px"
+                        className="object-cover"
+                      />
+                    </div>
                   )}
 
                   <div className="flex-1">
@@ -310,15 +328,15 @@ export default function Achievements() {
             </div>
           )}
         </div>
-
-        {/* Modal */}
-        {selectedAchievement && (
-          <AchievementModal
-            achievement={selectedAchievement}
-            onClose={() => setSelectedAchievement(null)}
-          />
-        )}
       </div>
+
+      {/* Achievement Modal */}
+      {selectedAchievement && (
+        <AchievementModal
+          achievement={selectedAchievement}
+          onClose={() => setSelectedAchievement(null)}
+        />
+      )}
     </div>
   );
 }
