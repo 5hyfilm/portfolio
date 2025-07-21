@@ -2,7 +2,6 @@
 "use client";
 
 import { experiencesData } from "../../data/experiences";
-import { calculateDuration, getTypeIcon } from "../../utils/experienceHelpers";
 
 export default function Experience() {
   return (

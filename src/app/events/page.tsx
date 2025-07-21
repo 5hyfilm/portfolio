@@ -2,6 +2,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { eventsData } from "../../data/events";
 import { getEventTypeColor } from "../../utils/eventHelpers";
 import { Event } from "../../types/events";
@@ -29,11 +30,16 @@ export default function Events() {
             </button>
           </div>
 
-          <img
-            src={event.image}
-            alt={event.title}
-            className="w-full rounded-lg mb-4"
-          />
+          <div className="relative w-full h-64 mb-4 rounded-lg overflow-hidden">
+            <Image
+              src={event.image}
+              alt={event.title}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover"
+              priority
+            />
+          </div>
 
           <div className="flex flex-wrap gap-4 mb-4">
             <span className="text-gray-600">📅 {event.date}</span>
@@ -93,11 +99,16 @@ export default function Events() {
               onClick={() => setSelectedEvent(event)}
               className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transform transition-transform hover:scale-105"
             >
-              <img
-                src={event.image}
-                alt={event.title}
-                className="w-full h-48 object-cover"
-              />
+              <div className="relative w-full h-48">
+                <Image
+                  src={event.image}
+                  alt={event.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover"
+                />
+              </div>
+
               <div className="p-4">
                 <div className="flex justify-between items-start mb-2">
                   <h2 className="text-xl font-semibold text-gray-800">

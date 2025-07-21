@@ -2,8 +2,8 @@
 
 import { Project, ProjectCategory, ProjectStatus } from "../types/projects";
 
-// Category icons mapping
-export const getCategoryIcon = (category: ProjectCategory): string => {
+// Category icons mapping - renamed to avoid conflict
+export const getProjectCategoryIcon = (category: ProjectCategory): string => {
   const icons = {
     "web-app": "🌐",
     "mobile-app": "📱",
@@ -17,8 +17,8 @@ export const getCategoryIcon = (category: ProjectCategory): string => {
   return icons[category];
 };
 
-// Category styles mapping
-export const getCategoryStyle = (category: ProjectCategory): string => {
+// Category styles mapping - renamed to avoid conflict
+export const getProjectCategoryStyle = (category: ProjectCategory): string => {
   const styles = {
     "web-app": "bg-blue-100 text-blue-800 border-blue-200",
     "mobile-app": "bg-green-100 text-green-800 border-green-200",
@@ -32,8 +32,25 @@ export const getCategoryStyle = (category: ProjectCategory): string => {
   return styles[category];
 };
 
+// Category border colors for cards
+export const getProjectCategoryBorderColor = (
+  category: ProjectCategory
+): string => {
+  const colors = {
+    "web-app": "#3B82F6", // Blue
+    "mobile-app": "#10B981", // Green
+    game: "#8B5CF6", // Purple
+    "ai-ml": "#EF4444", // Red
+    "data-analysis": "#F59E0B", // Yellow
+    iot: "#6366F1", // Indigo
+    "desktop-app": "#6B7280", // Gray
+    other: "#EC4899", // Pink
+  };
+  return colors[category];
+};
+
 // Status icons mapping
-export const getStatusIcon = (status: ProjectStatus): string => {
+export const getProjectStatusIcon = (status: ProjectStatus): string => {
   const icons = {
     completed: "✅",
     "in-progress": "🔄",
@@ -44,7 +61,7 @@ export const getStatusIcon = (status: ProjectStatus): string => {
 };
 
 // Status styles mapping
-export const getStatusStyle = (status: ProjectStatus): string => {
+export const getProjectStatusStyle = (status: ProjectStatus): string => {
   const styles = {
     completed: "bg-green-100 text-green-800 border-green-200",
     "in-progress": "bg-blue-100 text-blue-800 border-blue-200",

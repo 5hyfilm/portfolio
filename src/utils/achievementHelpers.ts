@@ -2,8 +2,10 @@
 
 import { Achievement, AchievementCategory } from "../types/achievements";
 
-// Category icons mapping
-export const getCategoryIcon = (category: AchievementCategory): string => {
+// Category icons mapping - renamed to avoid conflict
+export const getAchievementCategoryIcon = (
+  category: AchievementCategory
+): string => {
   const icons = {
     award: "🏆",
     certification: "📜",
@@ -13,8 +15,10 @@ export const getCategoryIcon = (category: AchievementCategory): string => {
   return icons[category];
 };
 
-// Category styles mapping
-export const getCategoryStyle = (category: AchievementCategory): string => {
+// Category styles mapping - renamed to avoid conflict
+export const getAchievementCategoryStyle = (
+  category: AchievementCategory
+): string => {
   const styles = {
     award: "bg-yellow-100 text-yellow-800 border-yellow-200",
     certification: "bg-blue-100 text-blue-800 border-blue-200",
@@ -24,8 +28,8 @@ export const getCategoryStyle = (category: AchievementCategory): string => {
   return styles[category];
 };
 
-// Category border colors for cards
-export const getCategoryBorderColor = (
+// Category border colors for cards - renamed to avoid conflict
+export const getAchievementCategoryBorderColor = (
   category: AchievementCategory
 ): string => {
   const colors = {
@@ -126,3 +130,9 @@ export const getAchievementStats = (achievements: Achievement[]) => {
 
   return stats;
 };
+
+// Legacy function names for backward compatibility
+// These will be deprecated - use the new prefixed names instead
+export const getCategoryIcon = getAchievementCategoryIcon;
+export const getCategoryStyle = getAchievementCategoryStyle;
+export const getCategoryBorderColor = getAchievementCategoryBorderColor;
