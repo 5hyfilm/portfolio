@@ -63,7 +63,7 @@ export const formatEventDate = (dateStr: string): string => {
       month: "long",
       day: "numeric",
     });
-  } catch (error) {
+  } catch {
     return dateStr; // Return original if parsing fails
   }
 };
