@@ -1,9 +1,18 @@
-// src/app/projects/page.tsx
+// ./src/app/projects/page.tsx
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { projectsData } from "../../data/projects";
 import { Project } from "../../types/projects";
+
+// Helper function เพื่อจัดการ image path ให้ถูกต้องสำหรับ Next.js Image
+const getImagePath = (imagePath: string): string => {
+  if (!imagePath) return "";
+  if (imagePath.startsWith("http")) return imagePath; // absolute URL
+  if (imagePath.startsWith("/")) return imagePath; // already absolute path
+  return `/${imagePath}`; // add leading slash for relative path
+};
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -30,11 +39,16 @@ export default function Projects() {
             </button>
           </div>
 
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full rounded-lg mb-4"
-          />
+          {/* แก้ไขจาก <img> เป็น <Image /> */}
+          <div className="relative w-full h-64 rounded-lg overflow-hidden mb-4">
+            <Image
+              src={getImagePath(project.image)}
+              alt={project.title}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover"
+            />
+          </div>
 
           <p className="text-gray-600 mb-4">{project.description}</p>
 
@@ -91,11 +105,17 @@ export default function Projects() {
               onClick={() => setSelectedProject(project)}
               className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transform transition-transform hover:scale-105"
             >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-48 object-cover"
-              />
+              {/* แก้ไขจาก <img> เป็น <Image /> */}
+              <div className="relative w-full h-48">
+                <Image
+                  src={getImagePath(project.image)}
+                  alt={project.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover"
+                />
+              </div>
+
               <div className="p-4">
                 <h2 className="text-xl font-semibold text-gray-800 mb-2">
                   {project.title}
