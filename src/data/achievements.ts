@@ -285,10 +285,10 @@ export const achievementsData: Achievement[] = [
   },
   {
     id: 20,
-    title: "Social Case Competition 2025",
+    title: "Thailand Social Case Competition 2025",
     category: "award",
     date: "9 July 2025",
-    organization: "Thailand Social Case Competition & Pandora",
+    organization: "AIESEC in Thailand & Pandora",
     description: "Winner of the competition",
     thumbnailImage: "images/achievements/achievement20/achievement20_0.png",
     images: ["images/achievements/achievement20/achievement20_1.jpg"],
