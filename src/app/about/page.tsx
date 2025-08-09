@@ -85,6 +85,10 @@ export default function About() {
           <h2 className="text-2xl font-bold mb-6 text-gray-800 border-b pb-2">
             Skills
           </h2>
+          <p className="text-gray-600 leading-relaxed mb-8">
+            Combining technical expertise and creative problem-solving for
+            outstanding results.
+          </p>
           <div className="grid md:grid-cols-3 gap-8">
             {/* Frontend Skills */}
             <div>
