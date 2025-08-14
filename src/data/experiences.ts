@@ -55,6 +55,22 @@ export const experiencesData: Experience[] = [
   },
   {
     id: 3,
+    title: "Student Consultant",
+    company: "Lotus’s",
+    location: "Bangkok, Thailand",
+    period: "November 2023 - February 2024",
+    startDate: "2023-11",
+    endDate: "2024-02",
+    type: "internship",
+    description: [
+      "Analyzed customer visit trends to design promotional strategies targeting shoppers from competing malls, driving increased store traffic",
+      "Assisted in developing promotional campaigns for a newly constructed building, aiming to boost both customer acquisition and sales performance",
+    ],
+    technologies: ["Data Analysis"],
+    highlights: [""],
+  },
+  {
+    id: 4,
     title: "Business Analyst (Part-Time)",
     company: "Pragma and Will Group",
     location: "Bangkok, Thailand",
@@ -73,7 +89,7 @@ export const experiencesData: Experience[] = [
   },
 
   {
-    id: 4,
+    id: 5,
     title: "Analytic and App Development Intern",
     company:
       "Thai Beverage Plc via Chang Junior (F&N Dairies Thailand Limited)",
