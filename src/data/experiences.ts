@@ -92,12 +92,18 @@ export const experiencesData: Experience[] = [
     id: 5,
     title: "Analytic and App Development Intern",
     company:
-      "Thai Beverage Plc via Chang Junior (F&N Dairies Thailand Limited)",
+      "Chang Junior Internship Program, Thai Beverage Plc — Assigned to F&N Dairies Thailand Limited",
     location: "Bangkok, Thailand",
     period: "Jul 2021 - Present",
     startDate: "2025-07",
     type: "volunteer",
-    description: ["Barcode", "Clustering"],
+    description: [
+      "Gathered and refined requirements from multiple stakeholder teams, translating operational needs into functional specifications and prioritizing features to improve workflow efficiency.",
+      "Developed and iteratively enhanced a barcode scanning web application leveraging computer vision for real-time product database matching, CSV export, and mobile-first optimization, adding features such as flashlight support, new product entry, and custom CSV formats.",
+      "Deployed and maintained the solution on a cloud platform, resolving technical issues, optimizing code for reliable builds, and ensuring readiness for production use.",
+      "Performed data cleaning, exploratory data analysis (EDA), data visualization, and modeling on Sellout data.",
+      "Conducted customer clustering to identify target groups and generate insights for tailored promotional campaigns.",
+    ],
     technologies: [
       "Deep Learning",
       "ONNX",
