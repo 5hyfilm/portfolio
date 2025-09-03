@@ -43,7 +43,7 @@ export default function Home() {
           {/* Main motto with dramatic styling */}
           <div className="mb-16">
             <p className="text-4xl md:text-5xl font-bold text-orange-400 font-japanese mb-4 leading-tight">
-              Compromise is death
+              妥協は死
             </p>
           </div>
 

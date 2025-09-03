@@ -48,11 +48,11 @@ export default function Experience() {
                 {/* Company logo and job title */}
                 <div className="mb-3 md:mb-4 flex items-start gap-3 md:gap-4">
                   {exp.image && (
-                    <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 relative">
+                    <div className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 relative">
                       <Image
                         src={exp.image}
                         alt={`${exp.company} logo`}
-                        width={48}
+                        width={64}
                         height={64}
                         className="object-contain rounded-md"
                         onError={(e) => {
