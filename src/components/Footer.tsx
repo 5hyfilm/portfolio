@@ -5,14 +5,7 @@
 import { useState } from "react";
 
 export default function Footer() {
-  const [hoveredSocial, setHoveredSocial] = useState<string | null>(null);
-
-  const quickLinks = [
-    { label: "About", path: "/about" },
-    { label: "Experience", path: "/experience" },
-    { label: "Projects", path: "/projects" },
-    { label: "Contact", path: "/contact" },
-  ];
+  const [, setHoveredSocial] = useState<string | null>(null);
 
   const socialLinks = [
     {
