@@ -17,17 +17,14 @@ export default function Experience() {
 
         <div className="space-y-12">
           {sortedExperiences.map((exp) => (
-            <div
-              key={exp.id}
-              className="bg-white rounded-lg shadow-md p-6 relative"
-            >
-              {/* Time period indicator */}
-              <div className="absolute top-6 right-6 text-sm text-gray-500 bg-white px-1">
+            <div key={exp.id} className="bg-white rounded-lg shadow-md p-6">
+              {/* Time period indicator - moved to top */}
+              <div className="text-sm text-gray-500 mb-4 text-right">
                 {exp.period}
               </div>
 
               {/* Company logo and job title */}
-              <div className="mb-4 flex items-start gap-4 pr-24">
+              <div className="mb-4 flex items-start gap-4">
                 {exp.image && (
                   <div className="flex-shrink-0 w-12 h-12 relative">
                     <Image
