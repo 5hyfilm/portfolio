@@ -38,8 +38,8 @@ export const experiencesData: Experience[] = [
     title: "Consultant",
     company: "NewWave Consulting",
     location: "Bangkok, Thailand",
-    period: "Jul 2021 - Present",
-    startDate: "2021-07",
+    period: "Jul 2023 - Jan 2024",
+    startDate: "2023-07",
     type: "volunteer",
     image: "/images/experiences/experience_2.jpg", // Microsoft logo
     companyWebsite: "https://microsoft.com",
