@@ -28,7 +28,7 @@ export default function Navbar() {
     { label: "Achievements", path: "/achievements" },
     { label: "Projects", path: "/projects" },
     { label: "Events", path: "/events" },
-    { label: "Contact", path: "/contact" },
+    { label: "Resume", path: "/resume.pdf", isSpecial: true },
   ];
 
   return (
@@ -61,48 +61,84 @@ export default function Navbar() {
             </Link>
 
             <div className="hidden md:flex space-x-1">
-              {navItems.map((item) => (
-                <Link
-                  key={item.path}
-                  href={item.path}
-                  className="relative px-4 py-2 group"
-                  onMouseEnter={() => setHoveredItem(item.path)}
-                  onMouseLeave={() => setHoveredItem(null)}
-                >
-                  <span
-                    className={`absolute inset-0 bg-gray-50 transform origin-left transition-transform duration-300 ease-out 
-                                  ${
-                                    hoveredItem === item.path
-                                      ? "scale-x-100"
-                                      : "scale-x-0"
-                                  }`}
-                  />
-                  <span
-                    className={`relative z-10 text-sm font-medium transition-colors duration-300
-                                  ${
-                                    pathname === item.path
-                                      ? "text-gray-900"
-                                      : "text-gray-600"
-                                  }`}
+              {navItems.map((item) => {
+                if (item.isSpecial) {
+                  // Special styling for Resume button
+                  return (
+                    <Link
+                      key={item.path}
+                      href={item.path}
+                      className="relative px-6 py-2 ml-4 group"
+                      onMouseEnter={() => setHoveredItem(item.path)}
+                      onMouseLeave={() => setHoveredItem(null)}
+                    >
+                      <span
+                        className={`absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600 
+                                    rounded-full shadow-lg transform transition-all duration-300 ease-out
+                                    ${
+                                      hoveredItem === item.path
+                                        ? "scale-105 shadow-xl"
+                                        : "scale-100"
+                                    }`}
+                      />
+                      <span
+                        className={`relative z-10 text-sm font-semibold transition-colors duration-300
+                                    ${
+                                      pathname === item.path
+                                        ? "text-white"
+                                        : "text-white"
+                                    }`}
+                      >
+                        {item.label}
+                      </span>
+                    </Link>
+                  );
+                }
+
+                // Regular nav items
+                return (
+                  <Link
+                    key={item.path}
+                    href={item.path}
+                    className="relative px-4 py-2 group"
+                    onMouseEnter={() => setHoveredItem(item.path)}
+                    onMouseLeave={() => setHoveredItem(null)}
                   >
-                    {item.label}
-                  </span>
-                  <span
-                    className={`absolute bottom-0 left-0 w-full h-0.5 bg-gray-900 transform origin-left 
-                                  transition-transform duration-300 ease-out
-                                  ${
-                                    pathname === item.path
-                                      ? "scale-x-100"
-                                      : "scale-x-0"
-                                  }
-                                  ${
-                                    hoveredItem === item.path
-                                      ? "scale-x-100"
-                                      : ""
-                                  }`}
-                  />
-                </Link>
-              ))}
+                    <span
+                      className={`absolute inset-0 bg-gray-50 transform origin-left transition-transform duration-300 ease-out 
+                                    ${
+                                      hoveredItem === item.path
+                                        ? "scale-x-100"
+                                        : "scale-x-0"
+                                    }`}
+                    />
+                    <span
+                      className={`relative z-10 text-sm font-medium transition-colors duration-300
+                                    ${
+                                      pathname === item.path
+                                        ? "text-gray-900"
+                                        : "text-gray-600"
+                                    }`}
+                    >
+                      {item.label}
+                    </span>
+                    <span
+                      className={`absolute bottom-0 left-0 w-full h-0.5 bg-gray-900 transform origin-left 
+                                    transition-transform duration-300 ease-out
+                                    ${
+                                      pathname === item.path
+                                        ? "scale-x-100"
+                                        : "scale-x-0"
+                                    }
+                                    ${
+                                      hoveredItem === item.path
+                                        ? "scale-x-100"
+                                        : ""
+                                    }`}
+                    />
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -120,27 +156,55 @@ export default function Navbar() {
                     ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <div className="flex flex-col pt-20 px-6">
-          {navItems.map((item, index) => (
-            <Link
-              key={item.path}
-              href={item.path}
-              onClick={() => setIsMenuOpen(false)}
-              className={`text-lg font-medium py-4 transition-all duration-300
-                         ${
-                           pathname === item.path
-                             ? "text-gray-900"
-                             : "text-gray-600"
-                         }
-                         hover:pl-6 hover:text-gray-900 border-b border-gray-100`}
-              style={{
-                transitionDelay: `${index * 50}ms`,
-                opacity: isMenuOpen ? 1 : 0,
-                transform: isMenuOpen ? "translateX(0)" : "translateX(20px)",
-              }}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {navItems.map((item, index) => {
+            if (item.isSpecial) {
+              // Special styling for Resume button in mobile menu
+              return (
+                <Link
+                  key={item.path}
+                  href={item.path}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`relative overflow-hidden text-lg font-semibold py-4 my-2 px-6 rounded-full
+                             bg-gradient-to-r from-orange-500 to-orange-600 text-white
+                             hover:from-orange-600 hover:to-orange-700
+                             transform hover:scale-105 transition-all duration-300
+                             shadow-lg hover:shadow-xl border-none`}
+                  style={{
+                    transitionDelay: `${index * 50}ms`,
+                    opacity: isMenuOpen ? 1 : 0,
+                    transform: isMenuOpen
+                      ? "translateX(0) scale(1)"
+                      : "translateX(20px) scale(0.95)",
+                  }}
+                >
+                  <span className="relative z-10">{item.label}</span>
+                </Link>
+              );
+            }
+
+            // Regular mobile menu items
+            return (
+              <Link
+                key={item.path}
+                href={item.path}
+                onClick={() => setIsMenuOpen(false)}
+                className={`text-lg font-medium py-4 transition-all duration-300
+                           ${
+                             pathname === item.path
+                               ? "text-gray-900"
+                               : "text-gray-600"
+                           }
+                           hover:pl-6 hover:text-gray-900 border-b border-gray-100`}
+                style={{
+                  transitionDelay: `${index * 50}ms`,
+                  opacity: isMenuOpen ? 1 : 0,
+                  transform: isMenuOpen ? "translateX(0)" : "translateX(20px)",
+                }}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </>
