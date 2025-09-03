@@ -1,6 +1,7 @@
 // src/app/layout.tsx
 import "./globals.css";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
@@ -26,6 +27,7 @@ export default function RootLayout({
         <div className="relative z-10">
           <Navbar />
           <main className="min-h-screen pt-16">{children}</main>
+          <Footer />
         </div>
       </body>
       <Analytics />
