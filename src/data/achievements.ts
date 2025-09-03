@@ -277,7 +277,7 @@ export const achievementsData: Achievement[] = [
     date: "11 October 2024",
     organization: "Thaihealth and SYNHUB",
     description:
-      "Finalist in the top 22 teams, received a fund for development",
+      "Finalist in the top 22 teams, received a fund 500000 THB for development",
     thumbnailImage: "images/achievements/achievement19/achievement19_0.jpg",
     images: ["images/achievements/achievement19/achievement19_1.png"],
     validUntil: "",
@@ -289,7 +289,7 @@ export const achievementsData: Achievement[] = [
     category: "award",
     date: "9 July 2025",
     organization: "AIESEC in Thailand & Pandora",
-    description: "Winner of the competition",
+    description: "Winner of the competition from 443 teams",
     thumbnailImage: "images/achievements/achievement20/achievement20_0.png",
     images: ["images/achievements/achievement20/achievement20_1.jpg"],
     validUntil: "",
