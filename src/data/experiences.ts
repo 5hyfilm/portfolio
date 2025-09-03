@@ -103,7 +103,7 @@ export const experiencesData: Experience[] = [
     title: "Business Analyst (Freelance)",
     company: "Pragma and Will Group",
     location: "Bangkok, Thailand",
-    period: "Jan 2022",
+    period: "Dec 2024",
     startDate: "2022-01",
     type: "part-time",
     image: "/images/experiences/experience_5.png", // Pragma and Will Group logo

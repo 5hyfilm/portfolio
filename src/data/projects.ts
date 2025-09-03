@@ -155,7 +155,7 @@ export const projectsData: Project[] = [
     title: "GOROLL",
     description:
       "A platform for accessible journeys and inclusive communities.",
-    image: "images/projects/project11.png",
+    image: "images/projects/project11.jpg",
     technologies: ["React", "Next.js", "Tailwind CSS"],
     demoLink: "https://goroll.co/",
     githubLink: "",
