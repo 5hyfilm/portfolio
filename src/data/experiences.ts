@@ -11,6 +11,8 @@ export const experiencesData: Experience[] = [
     period: "Jul 2021 - Present",
     startDate: "2021-07",
     type: "volunteer",
+    image: "/images/experiences/experience_1.jpg", // Microsoft logo
+    companyWebsite: "https://mvp.microsoft.com/studentambassadors",
     description: [
       "Organized workshops and coding sessions, mentoring and inspiring over 100 students, enhancing mentorship and training skills.",
       "Actively collaborated with peers to create impactful learning resources, including tutorials and guides on programming, AI, and cloud technologies.",
@@ -33,6 +35,29 @@ export const experiencesData: Experience[] = [
   },
   {
     id: 2,
+    title: "Consultant",
+    company: "NewWave Consulting",
+    location: "Bangkok, Thailand",
+    period: "Jul 2021 - Present",
+    startDate: "2021-07",
+    type: "volunteer",
+    image: "/images/experiences/experience_2.jpg", // Microsoft logo
+    companyWebsite: "https://microsoft.com",
+    description: [
+      "Collaborated with a cross-functional consulting team to analyze Makro’s existing rental stall business model and identify new revenue opportunities.",
+      "Conducted market research, competitor benchmarking, and on-site observation to evaluate foot traffic, tenant mix, and pricing strategies.",
+      "Presented findings and actionable recommendations to Makro executives, supporting decision-making on future stall management strategies.",
+    ],
+    technologies: ["Business Strategy Frameworks"],
+    highlights: [
+      "Mentored over 100 students",
+      "Created comprehensive learning resources on AI and cloud technologies",
+      "Built supportive developer community",
+      "Enhanced mentorship and training skills",
+    ],
+  },
+  {
+    id: 3,
     title: "HR Development Strategist Intern",
     company: "CP Axtra Public Company Limited (Makro)",
     location: "Bangkok, Thailand",
@@ -40,6 +65,8 @@ export const experiencesData: Experience[] = [
     startDate: "2023-11",
     endDate: "2024-02",
     type: "internship",
+    image: "/images/experiences/experience_3.jpg", // Makro logo
+    companyWebsite: "https://www.makro.co.th",
     description: [
       "Led a team of 3 students to innovate and develop a chatbot and dashboard HR analytics solution prototype, resulting in a 49% improvement in performance evaluation metrics and a 40% increase in productivity levels, building business consulting experience",
       "Executed extensive requirements collection, organizational research, and management analysis presentations for Makro's management team, contributing to informed decision-making processes and strategic planning",
@@ -54,14 +81,16 @@ export const experiencesData: Experience[] = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     title: "Student Consultant",
-    company: "Lotus’s",
+    company: "Lotus's",
     location: "Bangkok, Thailand",
     period: "November 2023 - February 2024",
     startDate: "2023-11",
     endDate: "2024-02",
     type: "internship",
+    image: "/images/experiences/experience_4.jpg", // Lotus's logo
+    companyWebsite: "https://www.lotuss.com",
     description: [
       "Analyzed customer visit trends to design promotional strategies targeting shoppers from competing malls, driving increased store traffic",
       "Assisted in developing promotional campaigns for a newly constructed building, aiming to boost both customer acquisition and sales performance",
@@ -70,13 +99,15 @@ export const experiencesData: Experience[] = [
     highlights: [""],
   },
   {
-    id: 4,
-    title: "Business Analyst (Part-Time)",
+    id: 5,
+    title: "Business Analyst (Freelance)",
     company: "Pragma and Will Group",
     location: "Bangkok, Thailand",
     period: "Jan 2022",
     startDate: "2022-01",
     type: "part-time",
+    image: "/images/experiences/experience_5.png", // Pragma and Will Group logo
+    companyWebsite: "https://pwg.co.th/",
     description: [
       "Assisted in rechecking customer requirements, refining them for accuracy and clarity.",
       "Supported the creation of application flowcharts to visualize system processes.",
@@ -87,16 +118,17 @@ export const experiencesData: Experience[] = [
       "Created clear visual documentation for system processes",
     ],
   },
-
   {
-    id: 5,
+    id: 6,
     title: "Analytic and App Development Intern",
     company:
       "Chang Junior Internship Program, Thai Beverage Plc — Assigned to F&N Dairies Thailand Limited",
     location: "Bangkok, Thailand",
-    period: "Jul 2021 - Present",
-    startDate: "2025-07",
-    type: "volunteer",
+    period: "Jun 2025 - Jul 2025",
+    startDate: "2021-07", // Fixed the date from 2025-07 to 2021-07
+    type: "internship",
+    image: "/images/experiences/experience_6.jpg", // Thai Beverage/F&N logo
+    companyWebsite: "https://www.thaibev.com",
     description: [
       "Gathered and refined requirements from multiple stakeholder teams, translating operational needs into functional specifications and prioritizing features to improve workflow efficiency.",
       "Developed and iteratively enhanced a barcode scanning web application leveraging computer vision for real-time product database matching, CSV export, and mobile-first optimization, adding features such as flashlight support, new product entry, and custom CSV formats.",
@@ -115,10 +147,34 @@ export const experiencesData: Experience[] = [
       "GCP",
     ],
     highlights: [
-      "Mentored over 100 students",
-      "Created comprehensive learning resources on AI and cloud technologies",
-      "Built supportive developer community",
-      "Enhanced mentorship and training skills",
+      "Developed barcode scanning web application with computer vision",
+      "Deployed cloud-based solution for production use",
+      "Conducted customer clustering for promotional insights",
+      "Enhanced workflow efficiency through requirement translation",
+    ],
+  },
+  {
+    id: 7,
+    title: "Co-founder & CTO",
+    company: "GOROLL",
+    location: "Bangkok, Thailand",
+    period: "2024 - Present",
+    startDate: "2021-07", // Fixed the date from 2025-07 to 2021-07
+    type: "full-time",
+    image: "/images/experiences/experience_7.jpg", // Thai Beverage/F&N logo
+    companyWebsite: "https://www.goroll.co",
+    description: [
+      "Co-founded GOROLL, a social-impact startup focused on improving mobility and inclusive travel experiences for wheelchair users, elderly, and caregivers.",
+      "Led technical direction as CTO — defined architecture, technology stack, and product roadmap aligned with startup strategy and impact goals.",
+      "Collaborated with co-founders on business model and conducted pilot testing with target users to refine product-market fit.",
+    ],
+    technologies: ["React", "TypeScript", "Azure"],
+    highlights: [
+      "Developed functional prototype to validate GOROLL’s concept",
+      "Defined technology roadmap and acted as CTO for the startup",
+      "Managed external software house for full-scale product build",
+      "Aligned product development with CSR and partnership strategy",
+      "Piloted prototype with real users to demonstrate social impact",
     ],
   },
 ];

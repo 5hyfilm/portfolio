@@ -2,6 +2,7 @@
 "use client";
 
 import { experiencesData } from "../../data/experiences";
+import Image from "next/image";
 
 export default function Experience() {
   // Sort experiences by id in descending order (highest id first)
@@ -25,13 +26,42 @@ export default function Experience() {
                 {exp.period}
               </div>
 
-              {/* Job title and company */}
-              <div className="mb-4">
-                <h2 className="text-xl font-semibold text-gray-800">
-                  {exp.title}
-                </h2>
-                <div className="text-gray-600">
-                  {exp.company} • {exp.location}
+              {/* Company logo and job title */}
+              <div className="mb-4 flex items-start gap-4">
+                {exp.image && (
+                  <div className="flex-shrink-0 w-12 h-12 relative">
+                    <Image
+                      src={exp.image}
+                      alt={`${exp.company} logo`}
+                      width={48}
+                      height={48}
+                      className="object-contain rounded-md"
+                      onError={(e) => {
+                        // Hide image if it fails to load
+                        e.currentTarget.style.display = "none";
+                      }}
+                    />
+                  </div>
+                )}
+                <div className="flex-1">
+                  <h2 className="text-xl font-semibold text-gray-800">
+                    {exp.title}
+                  </h2>
+                  <div className="text-gray-600">
+                    {exp.companyWebsite ? (
+                      <a
+                        href={exp.companyWebsite}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-blue-600 transition-colors"
+                      >
+                        {exp.company}
+                      </a>
+                    ) : (
+                      exp.company
+                    )}{" "}
+                    • {exp.location}
+                  </div>
                 </div>
               </div>
 
