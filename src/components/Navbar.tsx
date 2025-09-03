@@ -60,8 +60,12 @@ export default function Navbar() {
               href="/"
               className="flex items-center space-x-2 text-xl font-bold text-gray-900"
             >
-              <img src="/favicon.ico" alt="Logo" className="h-8 w-8" />
-              <span>PORTFOLIO</span>
+              <img
+                src="/favicon.ico"
+                alt="Logo"
+                className="h-8 w-8 object-contain relative top-[-4px]"
+              />
+              <span className="align-middle">PORTFOLIO</span>
             </Link>
 
             <div className="hidden md:flex space-x-1">
