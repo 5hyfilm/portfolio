@@ -22,12 +22,12 @@ export default function Experience() {
               className="bg-white rounded-lg shadow-md p-6 relative"
             >
               {/* Time period indicator */}
-              <div className="absolute top-6 right-6 text-sm text-gray-500">
+              <div className="absolute top-6 right-6 text-sm text-gray-500 bg-white px-1">
                 {exp.period}
               </div>
 
               {/* Company logo and job title */}
-              <div className="mb-4 flex items-start gap-4">
+              <div className="mb-4 flex items-start gap-4 pr-24">
                 {exp.image && (
                   <div className="flex-shrink-0 w-12 h-12 relative">
                     <Image
