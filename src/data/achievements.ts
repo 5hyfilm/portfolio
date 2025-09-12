@@ -295,6 +295,19 @@ export const achievementsData: Achievement[] = [
     validUntil: "",
     link: "",
   },
+  {
+    id: 21,
+    title: "The Outstanding Achievement Award in Competition 2025",
+    category: "award",
+    date: "28 Aug 2025",
+    organization:
+      "Depeartment of Computer Engineering, Chulalongkorn University",
+    description: "",
+    thumbnailImage: "images/achievements/achievement21/achievement21_0.png",
+    images: ["images/achievements/achievement21/achievement21_1.jpg"],
+    validUntil: "",
+    link: "",
+  },
 ];
 
 // Export category constants
