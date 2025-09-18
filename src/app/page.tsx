@@ -10,11 +10,16 @@ export default function Home() {
         <div className="absolute bottom-20 right-1/3 w-1 h-1 bg-orange-200 rounded-full animate-pulse delay-700"></div>
       </div>
 
-      {/* Decorative kanji background */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-3">
-        <span className="text-[25rem] font-japanese text-gray-300/20 transform -rotate-12 select-none">
-          フィルム
-        </span>
+      {/* Single large zero with diagonal line background */}
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-15">
+        <div className="relative">
+          {/* The zero character */}
+          <span className="text-[30rem] font-bold text-gray-400 select-none">
+            0
+          </span>
+          {/* Diagonal line cutting through the zero and extending beyond */}
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -rotate-45 w-96 h-4 bg-gray-500"></div>
+        </div>
       </div>
 
       {/* Main content */}
