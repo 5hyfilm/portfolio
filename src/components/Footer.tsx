@@ -67,7 +67,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-orange-500 border-t border-orange-600">
+    <footer className="relative bg-purple-700 border-t border-purple-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         {/* Connect Section - Centered */}
         <div className="flex justify-center items-center">
@@ -82,8 +82,8 @@ export default function Footer() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`text-orange-200 ${social.color} transform transition-all duration-200 
-                             hover:scale-110 p-2 rounded-full hover:bg-orange-600 flex items-center justify-center`}
+                  className={`text-purple-200 ${social.color} transform transition-all duration-200 
+                             hover:scale-110 p-2 rounded-full hover:bg-purple-600 flex items-center justify-center`}
                   onMouseEnter={() => setHoveredSocial(social.name)}
                   onMouseLeave={() => setHoveredSocial(null)}
                   aria-label={social.name}

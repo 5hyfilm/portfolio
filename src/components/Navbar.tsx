@@ -81,7 +81,7 @@ export default function Navbar() {
                       onMouseLeave={() => setHoveredItem(null)}
                     >
                       <span
-                        className={`absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600 
+                        className={`absolute inset-0 bg-gradient-to-r from-purple-600 to-purple-700 
                                     rounded-full shadow-lg transform transition-all duration-300 ease-out
                                     ${
                                       hoveredItem === item.path
@@ -173,8 +173,8 @@ export default function Navbar() {
                   href={item.path}
                   onClick={() => setIsMenuOpen(false)}
                   className={`relative overflow-hidden text-lg font-semibold py-4 my-2 px-6 rounded-full
-                             bg-gradient-to-r from-orange-500 to-orange-600 text-white
-                             hover:from-orange-600 hover:to-orange-700
+                             bg-gradient-to-r from-purple-600 to-purple-700 text-white
+                             hover:from-purple-700 hover:to-purple-800
                              transform hover:scale-105 transition-all duration-300
                              shadow-lg hover:shadow-xl border-none`}
                   style={{
