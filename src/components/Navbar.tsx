@@ -53,12 +53,12 @@ export default function Navbar() {
         />
       </button>
 
-      <nav className="fixed top-0 left-0 right-0 bg-white border-b border-gray-200 z-40">
+      <nav className="fixed top-0 left-0 right-0 bg-gradient-to-r from-purple-50 via-white to-purple-50 border-b border-purple-200 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
             <Link
               href="/"
-              className="flex items-center space-x-2 text-xl font-bold text-gray-900"
+              className="flex items-center space-x-2 text-xl font-bold text-purple-800"
             >
               <img
                 src="/favicon.ico"
@@ -113,7 +113,7 @@ export default function Navbar() {
                     onMouseLeave={() => setHoveredItem(null)}
                   >
                     <span
-                      className={`absolute inset-0 bg-gray-50 transform origin-left transition-transform duration-300 ease-out 
+                      className={`absolute inset-0 bg-purple-100 transform origin-left transition-transform duration-300 ease-out 
                                     ${
                                       hoveredItem === item.path
                                         ? "scale-x-100"
@@ -124,14 +124,14 @@ export default function Navbar() {
                       className={`relative z-10 text-sm font-medium transition-colors duration-300
                                     ${
                                       pathname === item.path
-                                        ? "text-gray-900"
-                                        : "text-gray-600"
+                                        ? "text-purple-800"
+                                        : "text-purple-600"
                                     }`}
                     >
                       {item.label}
                     </span>
                     <span
-                      className={`absolute bottom-0 left-0 w-full h-0.5 bg-gray-900 transform origin-left 
+                      className={`absolute bottom-0 left-0 w-full h-0.5 bg-purple-700 transform origin-left 
                                     transition-transform duration-300 ease-out
                                     ${
                                       pathname === item.path
