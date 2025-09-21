@@ -93,24 +93,6 @@ export default function Template({ children }: { children: React.ReactNode }) {
           animation: subtlePulse 1s ease-out;
         }
 
-        /* Elegant scan line */
-        .scan-minimal {
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 1px;
-          background: linear-gradient(
-            90deg,
-            transparent 0%,
-            rgba(168, 85, 247, 0.8) 50%,
-            transparent 100%
-          );
-          z-index: 10002;
-          animation: scanMinimal 1.2s ease-out;
-          box-shadow: 0 0 8px rgba(168, 85, 247, 0.3);
-        }
-
         /* Subtle floating particles */
         .particle-minimal {
           position: absolute;
@@ -162,23 +144,6 @@ export default function Template({ children }: { children: React.ReactNode }) {
           }
         }
 
-        @keyframes scanMinimal {
-          0% {
-            top: 0;
-            opacity: 0;
-          }
-          20% {
-            opacity: 1;
-          }
-          80% {
-            opacity: 1;
-          }
-          100% {
-            top: 100vh;
-            opacity: 0;
-          }
-        }
-
         @keyframes floatMinimal {
           0% {
             opacity: 0;
@@ -218,9 +183,6 @@ export default function Template({ children }: { children: React.ReactNode }) {
         <>
           {/* Elegant overlay */}
           <div className={`minimal-overlay ${isLoading ? "active" : ""}`} />
-
-          {/* Subtle scan line */}
-          <div className="scan-minimal" />
 
           {/* Minimal Geass symbol */}
           <div className="geass-minimal">
