@@ -1,10 +1,10 @@
+// src/components/Navbar.tsx
 "use client";
 
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-// Define types
 interface ParticleProps {
   x: number;
   y: number;
@@ -22,7 +22,6 @@ interface NavItem {
   isSpecial?: boolean;
 }
 
-// Particle Component
 const Particle = ({ x, y, delay = 0 }: ParticleProps) => {
   return (
     <div
@@ -59,32 +58,60 @@ const Particle = ({ x, y, delay = 0 }: ParticleProps) => {
   );
 };
 
-// Particle positions for different screen sizes
+// เพิ่มจำนวน particles แต่ยังคงอยู่ใน 3 area เดิม
 const getParticlePositions = (): Position[] => {
-  // Check if window is available (client-side)
   if (typeof window === "undefined") {
     return [];
   }
 
+  const w = window.innerWidth;
+  const h = window.innerHeight;
+
   const positions: Position[] = [
-    // Top left area
-    { x: 100, y: 50 },
-    { x: 120, y: 70 },
-    { x: 80, y: 80 },
-    { x: 150, y: 60 },
+    // Top left area - เพิ่มจาก 4 เป็น 12 particles
+    { x: 80, y: 40 },
+    { x: 120, y: 60 },
+    { x: 60, y: 80 },
+    { x: 150, y: 50 },
+    { x: 100, y: 90 },
+    { x: 140, y: 30 },
+    { x: 70, y: 110 },
+    { x: 160, y: 70 },
+    { x: 50, y: 60 },
+    { x: 180, y: 40 },
+    { x: 110, y: 120 },
+    { x: 90, y: 35 },
 
-    // Top right area
-    { x: window.innerWidth - 100, y: 50 },
-    { x: window.innerWidth - 120, y: 70 },
-    { x: window.innerWidth - 80, y: 80 },
-    { x: window.innerWidth - 150, y: 60 },
+    // Top right area - เพิ่มจาก 4 เป็น 12 particles
+    { x: w - 80, y: 40 },
+    { x: w - 120, y: 60 },
+    { x: w - 60, y: 80 },
+    { x: w - 150, y: 50 },
+    { x: w - 100, y: 90 },
+    { x: w - 140, y: 30 },
+    { x: w - 70, y: 110 },
+    { x: w - 160, y: 70 },
+    { x: w - 50, y: 60 },
+    { x: w - 180, y: 40 },
+    { x: w - 110, y: 120 },
+    { x: w - 90, y: 35 },
 
-    // Bottom center area
-    { x: window.innerWidth / 2 - 50, y: window.innerHeight - 100 },
-    { x: window.innerWidth / 2, y: window.innerHeight - 120 },
-    { x: window.innerWidth / 2 + 50, y: window.innerHeight - 90 },
-    { x: window.innerWidth / 2 - 30, y: window.innerHeight - 110 },
-    { x: window.innerWidth / 2 + 30, y: window.innerHeight - 80 },
+    // Bottom center area - เพิ่มจาก 5 เป็น 15 particles
+    { x: w / 2 - 50, y: h - 100 },
+    { x: w / 2, y: h - 120 },
+    { x: w / 2 + 50, y: h - 90 },
+    { x: w / 2 - 30, y: h - 110 },
+    { x: w / 2 + 30, y: h - 80 },
+    { x: w / 2 - 80, y: h - 140 },
+    { x: w / 2 + 80, y: h - 140 },
+    { x: w / 2, y: h - 160 },
+    { x: w / 2 - 70, y: h - 70 },
+    { x: w / 2 + 70, y: h - 70 },
+    { x: w / 2 - 100, y: h - 120 },
+    { x: w / 2 + 100, y: h - 120 },
+    { x: w / 2 - 20, y: h - 85 },
+    { x: w / 2 + 20, y: h - 85 },
+    { x: w / 2, y: h - 180 },
   ];
 
   return positions;
@@ -97,7 +124,6 @@ export default function NavbarWithParticles() {
   const [particles, setParticles] = useState<Position[]>([]);
   const pathname = usePathname();
 
-  // Initialize particles on component mount and window resize
   useEffect(() => {
     const updateParticles = () => {
       setParticles(getParticlePositions());
@@ -134,18 +160,16 @@ export default function NavbarWithParticles() {
 
   return (
     <>
-      {/* Particle Effect */}
       {showParticles &&
         particles.map((particle, index) => (
           <Particle
             key={index}
             x={particle.x}
             y={particle.y}
-            delay={index * 150}
+            delay={index * 100} // ลด delay เป็น 100ms เพื่อให้เร็วขึ้น
           />
         ))}
 
-      {/* Mobile Menu Button */}
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)}
         className="fixed top-5 right-4 w-6 h-6 flex flex-col justify-between 
@@ -166,7 +190,6 @@ export default function NavbarWithParticles() {
         />
       </button>
 
-      {/* Main Navbar */}
       <nav
         className="fixed top-0 left-0 right-0 bg-gradient-to-r from-purple-50 via-white to-purple-50 border-b border-purple-200 z-40"
         onMouseEnter={() => handleNavbarHover(true)}
@@ -268,7 +291,6 @@ export default function NavbarWithParticles() {
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
       {isMenuOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-40"
@@ -276,7 +298,6 @@ export default function NavbarWithParticles() {
         />
       )}
 
-      {/* Mobile Menu */}
       <div
         className={`fixed inset-y-0 right-0 w-full max-w-sm bg-white transform transition-all duration-500 ease-in-out z-50
                     ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
