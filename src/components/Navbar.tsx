@@ -1,15 +1,112 @@
-// src/app/components/Navbar.tsx
-
 "use client";
 
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+// Define types
+interface ParticleProps {
+  x: number;
+  y: number;
+  delay?: number;
+}
+
+interface Position {
+  x: number;
+  y: number;
+}
+
+interface NavItem {
+  label: string;
+  path: string;
+  isSpecial?: boolean;
+}
+
+// Particle Component
+const Particle = ({ x, y, delay = 0 }: ParticleProps) => {
+  return (
+    <div
+      className="fixed w-2 h-2 bg-purple-500 rounded-full pointer-events-none z-30"
+      style={{
+        left: `${x}px`,
+        top: `${y}px`,
+        animation: `particle-float 3s ease-in-out infinite`,
+        animationDelay: `${delay}ms`,
+      }}
+    >
+      <style jsx>{`
+        @keyframes particle-float {
+          0%,
+          100% {
+            opacity: 0;
+            transform: translateY(0) scale(0);
+          }
+          10% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+          50% {
+            opacity: 0.7;
+            transform: translateY(-20px) scale(0.8);
+          }
+          90% {
+            opacity: 1;
+            transform: translateY(-10px) scale(1);
+          }
+        }
+      `}</style>
+    </div>
+  );
+};
+
+// Particle positions for different screen sizes
+const getParticlePositions = (): Position[] => {
+  // Check if window is available (client-side)
+  if (typeof window === "undefined") {
+    return [];
+  }
+
+  const positions: Position[] = [
+    // Top left area
+    { x: 100, y: 50 },
+    { x: 120, y: 70 },
+    { x: 80, y: 80 },
+    { x: 150, y: 60 },
+
+    // Top right area
+    { x: window.innerWidth - 100, y: 50 },
+    { x: window.innerWidth - 120, y: 70 },
+    { x: window.innerWidth - 80, y: 80 },
+    { x: window.innerWidth - 150, y: 60 },
+
+    // Bottom center area
+    { x: window.innerWidth / 2 - 50, y: window.innerHeight - 100 },
+    { x: window.innerWidth / 2, y: window.innerHeight - 120 },
+    { x: window.innerWidth / 2 + 50, y: window.innerHeight - 90 },
+    { x: window.innerWidth / 2 - 30, y: window.innerHeight - 110 },
+    { x: window.innerWidth / 2 + 30, y: window.innerHeight - 80 },
+  ];
+
+  return positions;
+};
+
+export default function NavbarWithParticles() {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+  const [showParticles, setShowParticles] = useState<boolean>(false);
+  const [particles, setParticles] = useState<Position[]>([]);
   const pathname = usePathname();
+
+  // Initialize particles on component mount and window resize
+  useEffect(() => {
+    const updateParticles = () => {
+      setParticles(getParticlePositions());
+    };
+
+    updateParticles();
+    window.addEventListener("resize", updateParticles);
+    return () => window.removeEventListener("resize", updateParticles);
+  }, []);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -22,7 +119,7 @@ export default function Navbar() {
     };
   }, [isMenuOpen]);
 
-  const navItems = [
+  const navItems: NavItem[] = [
     { label: "About", path: "/about" },
     { label: "Experience", path: "/experience" },
     { label: "Achievements", path: "/achievements" },
@@ -31,8 +128,24 @@ export default function Navbar() {
     { label: "Resume", path: "/resume.pdf", isSpecial: true },
   ];
 
+  const handleNavbarHover = (isHovering: boolean) => {
+    setShowParticles(isHovering);
+  };
+
   return (
     <>
+      {/* Particle Effect */}
+      {showParticles &&
+        particles.map((particle, index) => (
+          <Particle
+            key={index}
+            x={particle.x}
+            y={particle.y}
+            delay={index * 150}
+          />
+        ))}
+
+      {/* Mobile Menu Button */}
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)}
         className="fixed top-5 right-4 w-6 h-6 flex flex-col justify-between 
@@ -53,7 +166,12 @@ export default function Navbar() {
         />
       </button>
 
-      <nav className="fixed top-0 left-0 right-0 bg-gradient-to-r from-purple-50 via-white to-purple-50 border-b border-purple-200 z-40">
+      {/* Main Navbar */}
+      <nav
+        className="fixed top-0 left-0 right-0 bg-gradient-to-r from-purple-50 via-white to-purple-50 border-b border-purple-200 z-40"
+        onMouseEnter={() => handleNavbarHover(true)}
+        onMouseLeave={() => handleNavbarHover(false)}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
             <Link
@@ -71,7 +189,6 @@ export default function Navbar() {
             <div className="hidden md:flex space-x-1">
               {navItems.map((item) => {
                 if (item.isSpecial) {
-                  // Special styling for Resume button
                   return (
                     <Link
                       key={item.path}
@@ -103,7 +220,6 @@ export default function Navbar() {
                   );
                 }
 
-                // Regular nav items
                 return (
                   <Link
                     key={item.path}
@@ -152,6 +268,7 @@ export default function Navbar() {
         </div>
       </nav>
 
+      {/* Mobile Menu Overlay */}
       {isMenuOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-40"
@@ -159,6 +276,7 @@ export default function Navbar() {
         />
       )}
 
+      {/* Mobile Menu */}
       <div
         className={`fixed inset-y-0 right-0 w-full max-w-sm bg-white transform transition-all duration-500 ease-in-out z-50
                     ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
@@ -166,7 +284,6 @@ export default function Navbar() {
         <div className="flex flex-col pt-20 px-6">
           {navItems.map((item, index) => {
             if (item.isSpecial) {
-              // Special styling for Resume button in mobile menu
               return (
                 <Link
                   key={item.path}
@@ -190,7 +307,6 @@ export default function Navbar() {
               );
             }
 
-            // Regular mobile menu items
             return (
               <Link
                 key={item.path}
