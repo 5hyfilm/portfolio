@@ -2,6 +2,7 @@
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import PageTransition from "../components/PageTransition";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
@@ -17,20 +18,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {/* Diagonal background */}
         <div className="diagonal-background">
           <div className="diagonal-slice"></div>
           <div className="diagonal-slice"></div>
         </div>
 
-        {/* Main content */}
         <div className="relative z-10">
           <Navbar />
-          <main className="min-h-screen pt-16">{children}</main>
+          <main className="min-h-screen pt-16">
+            <PageTransition>{children}</PageTransition>
+          </main>
           <Footer />
         </div>
+        <Analytics />
       </body>
-      <Analytics />
     </html>
   );
 }

@@ -1,27 +1,31 @@
 // src/components/PageTransition.tsx
 "use client";
 
-import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { ReactNode } from "react";
 
-export default function PageTransition() {
-  const [isTransitioning, setIsTransitioning] = useState(false);
+interface PageTransitionProps {
+  children: ReactNode;
+}
+
+export default function PageTransition({ children }: PageTransitionProps) {
   const pathname = usePathname();
 
-  useEffect(() => {
-    setIsTransitioning(true);
-    const timer = setTimeout(() => {
-      setIsTransitioning(false);
-    }, 400);
-
-    return () => clearTimeout(timer);
-  }, [pathname]);
-
   return (
-    <div
-      className={`fixed inset-0 bg-white z-50 pointer-events-none transition-opacity duration-400 ${
-        isTransitioning ? "opacity-100" : "opacity-0"
-      }`}
-    />
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={pathname}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
+        transition={{
+          duration: 0.4,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+      >
+        {children}
+      </motion.div>
+    </AnimatePresence>
   );
 }
