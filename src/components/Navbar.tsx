@@ -5,134 +5,16 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-interface ParticleProps {
-  x: number;
-  y: number;
-  delay?: number;
-}
-
-interface Position {
-  x: number;
-  y: number;
-}
-
 interface NavItem {
   label: string;
   path: string;
   isSpecial?: boolean;
 }
 
-const Particle = ({ x, y, delay = 0 }: ParticleProps) => {
-  return (
-    <div
-      className="fixed w-2 h-2 bg-purple-500 rounded-full pointer-events-none z-30"
-      style={{
-        left: `${x}px`,
-        top: `${y}px`,
-        animation: `particle-float 3s ease-in-out infinite`,
-        animationDelay: `${delay}ms`,
-      }}
-    >
-      <style jsx>{`
-        @keyframes particle-float {
-          0%,
-          100% {
-            opacity: 0;
-            transform: translateY(0) scale(0);
-          }
-          10% {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-          }
-          50% {
-            opacity: 0.7;
-            transform: translateY(-20px) scale(0.8);
-          }
-          90% {
-            opacity: 1;
-            transform: translateY(-10px) scale(1);
-          }
-        }
-      `}</style>
-    </div>
-  );
-};
-
-// เพิ่มจำนวน particles แต่ยังคงอยู่ใน 3 area เดิม
-const getParticlePositions = (): Position[] => {
-  if (typeof window === "undefined") {
-    return [];
-  }
-
-  const w = window.innerWidth;
-  const h = window.innerHeight;
-
-  const positions: Position[] = [
-    // Top left area - เพิ่มจาก 4 เป็น 12 particles
-    { x: 80, y: 40 },
-    { x: 120, y: 60 },
-    { x: 60, y: 80 },
-    { x: 150, y: 50 },
-    { x: 100, y: 90 },
-    { x: 140, y: 30 },
-    { x: 70, y: 110 },
-    { x: 160, y: 70 },
-    { x: 50, y: 60 },
-    { x: 180, y: 40 },
-    { x: 110, y: 120 },
-    { x: 90, y: 35 },
-
-    // Top right area - เพิ่มจาก 4 เป็น 12 particles
-    { x: w - 80, y: 40 },
-    { x: w - 120, y: 60 },
-    { x: w - 60, y: 80 },
-    { x: w - 150, y: 50 },
-    { x: w - 100, y: 90 },
-    { x: w - 140, y: 30 },
-    { x: w - 70, y: 110 },
-    { x: w - 160, y: 70 },
-    { x: w - 50, y: 60 },
-    { x: w - 180, y: 40 },
-    { x: w - 110, y: 120 },
-    { x: w - 90, y: 35 },
-
-    // Bottom center area - เพิ่มจาก 5 เป็น 15 particles
-    { x: w / 2 - 50, y: h - 100 },
-    { x: w / 2, y: h - 120 },
-    { x: w / 2 + 50, y: h - 90 },
-    { x: w / 2 - 30, y: h - 110 },
-    { x: w / 2 + 30, y: h - 80 },
-    { x: w / 2 - 80, y: h - 140 },
-    { x: w / 2 + 80, y: h - 140 },
-    { x: w / 2, y: h - 160 },
-    { x: w / 2 - 70, y: h - 70 },
-    { x: w / 2 + 70, y: h - 70 },
-    { x: w / 2 - 100, y: h - 120 },
-    { x: w / 2 + 100, y: h - 120 },
-    { x: w / 2 - 20, y: h - 85 },
-    { x: w / 2 + 20, y: h - 85 },
-    { x: w / 2, y: h - 180 },
-  ];
-
-  return positions;
-};
-
-export default function NavbarWithParticles() {
+export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
-  const [showParticles, setShowParticles] = useState<boolean>(false);
-  const [particles, setParticles] = useState<Position[]>([]);
   const pathname = usePathname();
-
-  useEffect(() => {
-    const updateParticles = () => {
-      setParticles(getParticlePositions());
-    };
-
-    updateParticles();
-    window.addEventListener("resize", updateParticles);
-    return () => window.removeEventListener("resize", updateParticles);
-  }, []);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -154,22 +36,8 @@ export default function NavbarWithParticles() {
     { label: "Resume", path: "/resume.pdf", isSpecial: true },
   ];
 
-  const handleNavbarHover = (isHovering: boolean) => {
-    setShowParticles(isHovering);
-  };
-
   return (
     <>
-      {showParticles &&
-        particles.map((particle, index) => (
-          <Particle
-            key={index}
-            x={particle.x}
-            y={particle.y}
-            delay={index * 100} // ลด delay เป็น 100ms เพื่อให้เร็วขึ้น
-          />
-        ))}
-
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)}
         className="fixed top-5 right-4 w-6 h-6 flex flex-col justify-between 
@@ -190,11 +58,7 @@ export default function NavbarWithParticles() {
         />
       </button>
 
-      <nav
-        className="fixed top-0 left-0 right-0 bg-gradient-to-r from-purple-50 via-white to-purple-50 border-b border-purple-200 z-40"
-        onMouseEnter={() => handleNavbarHover(true)}
-        onMouseLeave={() => handleNavbarHover(false)}
-      >
+      <nav className="fixed top-0 left-0 right-0 bg-gradient-to-r from-purple-50 via-white to-purple-50 border-b border-purple-200 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
             <Link
