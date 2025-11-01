@@ -65,7 +65,7 @@ export const experiencesData: Experience[] = [
     startDate: "2023-11",
     endDate: "2024-02",
     type: "internship",
-    image: "/images/experiences/experience_3.jpg", // Makro logo
+    image: "/images/experiences/experience_3/experience_3.jpg", // Makro logo
     companyWebsite: "https://www.makro.co.th",
     description: [
       "Led a team of 3 students to innovate and develop a chatbot and dashboard HR analytics solution prototype, resulting in a 49% improvement in performance evaluation metrics and a 40% increase in productivity levels, building business consulting experience",
@@ -128,7 +128,7 @@ export const experiencesData: Experience[] = [
     period: "Jun 2025 - Jul 2025",
     startDate: "2021-07", // Fixed the date from 2025-07 to 2021-07
     type: "internship",
-    image: "/images/experiences/experience_6.jpg", // Thai Beverage/F&N logo
+    image: "/images/experiences/experience_6/experience_6.jpg", // Thai Beverage/F&N logo
     companyWebsite: "https://www.thaibev.com",
     description: [
       "Gathered and refined requirements from multiple stakeholder teams, translating operational needs into functional specifications and prioritizing features to improve workflow efficiency.",

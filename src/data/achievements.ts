@@ -135,15 +135,15 @@ export const achievementsData: Achievement[] = [
   },
   {
     id: 9,
-    title: "เยาวชนดีเด่นแห่งชาติ",
+    title: "National Outstanding Children and Youth Awards",
     category: "award",
     date: "26 August 2021",
-    organization: "เยาวชนดีเด่นแห่งชาติ",
+    organization: "Department of Children and Youth",
     description: "เยาวชนดีเด่นแห่งชาติ",
     thumbnailImage: "",
     images: [],
     validUntil: "",
-    link: "",
+    link: "images/achievements/achievement9/achievement9_cer.jpg",
   },
   {
     id: 10,
