@@ -305,7 +305,7 @@ export const achievementsData: Achievement[] = [
     thumbnailImage: "images/achievements/achievement21/achievement21_0.png",
     images: ["images/achievements/achievement21/achievement21_1.jpg"],
     validUntil: "",
-    link: "",
+    link: "images/achievements/achievement21/achievement21_cer.jpg",
   },
   {
     id: 22,
