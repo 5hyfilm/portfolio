@@ -135,6 +135,24 @@ export default function Experience() {
                     </span>
                   ))}
                 </div>
+                {/* View Certificate Button - Hidden on mobile unless expanded */}
+                {exp.certificateLink && (
+                  <div
+                    className={`${
+                      isExpanded ? "block" : "hidden"
+                    } md:block mt-4`}
+                  >
+                    <a
+                      href={exp.certificateLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors text-sm"
+                    >
+                      <span className="mr-2">📜</span>
+                      View Certificate
+                    </a>
+                  </div>
+                )}
               </div>
             );
           })}

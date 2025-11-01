@@ -79,6 +79,7 @@ export const experiencesData: Experience[] = [
       "Final 10 teams in Thailand HR Tech 2024 Startup Pitching event",
       "Led team of 3 students successfully",
     ],
+    certificateLink: "/images/experiences/experience_3/experience_3_cer.jpg",
   },
   {
     id: 4,
@@ -152,6 +153,7 @@ export const experiencesData: Experience[] = [
       "Conducted customer clustering for promotional insights",
       "Enhanced workflow efficiency through requirement translation",
     ],
+    certificateLink: "/images/experiences/experience_6/experience_6_cer.jpg",
   },
   {
     id: 7,

@@ -14,6 +14,7 @@ export interface Experience {
   image?: string; // Optional company logo
   companyWebsite?: string; // Optional company website
   highlights?: string[]; // Key achievements/highlights
+  certificateLink?: string; // Optional certificate link
 }
 
 export type ExperienceType =
