@@ -313,7 +313,7 @@ export const achievementsData: Achievement[] = [
     category: "award",
     date: "15 Oct 2025",
     organization: "Junior Marketing Association of Thailand (J-MAT) & Hi-Herb",
-    description: "Selected as 50 teams",
+    description: "Selected as 24 teams",
     thumbnailImage: "images/achievements/achievement22/achievement22_0.jpg",
     images: ["images/achievements/achievement22/achievement22_1.jpg"],
     validUntil: "",

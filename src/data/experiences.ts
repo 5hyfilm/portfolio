@@ -5,13 +5,13 @@ import { Experience, ExperienceType } from "../types/experience";
 export const experiencesData: Experience[] = [
   {
     id: 1,
-    title: "Microsoft Learn Student Ambassador",
+    title: "Beta Microsoft Learn Student Ambassador",
     company: "Microsoft",
     location: "Bangkok, Thailand",
     period: "Jul 2021 - Present",
     startDate: "2021-07",
     type: "volunteer",
-    image: "/images/experiences/experience_1.jpg", // Microsoft logo
+    image: "/images/experiences/experience_1/experience_1.jpg", // Microsoft logo
     companyWebsite: "https://mvp.microsoft.com/studentambassadors",
     description: [
       "Organized workshops and coding sessions, mentoring and inspiring over 100 students, enhancing mentorship and training skills.",
@@ -32,6 +32,7 @@ export const experiencesData: Experience[] = [
       "Built supportive developer community",
       "Enhanced mentorship and training skills",
     ],
+    certificateLink: "/images/experiences/experience_1/experience_1_cer.jpg",
   },
   {
     id: 2,
