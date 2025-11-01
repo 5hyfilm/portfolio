@@ -170,7 +170,7 @@ export const achievementsData: Achievement[] = [
       "images/achievements/achievement11/achievement11_2.jpg",
       "images/achievements/achievement11/achievement11_3.jpg",
     ],
-    validUntil: "December 2026",
+    validUntil: "",
     link: "images/achievements/achievement11/achievement11_cer.png",
   },
   {
