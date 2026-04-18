@@ -159,21 +159,21 @@ export const experiencesData: Experience[] = [
   {
     id: 7,
     title: "Co-founder & CTO",
-    company: "GOROLL",
+    company: "GOOSEWAY",
     location: "Bangkok, Thailand",
     period: "2024 - Present",
     startDate: "2021-07", // Fixed the date from 2025-07 to 2021-07
     type: "full-time",
     image: "/images/experiences/experience_7.jpg", // Thai Beverage/F&N logo
-    companyWebsite: "https://www.goroll.co",
+    companyWebsite: "https://www.gooseway.co",
     description: [
-      "Co-founded GOROLL, a social-impact startup focused on improving mobility and inclusive travel experiences for wheelchair users, elderly, and caregivers.",
+      "Co-founded GOOSEWAY, a social-impact startup focused on improving mobility and inclusive travel experiences for wheelchair users, elderly, and caregivers.",
       "Led technical direction as CTO — defined architecture, technology stack, and product roadmap aligned with startup strategy and impact goals.",
       "Collaborated with co-founders on business model and conducted pilot testing with target users to refine product-market fit.",
     ],
     technologies: ["React", "TypeScript", "Azure"],
     highlights: [
-      "Developed functional prototype to validate GOROLL’s concept",
+      "Developed functional prototype to validate GOOSEWAY concept",
       "Defined technology roadmap and acted as CTO for the startup",
       "Managed external software house for full-scale product build",
       "Aligned product development with CSR and partnership strategy",

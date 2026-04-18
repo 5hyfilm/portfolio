@@ -137,13 +137,16 @@ export const filterExperiencesByTechnology = (
 // Sort experiences
 export const sortExperiences = (
   experiences: Experience[],
-  sortBy: "startDate" | "title" | "company",
+  sortBy: "startDate" | "title" | "company" | "id",
   sortOrder: "asc" | "desc" = "desc"
 ): Experience[] => {
   return [...experiences].sort((a, b) => {
     let comparison = 0;
 
     switch (sortBy) {
+      case "id":
+        comparison = a.id - b.id;
+        break;
       case "startDate":
         const dateA = new Date(a.startDate + "-01");
         const dateB = new Date(b.startDate + "-01");
@@ -167,7 +170,7 @@ export const processExperiences = (
   searchTerm: string,
   selectedTypes: ExperienceType[],
   selectedTechnologies: string[],
-  sortBy: "startDate" | "title" | "company",
+  sortBy: "startDate" | "title" | "company" | "id",
   sortOrder: "asc" | "desc" = "desc"
 ): Experience[] => {
   let processed = filterExperiencesBySearch(experiences, searchTerm);

@@ -152,12 +152,12 @@ export const projectsData: Project[] = [
   },
   {
     id: 11,
-    title: "GOROLL",
+    title: "GOOSEWAY",
     description:
       "A platform for accessible journeys and inclusive communities.",
     image: "images/projects/project11.jpg",
     technologies: ["React", "Next.js", "Tailwind CSS"],
-    demoLink: "https://goroll.co/",
+    demoLink: "https://gooseway.co/",
     githubLink: "",
     category: "web-app" as ProjectCategory,
     status: "completed" as ProjectStatus,

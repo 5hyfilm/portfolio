@@ -1,16 +1,40 @@
 // src/app/experience/page.tsx
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { experiencesData } from "../../data/experiences";
 import Image from "next/image";
+import {
+  getTypeStyle,
+  sortExperiences,
+} from "../../utils/experienceHelpers";
+import {
+  BriefcaseIcon,
+  ClockIcon,
+  FileTextIcon,
+  GraduationCapIcon,
+  HandshakeIcon,
+} from "../../components/ui/Icons";
+import type { ExperienceType } from "../../types/experience";
+
+const getTypeIcon = (type: ExperienceType) => {
+  const cls = "h-4 w-4";
+  switch (type) {
+    case "full-time":
+      return <BriefcaseIcon className={cls} />;
+    case "part-time":
+      return <ClockIcon className={cls} />;
+    case "internship":
+      return <GraduationCapIcon className={cls} />;
+    case "volunteer":
+      return <HandshakeIcon className={cls} />;
+    case "contract":
+      return <FileTextIcon className={cls} />;
+  }
+};
 
 export default function Experience() {
-  // State to track which items are expanded on mobile
   const [expandedItems, setExpandedItems] = useState<Set<number>>(new Set());
-
-  // Sort experiences by id in descending order (highest id first)
-  const sortedExperiences = [...experiencesData].sort((a, b) => b.id - a.id);
 
   const toggleExpand = (id: number) => {
     setExpandedItems((prev) => {
@@ -24,138 +48,219 @@ export default function Experience() {
     });
   };
 
+  const processedExperiences = useMemo(() => {
+    return sortExperiences(experiencesData, "id", "desc");
+  }, []);
+
   return (
-    <div className="min-h-screen p-4 md:p-8">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-gray-800">
-          Professional Experience
-        </h1>
+    <div className="min-h-screen px-4 py-6 md:px-8 md:py-10">
+      <div className="mx-auto max-w-5xl">
+        <header className="relative overflow-hidden rounded-2xl border border-white/60 bg-white/70 p-6 shadow-sm backdrop-blur md:p-10">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(109,40,217,0.10),transparent_55%)]" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-violet-700 via-fuchsia-700 to-amber-500 opacity-80" />
+          <div className="pointer-events-none absolute -left-24 top-10 h-px w-[140%] -rotate-6 bg-gradient-to-r from-transparent via-violet-900/15 to-transparent" />
 
-        <div className="space-y-6 md:space-y-12">
-          {sortedExperiences.map((exp) => {
-            const isExpanded = expandedItems.has(exp.id);
-
-            return (
-              <div
-                key={exp.id}
-                className="bg-white rounded-lg shadow-md p-4 md:p-6"
-              >
-                {/* Time period indicator - moved to top */}
-                <div className="text-sm text-gray-500 mb-3 md:mb-4 text-right">
-                  {exp.period}
-                </div>
-
-                {/* Company logo and job title */}
-                <div className="mb-3 md:mb-4 flex items-start gap-3 md:gap-4">
-                  {exp.image && (
-                    <div className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 relative">
-                      <Image
-                        src={exp.image}
-                        alt={`${exp.company} logo`}
-                        width={64}
-                        height={64}
-                        className="object-contain rounded-md"
-                        onError={(e) => {
-                          // Hide image if it fails to load
-                          e.currentTarget.style.display = "none";
-                        }}
-                      />
-                    </div>
-                  )}
-                  <div className="flex-1">
-                    <h2 className="text-lg md:text-xl font-semibold text-gray-800 leading-tight">
-                      {exp.title}
-                    </h2>
-                    <div className="text-gray-600 text-sm md:text-base">
-                      {exp.companyWebsite ? (
-                        <a
-                          href={exp.companyWebsite}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:text-blue-600 transition-colors"
-                        >
-                          {exp.company}
-                        </a>
-                      ) : (
-                        exp.company
-                      )}{" "}
-                      • {exp.location}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Expand/Collapse button for mobile */}
-                <div className="md:hidden mb-3 flex justify-end">
-                  <button
-                    onClick={() => toggleExpand(exp.id)}
-                    className="text-blue-600 text-sm hover:text-blue-800 transition-colors flex items-center gap-1"
-                  >
-                    <span>{isExpanded ? "Less" : "More"}</span>
-                    <svg
-                      className={`w-3 h-3 transition-transform duration-200 ${
-                        isExpanded ? "rotate-180" : ""
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </button>
-                </div>
-
-                {/* Responsibilities and achievements - Hidden on mobile unless expanded */}
-                <div className={`${isExpanded ? "block" : "hidden"} md:block`}>
-                  <ul className="list-disc list-inside mb-4 space-y-2">
-                    {exp.description.map((item, idx) => (
-                      <li key={idx} className="text-gray-600 ml-4">
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Technologies used - Hidden on mobile unless expanded */}
-                <div
-                  className={`${
-                    isExpanded ? "flex" : "hidden"
-                  } md:flex flex-wrap gap-2 mt-4`}
-                >
-                  {exp.technologies.map((tech, idx) => (
-                    <span
-                      key={idx}
-                      className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                {/* View Certificate Button - Hidden on mobile unless expanded */}
-                {exp.certificateLink && (
-                  <div
-                    className={`${
-                      isExpanded ? "block" : "hidden"
-                    } md:block mt-4`}
-                  >
-                    <a
-                      href={exp.certificateLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors text-sm"
-                    >
-                      <span className="mr-2">📜</span>
-                      View Certificate
-                    </a>
-                  </div>
-                )}
+          <div className="relative">
+            <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+              <div>
+                <p className="text-xs font-semibold tracking-[0.25em] text-violet-900/70">
+                  ARCHIVE
+                </p>
+                <h1 className="mt-2 text-3xl font-semibold tracking-tight text-gray-950 md:text-5xl">
+                  Experience
+                </h1>
+                <p className="mt-3 text-sm text-gray-600 md:text-base">
+                  A timeline of roles, projects, and impact.
+                </p>
               </div>
-            );
-          })}
+            </div>
+          </div>
+        </header>
+
+        <div className="mt-8">
+          <div className="relative">
+            <div className="absolute left-4 top-0 hidden h-full w-px bg-gradient-to-b from-gray-300 via-gray-200 to-transparent md:block" />
+
+            <div className="space-y-4 md:space-y-6">
+              {processedExperiences.map((exp) => {
+                const isExpanded = expandedItems.has(exp.id);
+
+                return (
+                  <article
+                    key={exp.id}
+                    className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-50/70 via-transparent to-white opacity-0 transition group-hover:opacity-100" />
+                    <div className="pointer-events-none absolute left-0 top-0 h-full w-[3px] bg-[linear-gradient(to_bottom,rgba(76,29,149,0.95),rgba(167,139,250,0.85),rgba(245,158,11,0.75))] opacity-80" />
+
+                    <div className="relative p-4 md:p-6">
+                      <div className="hidden md:block">
+                        <div className="absolute -left-[6px] top-8 h-3 w-3 rounded-full border border-gray-300 bg-white shadow-sm" />
+                      </div>
+
+                      <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                        <div className="flex items-start gap-4">
+                          {exp.image ? (
+                            <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl border border-gray-200 bg-white md:h-16 md:w-16">
+                              <Image
+                                src={exp.image}
+                                alt={`${exp.company} logo`}
+                                fill
+                                sizes="64px"
+                                className="object-contain p-2"
+                                onError={(e) => {
+                                  e.currentTarget.style.display = "none";
+                                }}
+                              />
+                            </div>
+                          ) : (
+                            <div className="h-14 w-14 shrink-0 rounded-xl border border-gray-200 bg-gray-50 md:h-16 md:w-16" />
+                          )}
+
+                          <div className="min-w-0">
+                            <div className="flex flex-wrap items-center gap-2">
+                              <h2 className="text-lg font-semibold leading-tight text-gray-900 md:text-xl">
+                                {exp.title}
+                              </h2>
+                              <span
+                                className={[
+                                  "inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-xs font-medium",
+                                  getTypeStyle(exp.type),
+                                ].join(" ")}
+                              >
+                                <span aria-hidden="true">{getTypeIcon(exp.type)}</span>
+                                <span className="capitalize">{exp.type}</span>
+                              </span>
+                            </div>
+
+                            <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-gray-600 md:text-base">
+                              {exp.companyWebsite ? (
+                                <a
+                                  href={exp.companyWebsite}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="font-medium text-gray-800 underline decoration-gray-300 underline-offset-4 transition hover:decoration-gray-500"
+                                >
+                                  {exp.company}
+                                </a>
+                              ) : (
+                                <span className="font-medium text-gray-800">
+                                  {exp.company}
+                                </span>
+                              )}
+                              <span className="text-gray-400">•</span>
+                              <span>{exp.location}</span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center justify-between gap-3 md:flex-col md:items-end md:justify-start">
+                          <div className="text-right">
+                            <div className="text-sm font-medium text-gray-900">
+                              {exp.period}
+                            </div>
+                          </div>
+
+                          <button
+                            type="button"
+                            onClick={() => toggleExpand(exp.id)}
+                            className="inline-flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-900 shadow-sm transition hover:bg-gray-50 focus:outline-none focus:ring-4 focus:ring-gray-100 md:hidden"
+                            aria-expanded={isExpanded}
+                          >
+                            <span>{isExpanded ? "Hide" : "Details"}</span>
+                            <svg
+                              className={[
+                                "h-4 w-4 transition-transform duration-200",
+                                isExpanded ? "rotate-180" : "",
+                              ].join(" ")}
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M6 9l6 6 6-6"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+
+                      <div
+                        className={[
+                          "mt-4 grid gap-4 transition-all md:mt-5 md:grid",
+                          isExpanded ? "grid" : "hidden md:grid",
+                        ].join(" ")}
+                      >
+                        <ul className="space-y-2 text-sm text-gray-700 md:text-base">
+                          {exp.description.map((item, idx) => (
+                            <li key={idx} className="flex gap-3">
+                              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gray-400" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+
+                        <div className="flex flex-wrap gap-2">
+                          {exp.technologies.map((tech) => (
+                            <span
+                              key={tech}
+                              className="rounded-full border border-gray-200 bg-gray-50 px-3 py-1.5 text-xs font-medium text-gray-700 md:text-sm"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+
+                        {exp.certificateLink && (
+                          <div>
+                            <a
+                              href={exp.certificateLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 rounded-xl bg-gray-900 px-4 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-200"
+                            >
+                              <svg
+                                width="18"
+                                height="18"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M7 4h10a2 2 0 0 1 2 2v14l-5-2-5 2-5-2V6a2 2 0 0 1 2-2Z"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                  strokeLinejoin="round"
+                                />
+                                <path
+                                  d="M9 8h6"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                />
+                                <path
+                                  d="M9 12h6"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                />
+                              </svg>
+                              View Certificate
+                            </a>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </article>
+                );
+              })}
+
+            </div>
+          </div>
         </div>
       </div>
     </div>
