@@ -17,11 +17,11 @@ export const getTypeIcon = (type: ExperienceType): string => {
 // Type styles mapping
 export const getTypeStyle = (type: ExperienceType): string => {
   const styles = {
-    "full-time": "bg-blue-100 text-blue-800 border-blue-200",
-    "part-time": "bg-green-100 text-green-800 border-green-200",
-    internship: "bg-purple-100 text-purple-800 border-purple-200",
-    volunteer: "bg-orange-100 text-orange-800 border-orange-200",
-    contract: "bg-gray-100 text-gray-800 border-gray-200",
+    "full-time": "bg-violet-100 text-violet-800 border-violet-200",
+    "part-time": "bg-violet-100 text-violet-800 border-violet-200",
+    internship: "bg-violet-100 text-violet-800 border-violet-200",
+    volunteer: "bg-violet-100 text-violet-800 border-violet-200",
+    contract: "bg-violet-100 text-violet-800 border-violet-200",
   };
   return styles[type];
 };

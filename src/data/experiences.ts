@@ -8,7 +8,7 @@ export const experiencesData: Experience[] = [
     title: "Beta Microsoft Learn Student Ambassador",
     company: "Microsoft",
     location: "Bangkok, Thailand",
-    period: "Jul 2021 - Present",
+    period: "July 2021 - June 2025",
     startDate: "2021-07",
     type: "volunteer",
     image: "/images/experiences/experience_1/experience_1.jpg", // Microsoft logo
@@ -39,7 +39,7 @@ export const experiencesData: Experience[] = [
     title: "Consultant",
     company: "NewWave Consulting",
     location: "Bangkok, Thailand",
-    period: "Jul 2023 - Jan 2024",
+    period: "July 2023 - January 2024",
     startDate: "2023-07",
     type: "volunteer",
     image: "/images/experiences/experience_2.jpg", // Microsoft logo
@@ -105,7 +105,7 @@ export const experiencesData: Experience[] = [
     title: "Business Analyst (Freelance)",
     company: "Pragma and Will Group",
     location: "Bangkok, Thailand",
-    period: "Dec 2024",
+    period: "December 2024",
     startDate: "2022-01",
     type: "part-time",
     image: "/images/experiences/experience_5.png", // Pragma and Will Group logo
@@ -126,7 +126,7 @@ export const experiencesData: Experience[] = [
     company:
       "Chang Junior Internship Program, Thai Beverage Plc — Assigned to F&N Dairies Thailand Limited",
     location: "Bangkok, Thailand",
-    period: "Jun 2025 - Jul 2025",
+    period: "June 2025 - July 2025",
     startDate: "2021-07", // Fixed the date from 2025-07 to 2021-07
     type: "internship",
     image: "/images/experiences/experience_6/experience_6.jpg", // Thai Beverage/F&N logo
