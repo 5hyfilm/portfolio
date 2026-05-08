@@ -55,21 +55,22 @@ export default function Experience() {
   return (
     <div className="min-h-screen px-4 py-6 md:px-8 md:py-10">
       <div className="mx-auto max-w-5xl">
-        <header className="relative overflow-hidden rounded-2xl border border-white/60 bg-white/70 p-6 shadow-sm backdrop-blur md:p-10">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(109,40,217,0.10),transparent_55%)]" />
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-violet-700 via-fuchsia-700 to-amber-500 opacity-80" />
-          <div className="pointer-events-none absolute -left-24 top-10 h-px w-[140%] -rotate-6 bg-gradient-to-r from-transparent via-violet-900/15 to-transparent" />
+        <header className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-violet-900 to-purple-900 p-6 shadow-xl md:p-10">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(124,58,237,0.4),transparent_50%)]" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(245,158,11,0.2),transparent_50%)]" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-1.5 bg-gradient-to-b from-fuchsia-500 to-amber-500" />
+          <div className="pointer-events-none absolute -left-24 top-10 h-px w-[140%] -rotate-6 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 
           <div className="relative">
             <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
               <div>
-                <p className="text-xs font-semibold tracking-[0.25em] text-violet-900/70">
+                <p className="text-xs font-semibold tracking-[0.25em] text-violet-200">
                   ARCHIVE
                 </p>
-                <h1 className="mt-2 text-3xl font-semibold tracking-tight text-gray-950 md:text-5xl">
+                <h1 className="mt-2 text-3xl font-semibold tracking-tight text-white md:text-5xl">
                   Experience
                 </h1>
-                <p className="mt-3 text-sm text-gray-600 md:text-base">
+                <p className="mt-3 max-w-2xl text-sm text-purple-100 md:text-base">
                   A timeline of roles, projects, and impact.
                 </p>
               </div>
