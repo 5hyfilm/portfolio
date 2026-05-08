@@ -4,6 +4,7 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import TransitionLink from "./ui/TransitionLink";
 
 interface NavItem {
   label: string;
@@ -61,7 +62,7 @@ export default function Navbar() {
       <nav className="fixed top-0 left-0 right-0 bg-gradient-to-r from-purple-50 via-white to-purple-50 border-b border-purple-200 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
-            <Link
+            <TransitionLink
               href="/"
               className="flex items-center space-x-2 text-xl font-bold text-purple-800"
             >
@@ -71,7 +72,7 @@ export default function Navbar() {
                 className="h-8 w-8 object-contain relative top-[-4px]"
               />
               <span className="align-middle">PORTFOLIO</span>
-            </Link>
+            </TransitionLink>
 
             <div className="hidden md:flex space-x-1">
               {navItems.map((item) => {
@@ -108,7 +109,7 @@ export default function Navbar() {
                 }
 
                 return (
-                  <Link
+                  <TransitionLink
                     key={item.path}
                     href={item.path}
                     className="relative px-4 py-2 group"
@@ -147,7 +148,7 @@ export default function Navbar() {
                                         : ""
                                     }`}
                     />
-                  </Link>
+                  </TransitionLink>
                 );
               })}
             </div>
@@ -193,7 +194,7 @@ export default function Navbar() {
             }
 
             return (
-              <Link
+              <TransitionLink
                 key={item.path}
                 href={item.path}
                 onClick={() => setIsMenuOpen(false)}
@@ -211,7 +212,7 @@ export default function Navbar() {
                 }}
               >
                 {item.label}
-              </Link>
+              </TransitionLink>
             );
           })}
         </div>

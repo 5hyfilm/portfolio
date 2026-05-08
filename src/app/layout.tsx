@@ -10,6 +10,9 @@ export const metadata = {
   description: "Professional portfolio website",
 };
 
+import { TransitionProvider } from "../context/TransitionContext";
+import KyokaTransition from "../components/ui/KyokaTransition";
+
 export default function RootLayout({
   children,
 }: {
@@ -18,19 +21,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="diagonal-background">
-          <div className="diagonal-slice"></div>
-          <div className="diagonal-slice"></div>
-        </div>
+        <TransitionProvider>
+          <div className="diagonal-background">
+            <div className="diagonal-slice"></div>
+            <div className="diagonal-slice"></div>
+          </div>
 
-        <div className="relative z-10">
-          <Navbar />
-          <main className="min-h-screen pt-16">
-            <PageTransition>{children}</PageTransition>
-          </main>
-          <Footer />
-        </div>
-        <Analytics />
+          <div className="relative z-10">
+            <Navbar />
+            <main className="min-h-screen pt-16">
+              <PageTransition>{children}</PageTransition>
+            </main>
+            <Footer />
+          </div>
+          <KyokaTransition />
+          <Analytics />
+        </TransitionProvider>
       </body>
     </html>
   );
