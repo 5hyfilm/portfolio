@@ -1,9 +1,30 @@
 // src/app/page.tsx
 "use client";
 
+import { useState, useEffect } from "react";
+import CinematicIntro from "../components/ui/CinematicIntro";
+
 export default function Home() {
+  const [showIntro, setShowIntro] = useState(true);
+
+  // Lock body scroll and navigation interactions while the cinematic intro plays
+  useEffect(() => {
+    if (showIntro) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [showIntro]);
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 relative overflow-hidden">
+    <>
+      {showIntro && (
+        <CinematicIntro onComplete={() => setShowIntro(false)} />
+      )}
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 relative overflow-hidden">
       {/* Custom animations */}
       <style jsx>{`
         @keyframes fade-in-up {
@@ -104,5 +125,6 @@ export default function Home() {
       <div className="absolute bottom-0 left-0 w-20 h-20 border-l-2 border-b-2 border-purple-600/30"></div>
       <div className="absolute bottom-0 right-0 w-20 h-20 border-r-2 border-b-2 border-purple-600/30"></div>
     </div>
+    </>
   );
 }
