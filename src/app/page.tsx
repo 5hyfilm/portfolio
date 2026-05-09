@@ -86,7 +86,7 @@ export default function Home() {
             <h2 className="text-5xl md:text-6xl font-bold text-gray-700 mb-6 tracking-wide animate-fade-in-up">
               Welcome to My
             </h2>
-            <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 bg-clip-text text-transparent mb-8 animate-pulse-slow">
+            <h2 className="text-5xl md:text-6xl font-bold text-purple-600 drop-shadow-[0_2px_8px_rgba(147,51,234,0.15)] mb-8 animate-pulse-slow">
               Portfolio
             </h2>
           </div>
