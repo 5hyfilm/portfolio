@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { gsap } from "gsap";
 
@@ -11,8 +11,7 @@ interface CinematicIntroProps {
 export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [showSkip, setShowSkip] = useState(false);
-  const skipActionRef = useRef<(() => void) | null>(null);
+
 
   useEffect(() => {
     if (!canvasRef.current || !containerRef.current) return;
@@ -399,10 +398,7 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
       ease: "power1.inOut",
     }, 4.1);
 
-    // Show skip button after 2.2 seconds to match the slower rise
-    const skipTimer = setTimeout(() => {
-      setShowSkip(true);
-    }, 2200);
+
 
     // --- 6. Render Tick Loop ---
     let animationFrameId: number;
@@ -569,25 +565,10 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
 
     window.addEventListener("resize", handleResize);
 
-    // --- 8. Skip Actions ---
-    const skipAction = () => {
-      clearTimeout(skipTimer);
-      tl.kill();
-      gsap.to(containerRef.current, {
-        opacity: 0,
-        duration: 0.6,
-        ease: "power2.out",
-        onComplete: () => {
-          onComplete();
-        },
-      });
-    };
 
-    skipActionRef.current = skipAction;
 
     // --- 9. Clean up WebGL Context & Geometries ---
     return () => {
-      clearTimeout(skipTimer);
       window.removeEventListener("resize", handleResize);
       cancelAnimationFrame(animationFrameId);
       tl.kill();
@@ -606,11 +587,7 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
     };
   }, [onComplete]);
 
-  const handleSkipClick = () => {
-    if (skipActionRef.current) {
-      skipActionRef.current();
-    }
-  };
+
 
   return (
     <div
@@ -626,15 +603,7 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
       <div className="absolute inset-0 pointer-events-none border-[12px] border-purple-950/20 mix-blend-overlay opacity-60" />
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_20%,rgba(0,0,0,0.8)_100%)] opacity-80" />
 
-      {/* Skip Button */}
-      {showSkip && (
-        <button
-          onClick={handleSkipClick}
-          className="absolute bottom-8 right-8 z-[10000] px-5 py-2.5 rounded-md border border-purple-500/30 bg-black/40 text-purple-400 font-mono text-xs tracking-widest uppercase transition-all duration-300 hover:bg-purple-900/20 hover:border-purple-400 hover:text-purple-300 hover:shadow-[0_0_15px_rgba(168,85,247,0.25)] active:scale-95"
-        >
-          Skip Intro
-        </button>
-      )}
+
 
       {/* Central Cyberpunk branding indicator */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none text-[8rem] font-bold text-purple-950/5 font-mono">
