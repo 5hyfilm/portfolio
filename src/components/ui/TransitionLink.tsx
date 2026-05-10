@@ -30,14 +30,12 @@ export default function TransitionLink({ href, children, ...props }: TransitionL
         scale: window.devicePixelRatio,
         useCORS: true,
         backgroundColor: "#ffffff",
-        x: currentScrollX,
-        y: currentScrollY,
+        scrollX: 0,
+        scrollY: -currentScrollY,
         width: window.innerWidth,
         height: window.innerHeight,
-        scrollX: -currentScrollX,
-        scrollY: -currentScrollY,
-        windowWidth: document.documentElement.offsetWidth,
-        windowHeight: document.documentElement.offsetHeight,
+        windowWidth: window.innerWidth,
+        windowHeight: window.innerHeight,
       });
 
       // Restore scroll position in case html2canvas forced a scroll jump
