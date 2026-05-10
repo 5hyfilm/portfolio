@@ -95,9 +95,7 @@ export default function Experience() {
                     <div className="pointer-events-none absolute left-0 top-0 h-full w-[3px] bg-[linear-gradient(to_bottom,rgba(76,29,149,0.95),rgba(167,139,250,0.85),rgba(245,158,11,0.75))] opacity-80" />
 
                     <div className="relative p-4 md:p-6">
-                      <div className="hidden md:block">
-                        <div className="absolute -left-[6px] top-8 h-3 w-3 rounded-full border border-gray-300 bg-white shadow-sm" />
-                      </div>
+
 
                       <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
                         <div className="flex items-start gap-4">
