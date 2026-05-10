@@ -71,7 +71,7 @@ export default function Navbar() {
                 alt="Logo"
                 className="h-8 w-8 object-contain relative top-[-4px]"
               />
-              <span className="align-middle">PORTFOLIO</span>
+              <span className="align-middle">ꊰꀧ꒒ꉈ꒒ꁄꍈꍈꀧ꒦ꉈ</span>
             </TransitionLink>
 
             <div className="hidden md:flex space-x-1">
