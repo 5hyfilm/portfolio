@@ -26,7 +26,7 @@ export default function TransitionLink({ href, children, ...props }: TransitionL
       const currentScrollX = window.scrollX;
       const currentScrollY = window.scrollY;
 
-      const canvas = await html2canvas(document.documentElement, {
+      const canvas = await html2canvas(document.body, {
         scale: window.devicePixelRatio,
         useCORS: true,
         backgroundColor: "#ffffff",
@@ -34,8 +34,8 @@ export default function TransitionLink({ href, children, ...props }: TransitionL
         y: currentScrollY,
         width: window.innerWidth,
         height: window.innerHeight,
-        scrollX: currentScrollX,
-        scrollY: currentScrollY,
+        scrollX: -currentScrollX,
+        scrollY: -currentScrollY,
         windowWidth: document.documentElement.offsetWidth,
         windowHeight: document.documentElement.offsetHeight,
       });
