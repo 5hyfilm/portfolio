@@ -4,6 +4,19 @@ import { Achievement } from "../types/achievements";
 
 export const achievementsData: Achievement[] = [
   {
+    id: 24,
+    title: "S-Impact 2026: Social Enterprise Incubation Program",
+    category: "recognition",
+    date: "12 May 2026",
+    organization: "S-Impact",
+    description:
+      "Selected as part of the team for the S-Impact 2026 program, an intensive incubation initiative for social enterprises, choosing from more than 100 applicants nationwide. Through this program, received specialized knowledge, expert mentoring, and networking opportunities with various partners. Focused on systematically and sustainably addressing accessibility challenges for wheelchair users, marking a significant milestone in transitioning from an innovation project to a robust social enterprise.",
+    thumbnailImage: "images/achievements/achievement24/achievement24_0.png",
+    images: ["images/achievements/achievement24/achievement24_1.png"],
+    validUntil: "",
+    link: "",
+  },
+  {
     id: 23,
     title: "Hack for Rights 2026: Youth Power for Human Rights Innovation",
     category: "award",
