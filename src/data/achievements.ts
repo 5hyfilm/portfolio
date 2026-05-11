@@ -4,6 +4,19 @@ import { Achievement } from "../types/achievements";
 
 export const achievementsData: Achievement[] = [
   {
+    id: 23,
+    title: "Hack for Rights 2026: Youth Power for Human Rights Innovation",
+    category: "award",
+    date: "11 May 2026",
+    organization: "National Human Rights Commission of Thailand (NHRC)",
+    description:
+      "We are honored to be selected as one of the top 62 teams from a total of 537 applicants nationwide for the Hack for Rights project, organized by the National Human Rights Commission of Thailand (NHRC). This initiative empowers the younger generation to create innovations that promote human rights and combat discrimination. Under the theme 'Age-Friendly and Non-Discriminatory City,' we worked on brainstorming and developing solutions to foster an inclusive society that embraces diversity and ensures equality for all.",
+    thumbnailImage: "images/achievements/achievement23/achievement23_0.png",
+    images: ["images/achievements/achievement23/achievement23_1.png"],
+    validUntil: "",
+    link: "",
+  },
+  {
     id: 1,
     title: "Korean International Youth Olympiad 2018",
     category: "award",
