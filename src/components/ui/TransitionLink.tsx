@@ -13,21 +13,23 @@ interface TransitionLinkProps extends React.ComponentProps<typeof Link> {
 
 export default function TransitionLink({ href, children, ...props }: TransitionLinkProps) {
   const router = useRouter();
-  const { startTransition, isTransitioning } = useTransitionContext();
+  const { startCapture, startTransition, cancelTransition, isTransitioning, isCapturing } = useTransitionContext();
 
   const handleClick = async (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
 
-    if (isTransitioning) return; // Prevent double clicks
+    // Prevent double clicks or parallel screen captures while transitioning/capturing
+    if (isTransitioning || isCapturing) return;
 
     try {
-      // Hide the navbar during capture if we want, or just capture everything
-      // It's usually better to capture the whole document.body
+      // Instantly start capture feedback (loading bar triggers)
+      startCapture();
+
       const currentScrollX = window.scrollX;
       const currentScrollY = window.scrollY;
 
       const canvas = await html2canvas(document.body, {
-        scale: window.devicePixelRatio,
+        scale: window.devicePixelRatio > 1.5 ? 1.5 : window.devicePixelRatio, // Cap scale to prevent huge canvas on retina
         useCORS: true,
         backgroundColor: "#ffffff",
         scrollX: 0,
@@ -36,12 +38,13 @@ export default function TransitionLink({ href, children, ...props }: TransitionL
         height: window.innerHeight,
         windowWidth: window.innerWidth,
         windowHeight: window.innerHeight,
+        logging: false, // Turn off logging for better performance
       });
 
       // Restore scroll position in case html2canvas forced a scroll jump
       window.scrollTo(currentScrollX, currentScrollY);
       
-      const dataUrl = canvas.toDataURL("image/jpeg", 0.8);
+      const dataUrl = canvas.toDataURL("image/jpeg", 0.75); // Slightly reduce quality to speed up encoding/memory
       
       // Start the shatter animation
       startTransition(dataUrl);
@@ -54,7 +57,9 @@ export default function TransitionLink({ href, children, ...props }: TransitionL
 
     } catch (error) {
       console.error("Failed to capture screen for transition", error);
-      // Fallback to normal navigation if it fails
+      // Cleanly cancel transition states and unlock buttons
+      cancelTransition();
+      // Fallback to normal navigation
       router.push(href);
     }
   };
