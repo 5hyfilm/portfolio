@@ -286,7 +286,7 @@ export const achievementsData: Achievement[] = [
     category: "award",
     date: "12 August 2024",
     organization: "EdVISORY",
-    description: "Final 10 teams",
+    description: "Final 11 teams",
     thumbnailImage: "images/achievements/achievement18/achievement18_0.jpg",
     images: [
       "images/achievements/achievement18/achievement18_1.png",
