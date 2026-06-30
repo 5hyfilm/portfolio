@@ -23,11 +23,11 @@ export const achievementsData: Achievement[] = [
     date: "11 May 2026",
     organization: "National Human Rights Commission of Thailand (NHRC)",
     description:
-      "Honored to be selected as one of the top 70 teams from a total of 537 applicants nationwide for the Hack for Rights project, organized by the National Human Rights Commission of Thailand (NHRC). This initiative empowers the younger generation to create innovations that promote human rights and combat discrimination. Under the theme 'Age-Friendly and Non-Discriminatory City,' worked on brainstorming and developing solutions to foster an inclusive society that embraces diversity and ensures equality for all.",
+      "Awarded the 1st Runner-up Honorable Mention from 537 teams nationwide in the Hack for Rights 2026 project, organized by the National Human Rights Commission of Thailand (NHRC). This initiative empowers the younger generation to create innovations that promote human rights and combat discrimination. Under the theme 'Age-Friendly and Non-Discriminatory City,' worked on brainstorming and developing solutions to foster an inclusive society that embraces diversity and ensures equality for all.",
     thumbnailImage: "images/achievements/achievement23/achievement23_0.webp",
     images: ["images/achievements/achievement23/achievement23_1.jpg"],
     validUntil: "",
-    link: "",
+    link: "images/achievements/achievement23/achievement23_cer.pdf",
   },
   {
     id: 1,
@@ -360,17 +360,17 @@ export const getAchievementsCount = (): number => achievementsData.length;
 
 // Export achievements by category
 export const getAchievementsByCategory = (
-  category: Achievement["category"]
+  category: Achievement["category"],
 ): Achievement[] => {
   return achievementsData.filter(
-    (achievement) => achievement.category === category
+    (achievement) => achievement.category === category,
   );
 };
 
 // Export featured achievements (achievements with images)
 export const getFeaturedAchievements = (): Achievement[] => {
   return achievementsData.filter(
-    (achievement) => achievement.images && achievement.images.length > 0
+    (achievement) => achievement.images && achievement.images.length > 0,
   );
 };
 
