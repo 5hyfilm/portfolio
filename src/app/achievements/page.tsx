@@ -94,7 +94,7 @@ const AchievementModal = ({ achievement, onClose }: AchievementModalProps) => {
 
         <div className="relative max-h-[90vh] overflow-y-auto p-6 md:p-8 pt-8">
           <div className="flex items-start justify-between gap-4">
-            <div className="min-w-0">
+            <div className="min-w-0 flex-1">
               <div className="flex flex-wrap items-center gap-2">
                 <span
                   className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${getEnhancedCategoryStyle(
@@ -108,13 +108,28 @@ const AchievementModal = ({ achievement, onClose }: AchievementModalProps) => {
                 </span>
               </div>
 
-              <h2 className="mt-3.5 text-2xl font-bold tracking-tight text-gray-900 md:text-3xl leading-snug">
-                {achievement.title}
-              </h2>
-              <div className="mt-2 flex flex-wrap items-center gap-2 text-xs md:text-sm text-gray-600">
-                <span className="font-semibold text-gray-800">{achievement.organization}</span>
-                <span className="text-gray-300">•</span>
-                <span className="text-gray-500">{achievement.date}</span>
+              <div className="flex items-center gap-4 min-w-0 mt-3.5">
+                {achievement.thumbnailImage && (
+                  <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl border border-gray-200 bg-gray-50 shadow-sm md:h-20 md:w-20">
+                    <Image
+                      src={getImagePath(achievement.thumbnailImage)}
+                      alt={`${achievement.title} logo`}
+                      fill
+                      sizes="(max-width: 768px) 64px, 80px"
+                      className="object-cover"
+                    />
+                  </div>
+                )}
+                <div className="min-w-0 flex-1">
+                  <h2 className="text-2xl font-bold tracking-tight text-gray-900 md:text-3xl leading-snug">
+                    {achievement.title}
+                  </h2>
+                  <div className="mt-2 flex flex-wrap items-center gap-2 text-xs md:text-sm text-gray-600">
+                    <span className="font-semibold text-gray-800">{achievement.organization}</span>
+                    <span className="text-gray-300">•</span>
+                    <span className="text-gray-500">{achievement.date}</span>
+                  </div>
+                </div>
               </div>
             </div>
 
