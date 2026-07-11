@@ -12,7 +12,7 @@ export const achievementsData: Achievement[] = [
     award: "Passed IDEA Track & Funding (150,000 THB)",
     description:
       "Passed the IDEA track of the TED Youth Startup 2026 program, which supports and develops new entrepreneurs using innovation to drive business. Awarded 150,000 THB in funding to develop our prototype and prove our business concept, marking a significant milestone that prepares us for larger funding tracks in the future.",
-    thumbnailImage: "",
+    thumbnailImage: "images/achievements/achievements25/achievements25_0.jpg",
     images: [],
     validUntil: "",
     link: "",
@@ -190,7 +190,8 @@ export const achievementsData: Achievement[] = [
     category: "award",
     date: "26 August 2021",
     organization: "Department of Children and Youth",
-    award: "เยาวชนดีเด่นแห่งชาติ (National Outstanding Children and Youth Award)",
+    award:
+      "เยาวชนดีเด่นแห่งชาติ (National Outstanding Children and Youth Award)",
     description:
       "Honored with the National Outstanding Children and Youth Award (เยาวชนดีเด่นแห่งชาติ) by the Department of Children and Youth, Ministry of Social Development and Human Security. Recognized at the national level for exemplary academic performance, leadership, and contributions to society.",
     thumbnailImage: "images/achievements/achievement9/achievement9_0.png",
