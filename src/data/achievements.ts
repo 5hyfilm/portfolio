@@ -4,14 +4,28 @@ import { Achievement } from "../types/achievements";
 
 export const achievementsData: Achievement[] = [
   {
+    id: 25,
+    title: "TED Youth Startup 2026",
+    category: "award",
+    date: "14 May 2026",
+    organization: "TED Fund (MHESI)",
+    award: "Passed IDEA Track & Funding (150,000 THB)",
+    description:
+      "Passed the IDEA track of the TED Youth Startup 2026 program, which supports and develops new entrepreneurs using innovation to drive business. Awarded 150,000 THB in funding to develop our prototype and prove our business concept, marking a significant milestone that prepares us for larger funding tracks in the future.",
+    thumbnailImage: "",
+    images: [],
+    validUntil: "",
+    link: "",
+  },
+  {
     id: 24,
     title: "S-Impact 2026: Social Enterprise Incubation Program",
     category: "recognition",
     date: "12 May 2026",
     organization: "S-Impact",
-    award: "Selected as one of the Top 62 Teams (from 100+ teams nationwide)",
+    award: "Selected as one of the Final 15 Teams to pitch to NIA",
     description:
-      "Selected for the S-Impact 2026 program, an intensive incubation initiative for social enterprises. Through this program, received specialized knowledge, expert mentoring, and networking opportunities with various partners. Focused on systematically and sustainably addressing accessibility challenges for wheelchair users, marking a significant milestone in transitioning from an innovation project to a robust social enterprise.",
+      "Selected as one of the Final 15 teams nationwide to pitch directly to the National Innovation Agency (NIA) in the S-Impact 2026 program, an intensive social enterprise incubation initiative. Received expert mentoring and strategic partnership opportunities to systematically scale a wheelchair accessibility solution into a sustainable, robust social enterprise.",
     thumbnailImage: "images/achievements/achievement24/achievement24_0.jpg",
     images: ["images/achievements/achievement24/achievement24_1.jpg"],
     validUntil: "",
@@ -25,7 +39,7 @@ export const achievementsData: Achievement[] = [
     organization: "National Human Rights Commission of Thailand (NHRC)",
     award: "1st Runner-up Honorable Mention (from 537 teams nationwide)",
     description:
-      "Participated in the Hack for Rights 2026 project, organized by the National Human Rights Commission of Thailand (NHRC). This initiative empowers the younger generation to create innovations that promote human rights and combat discrimination. Under the theme 'Age-Friendly and Non-Discriminatory City,' worked on brainstorming and developing solutions to foster an inclusive society that embraces diversity and ensures equality for all.",
+      "Secured the 1st Runner-up Honorable Mention out of 537 teams nationwide in the Hack for Rights 2026 competition organized by the National Human Rights Commission of Thailand (NHRC). Designed and pitched an urban tech solution under the theme 'Age-Friendly and Non-Discriminatory City' to promote accessibility, foster social inclusivity, and guarantee equal rights for marginalized groups.",
     thumbnailImage: "images/achievements/achievement23/achievement23_0.webp",
     images: ["images/achievements/achievement23/achievement23_1.jpg"],
     validUntil: "",
@@ -39,7 +53,7 @@ export const achievementsData: Achievement[] = [
     organization: "World Women Inventors and Entrepreneurs Association",
     award: "Bronze Medal",
     description:
-      "Selected as a representative of Thailand to participate in the Korean International Youth Olympiad 2018.",
+      "Awarded the Bronze Medal at the Korea International Youth Olympiad (KIYO 4i) 2018, representing Thailand on the global stage. Selected by the World Women Inventors and Entrepreneurs Association (WWIEA) for demonstrating exceptional creativity and technical innovation in solving global engineering problems.",
     thumbnailImage: "images/achievements/achievement1/achievement1_0.jpg",
     images: [
       "images/achievements/achievement1/achievement1_1.jpg",
@@ -57,7 +71,7 @@ export const achievementsData: Achievement[] = [
     organization: "Princess Chulabhron Science High School and Kosen",
     award: "Gold Medal (Final Round)",
     description:
-      "Selected as a representative of Thailand to participate in the Thailand-Japan Hackathon 2018.",
+      "Won the Gold Medal at the Thailand-Japan Hackathon 2018 Final Round. Selected as a Thailand youth representative to collaborate with Kosen (Japan) and Princess Chulabhorn Science High School students, developing and pitching an innovative engineering solution to address critical binational technological challenges.",
     thumbnailImage: "images/achievements/achievement2/achievement2_0.png",
     images: [
       "images/achievements/achievement2/achievement2_1.jpg",
@@ -76,7 +90,7 @@ export const achievementsData: Achievement[] = [
       "Associate of Science, Technology and Innovation (ASTI), Malaysia",
     award: "Thailand Representative",
     description:
-      "Selected as a representative of Thailand to participate in the Young Inventors Challenge 2019.",
+      "Represented Thailand at the Young Inventors Challenge 2019, organized by the Association of Science, Technology and Innovation (ASTI) in Malaysia. Developed and presented a sustainable, hands-on scientific invention addressing real-world community challenges, competing against student teams across the ASEAN region.",
     thumbnailImage: "images/achievements/achievement3/achievement3_0.jpg",
     images: ["images/achievements/achievement3/achievement3_1.jpg"],
     validUntil: "",
@@ -91,7 +105,7 @@ export const achievementsData: Achievement[] = [
       "Power of Innovation Foundation in collaboration with PTT Group and the Science Society of Thailand under the Patronage of His Majesty the King.",
     award: "Honorable Mention Award",
     description:
-      "Participated in the Youth Greenovation Awards 2019, organized by the Power of Innovation Foundation in collaboration with PTT Group and the Science Society of Thailand under the Patronage of His Majesty the King.",
+      "Earned an Honorable Mention at the Youth Greenovation Awards 2019 for designing an eco-friendly science project. The national competition, organized by the Power of Innovation Foundation, PTT Group, and the Science Society of Thailand, honors innovative youth projects targeting environmental sustainability and green technology.",
     thumbnailImage: "images/achievements/achievement4/achievement4_0.png",
     images: [
       "images/achievements/achievement4/achievement4_1.jpg",
@@ -106,10 +120,10 @@ export const achievementsData: Achievement[] = [
     category: "award",
     date: "21 July 2020",
     organization:
-      "Associate of Science, Technology and Innovation (ASTI), Malaysia",
+      "National Science and Technology Development Agency (NSTDA), Thailand",
     award: "Selected to GENIUS Group & Long-term Doctoral Scholarship",
     description:
-      "Selected as a participant in the Junior Science Talent Project, receiving recognition and a long-term academic scholarship up to the doctoral level.",
+      "Admitted into the elite GENIUS Group of the Junior Science Talent Project (JSTP), organized by the National Science and Technology Development Agency (NSTDA), Thailand. Awarded a prestigious, fully-funded long-term academic scholarship up to the Doctoral degree level, recognizing top-tier youth research talent.",
     thumbnailImage: "images/achievements/achievement5/achievement5_0.jpg",
     images: [
       "images/achievements/achievement5/achievement5_1.jpg",
@@ -127,7 +141,7 @@ export const achievementsData: Achievement[] = [
     organization: "National Science Museum",
     award: "Gold Medal & Best of the Best Award (Applied Science Category)",
     description:
-      "Participated in the Thai Young Scientist Festival #16 organized by the National Science Museum.",
+      "Awarded the Gold Medal and the prestigious 'Best of the Best' Award in the Applied Science Category at the 16th Thai Young Scientist Festival (TYSF). Recognized by the National Science Museum and the Science Society of Thailand for developing a highly innovative applied science project with immense practical utility.",
     thumbnailImage: "images/achievements/achievement6/achievement6_0.jpg",
     images: [
       "images/achievements/achievement6/achievement6_1.jpg",
@@ -146,7 +160,7 @@ export const achievementsData: Achievement[] = [
       "Indonesian Invention and Innovation Promotion Association (INNOPA)",
     award: "Gold Medal",
     description:
-      "Selected as a representative of Thailand to participate in the International Young Inventor Awards 2020.",
+      "Won the Gold Medal at the International Young Inventor Awards (IYIA) 2020, representing Thailand. Organized by the Indonesian Invention and Innovation Promotion Association (INNOPA), this international exhibition recognizes top-tier youth innovations demonstrating high commercial potential and social impact.",
     thumbnailImage: "images/achievements/achievement7/achievement7_0.png",
     images: [],
     validUntil: "",
@@ -160,7 +174,7 @@ export const achievementsData: Achievement[] = [
     organization: "Society for Science",
     award: "Thailand Representative",
     description:
-      "Selected as a representative of Thailand to participate in the Regeneron International Science and Engineering Fair 2021, one of the most prestigious science fairs in the world.",
+      "Represented Thailand at the Regeneron International Science and Engineering Fair (ISEF) 2021, the world’s largest and most prestigious pre-college science competition. Selected through rigorous national-level qualifiers to present an original research project to an international panel of Nobel laureates and industry leaders.",
     thumbnailImage: "images/achievements/achievement8/achievement8_0.jpg",
     images: [
       "images/achievements/achievement8/achievement8_1.jpg",
@@ -178,7 +192,7 @@ export const achievementsData: Achievement[] = [
     organization: "Department of Children and Youth",
     award: "เยาวชนดีเด่นแห่งชาติ (National Outstanding Children and Youth Award)",
     description:
-      "Awarded by the Department of Children and Youth of Thailand for outstanding performance, contributions, and leadership.",
+      "Honored with the National Outstanding Children and Youth Award (เยาวชนดีเด่นแห่งชาติ) by the Department of Children and Youth, Ministry of Social Development and Human Security. Recognized at the national level for exemplary academic performance, leadership, and contributions to society.",
     thumbnailImage: "images/achievements/achievement9/achievement9_0.png",
     images: ["images/achievements/achievement9/achievement9_1.jpg"],
     validUntil: "",
@@ -192,7 +206,7 @@ export const achievementsData: Achievement[] = [
     organization: "dtac",
     award: "Top 10 Winner Finalist",
     description:
-      "Participated in the Young Safe Internet Leader Camp Version 3, organized by dtac to promote digital literacy and safe internet usage.",
+      "Selected as a Top 10 Winner Finalist at the Young Safe Internet Leader Camp (Version 3) organized by dtac. Designed and pitched digital literacy campaigns and cyber-safety initiatives to promote secure internet environments and combat online risks for youth nationwide.",
     thumbnailImage: "images/achievements/achievement10/achievement10_0.jpg",
     images: ["images/achievements/achievement10/achievement10_1.jpg"],
     validUntil: "",
@@ -206,7 +220,7 @@ export const achievementsData: Achievement[] = [
     organization: "Society for Science",
     award: "Thailand Representative Finalist",
     description:
-      "Selected as a finalist and representative for the prestigious Prime Minister's Science Award.",
+      "Selected as a Thailand Representative Finalist for the prestigious Prime Minister's Science Award. Honored by the Ministry of Higher Education, Science, Research and Innovation (MHESI) for outstanding scientific achievements and contributions to technological innovation.",
     thumbnailImage: "images/achievements/achievement11/achievement11_0.png",
     images: [
       "images/achievements/achievement11/achievement11_1.jpg",
@@ -224,7 +238,7 @@ export const achievementsData: Achievement[] = [
     organization: "Sustainability Expo",
     award: "Finalist",
     description:
-      "Competed in the SX2022 Hackathon organized by Sustainability Expo, focusing on sustainable innovation and social impact solutions.",
+      "Advanced as a Finalist in the SX2022 Hackathon, organized by the Sustainability Expo (ASEAN’s largest sustainability event). Engineered and pitched innovative tech solutions focused on sustainability and addressing immediate environmental and social challenges.",
     thumbnailImage: "images/achievements/achievement12/achievement12_0.jpg",
     images: [],
     validUntil: "",
@@ -238,7 +252,7 @@ export const achievementsData: Achievement[] = [
     organization: "Kasikorn Bank and Stanford Thailand Research Consortium",
     award: "Finalist",
     description:
-      "Selected as a finalist in the KATALYST Startup Launchpad 2022 program, designed to nurture and accelerate emerging startups in Thailand.",
+      "Reached the Finalist stage of the KATALYST Startup Launchpad 2022, an intensive acceleration program by Kasikornbank and the Stanford Thailand Research Consortium. Developed business models and pitched tech startup concepts to venture capitalists and industry executives after completing a rigorous Silicon Valley-backed business curriculum.",
     thumbnailImage: "images/achievements/achievement13/achievement13_0.jpg",
     images: ["images/achievements/achievement13/achievement13_1.jpg"],
     validUntil: "",
@@ -252,7 +266,7 @@ export const achievementsData: Achievement[] = [
     organization: "Microsoft",
     award: "Finalist (Top 6 Teams)",
     description:
-      "Participated and reached the final round of the Microsoft Imagine Cup 2023 Thailand competition.",
+      "Advanced as a Top 6 Finalist in the Microsoft Imagine Cup 2023 Thailand national championship. Designed and pitched an innovative tech solution leveraging artificial intelligence and cloud computing to address critical global health/environmental issues, competing against top university teams nationwide.",
     thumbnailImage: "images/achievements/achievement14/achievement14_0.jpg",
     images: [
       "images/achievements/achievement14/achievement14_1.jpg",
@@ -269,7 +283,7 @@ export const achievementsData: Achievement[] = [
     organization: "Junior Marketing Association of Thailand (J-MAT) & ThaiPost",
     award: "Top 50 Teams",
     description:
-      "Selected out of hundreds of participants in the marketing and brand planning competition organized by J-MAT and Thailand Post.",
+      "Selected into the Top 50 Teams nationwide in the J-MAT Brand Planning Competition #2, organized by the Junior Marketing Association of Thailand and Thailand Post. Developed a comprehensive, data-driven marketing strategy and brand rejuvenation plan for national logistics services.",
     thumbnailImage: "images/achievements/achievement15/achievement15.jpg",
     images: [],
     validUntil: "",
@@ -284,7 +298,7 @@ export const achievementsData: Achievement[] = [
       "Junior Marketing Association of Thailand (J-MAT) & CP Bologna",
     award: "Top 50 Teams",
     description:
-      "Participated and succeeded in entering the top 50 teams in the brand planning competition organized by J-MAT in collaboration with CP Bologna.",
+      "Secured a spot in the Top 50 Teams nationwide in the J-MAT Brand Planning Competition #3, in collaboration with CP Bologna. Designed and pitched an innovative brand positioning and product marketing strategy tailored for modern convenience retail consumers.",
     thumbnailImage: "images/achievements/achievement16/achievement16.jpg",
     images: [],
     validUntil: "",
@@ -298,7 +312,7 @@ export const achievementsData: Achievement[] = [
     organization: "Personnel Management Association of Thailand (PMAT)",
     award: "Finalist (Top 10 Teams)",
     description:
-      "Selected as a finalist in the startup pitching competition at the Thailand HR Tech 2024 event, presenting HR tech innovation to industry leaders.",
+      "Selected as a Finalist (Top 10 Teams) in the Thailand HR Tech 2024 Startup Pitching competition organized by PMAT. Developed and pitched a proprietary HR analytics dashboard and chatbot prototype (originally developed during an internship at CP Axtra/Makro) to industry executives and venture capitalists.",
     thumbnailImage: "images/achievements/achievement17/achievement17_0.png",
     images: [
       "images/achievements/achievement17/achievement17_1.jpg",
@@ -317,7 +331,7 @@ export const achievementsData: Achievement[] = [
     organization: "EdVISORY",
     award: "Finalist (Top 11 Teams)",
     description:
-      "Selected as one of the final 11 teams in the BIT Social Scale Up program, focusing on developing and scaling social innovations.",
+      "Selected as a Finalist (Top 11 Teams) in the BIT Social Scale Up program organized by EdVISORY. Successfully completed a social innovation accelerator curriculum, refinement of social impact metrics, and business model validation to scale impact-driven tech solutions.",
     thumbnailImage: "images/achievements/achievement18/achievement18_0.jpg",
     images: [
       "images/achievements/achievement18/achievement18_1.png",
@@ -332,9 +346,9 @@ export const achievementsData: Achievement[] = [
     category: "award",
     date: "11 October 2024",
     organization: "Thaihealth & SYNHUB",
-    award: "Finalist (Top 22 Teams) & Development Funding (500,000 THB)",
+    award: "1st Runner-up (2nd Place) & Development Funding (500,000 THB)",
     description:
-      "Recognized as a top-22 finalist in the HealthTech X 2 The Future project, securing seed funding of 500,000 THB for prototype development.",
+      "GOOSEWAY was selected as one of the top 22 finalist teams out of 234 entries and successfully achieved 1st Runner-up (2nd Place) in HealthTech X 2 The Future, a prestigious platform supporting high-potential health technology solutions. The project was awarded 500,000 THB in development funding to further enhance its impact and scalability. This recognition reflects our team’s commitment, creativity, and capability in addressing critical challenges related to accessibility and equity in transportation for wheelchair users. The funding has empowered us to expand key features, improve user experience, and continue building a more inclusive and accessible society for everyone.",
     thumbnailImage: "images/achievements/achievement19/achievement19_0.jpg",
     images: ["images/achievements/achievement19/achievement19_1.png"],
     validUntil: "",
@@ -348,7 +362,7 @@ export const achievementsData: Achievement[] = [
     organization: "AIESEC in Thailand & Pandora",
     award: "Winner (1st Place out of 443 Teams)",
     description:
-      "Competed and won the championship title in the national case competition focused on solving real-world social and business cases.",
+      "Crowned the Winner (1st Place out of 443 Teams nationwide) in the Thailand Social Case Competition 2025 (Pandora Track), organized by AIESEC in Thailand. Formulated and pitched an award-winning sustainable business strategy and corporate social responsibility (CSR) roadmap for Pandora.",
     thumbnailImage: "images/achievements/achievement20/achievement20_0.png",
     images: ["images/achievements/achievement20/achievement20_1.jpg"],
     validUntil: "",
@@ -363,7 +377,7 @@ export const achievementsData: Achievement[] = [
       "Depeartment of Computer Engineering, Chulalongkorn University",
     award: "Outstanding Achievement Award",
     description:
-      "Awarded by the Department of Computer Engineering, Chulalongkorn University, in recognition of outstanding performance in academic and technological competitions.",
+      "Honored with the Outstanding Achievement Award by the Department of Computer Engineering, Chulalongkorn University. Awarded in recognition of exceptional performance and academic excellence in national and international engineering and technological competitions.",
     thumbnailImage: "images/achievements/achievement21/achievement21_0.png",
     images: ["images/achievements/achievement21/achievement21_1.jpg"],
     validUntil: "",
@@ -377,7 +391,7 @@ export const achievementsData: Achievement[] = [
     organization: "Junior Marketing Association of Thailand (J-MAT) & Hi-Herb",
     award: "Top 24 Teams",
     description:
-      "Reached the top 24 teams in the marketing planning competition organized by J-MAT in partnership with Hi-Herb.",
+      "Reached the Top 24 Teams nationwide in the J-MAT Award 2025 marketing planning competition, in partnership with Hi-Herb. Conducted comprehensive market research, consumer insight analysis, and developed a complete go-to-market campaign for health and wellness products.",
     thumbnailImage: "images/achievements/achievement22/achievement22_0.jpg",
     images: ["images/achievements/achievement22/achievement22_1.jpg"],
     validUntil: "",
