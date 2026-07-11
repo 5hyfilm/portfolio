@@ -351,7 +351,7 @@ export const achievementsData: Achievement[] = [
     description:
       "GOOSEWAY was selected as one of the top 22 finalist teams out of 234 entries and successfully achieved 1st Runner-up (2nd Place) in HealthTech X 2 The Future, a prestigious platform supporting high-potential health technology solutions. The project was awarded 500,000 THB in development funding to further enhance its impact and scalability. This recognition reflects our team’s commitment, creativity, and capability in addressing critical challenges related to accessibility and equity in transportation for wheelchair users. The funding has empowered us to expand key features, improve user experience, and continue building a more inclusive and accessible society for everyone.",
     thumbnailImage: "images/achievements/achievement19/achievement19_0.jpg",
-    images: ["images/achievements/achievement19/achievement19_1.png"],
+    images: ["images/achievements/achievement19/achievement19_1.jpg"],
     validUntil: "",
     link: "",
   },
