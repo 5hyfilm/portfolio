@@ -7,6 +7,7 @@ export interface Achievement {
   date: string;
   organization: string;
   description: string;
+  award?: string;
   thumbnailImage?: string; // This will be shown in the list
   images?: string[]; // These will be shown in the modal
   link?: string;
