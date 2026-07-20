@@ -19,7 +19,7 @@ export default function Contact() {
 
   const handleDownloadResume = () => {
     // Replace '/path-to-your-resume.pdf' with the actual path to your resume file
-    window.open("/resume.pdf", "_blank");
+    window.open("/Waranthorn-Chansawang-resume.pdf", "_blank");
   };
 
   return (

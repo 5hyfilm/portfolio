@@ -34,7 +34,11 @@ export default function Navbar() {
     { label: "Achievements", path: "/achievements" },
     { label: "Projects", path: "/projects" },
     { label: "Events", path: "/events" },
-    { label: "Resume", path: "/resume.pdf", isSpecial: true },
+    {
+      label: "Resume",
+      path: "/Waranthorn-Chansawang-resume.pdf",
+      isSpecial: true,
+    },
   ];
 
   return (
