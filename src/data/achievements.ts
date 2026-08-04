@@ -19,17 +19,31 @@ export const achievementsData: Achievement[] = [
   },
   {
     id: 24,
-    title: "S-Impact 2026: Social Enterprise Incubation Program",
+    title: "S-Impact 2026: Social Enterprise Acceleration Program",
     category: "recognition",
     date: "12 May 2026",
     organization: "S-Impact",
     award: "Selected as one of the Final 15 Teams to pitch to NIA",
     description:
-      "Selected as one of the Final 15 teams nationwide to pitch directly to the National Innovation Agency (NIA) in the S-Impact 2026 program, an intensive social enterprise incubation initiative. Received expert mentoring and strategic partnership opportunities to systematically scale a wheelchair accessibility solution into a sustainable, robust social enterprise.",
+      "Selected as one of the Final 15 teams nationwide to pitch directly to the National Innovation Agency (NIA) in the S-Impact 2026 program, an intensive social enterprise acceleration initiative. Received expert mentoring and strategic partnership opportunities to systematically scale a wheelchair accessibility solution into a sustainable, robust social enterprise.",
     thumbnailImage: "images/achievements/achievement24/achievement24_0.jpg",
     images: ["images/achievements/achievement24/achievement24_1.jpg"],
     validUntil: "",
     link: "",
+  },
+  {
+    id: 26,
+    title: "S-Impact 2026: Social Enterprise Incubation Program",
+    category: "recognition",
+    date: "16-24 May 2026",
+    organization: "S-Impact",
+    award: "Selected as one of the Final 62 Teams nationwide",
+    description:
+      "Selected as one of the Final 62 teams nationwide in the S-Impact 2026 program, an intensive incubation initiative for social enterprises. Completed all requirements in the Incubation Program organized by the National Innovation Agency (NIA), receiving specialized knowledge, expert mentoring, and networking opportunities to systematically scale a wheelchair accessibility solution into a sustainable social enterprise.",
+    thumbnailImage: "images/achievements/achievement26/achievement26_0.jpg",
+    images: ["images/achievements/achievement26/achievement26_1.jpg"],
+    validUntil: "",
+    link: "images/achievements/achievement26/achievement26_cer.pdf",
   },
   {
     id: 23,
