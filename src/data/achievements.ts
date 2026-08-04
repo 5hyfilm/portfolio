@@ -4,30 +4,30 @@ import { Achievement } from "../types/achievements";
 
 export const achievementsData: Achievement[] = [
   {
-    id: 25,
-    title: "TED Youth Startup 2026",
-    category: "award",
-    date: "14 May 2026",
-    organization: "TED Fund (MHESI)",
-    award: "Passed IDEA Track & Funding (150,000 THB)",
-    description:
-      "Passed the IDEA track of the TED Youth Startup 2026 program, which supports and develops new entrepreneurs using innovation to drive business. Awarded 150,000 THB in funding to develop our prototype and prove our business concept, marking a significant milestone that prepares us for larger funding tracks in the future.",
-    thumbnailImage: "images/achievements/achievements25/achievements25_0.jpg",
-    images: [],
-    validUntil: "",
-    link: "",
-  },
-  {
     id: 24,
     title: "S-Impact 2026: Social Enterprise Acceleration Program",
     category: "recognition",
-    date: "12 May 2026",
+    date: "5 August 2026",
     organization: "S-Impact",
     award: "Selected as one of the Final 15 Teams to pitch to NIA",
     description:
       "Selected as one of the Final 15 teams nationwide to pitch directly to the National Innovation Agency (NIA) in the S-Impact 2026 program, an intensive social enterprise acceleration initiative. Received expert mentoring and strategic partnership opportunities to systematically scale a wheelchair accessibility solution into a sustainable, robust social enterprise.",
     thumbnailImage: "images/achievements/achievement24/achievement24_0.jpg",
     images: ["images/achievements/achievement24/achievement24_1.jpg"],
+    validUntil: "",
+    link: "",
+  },
+  {
+    id: 25,
+    title: "TED Youth Startup 2026",
+    category: "award",
+    date: "24 June 2026",
+    organization: "TED Fund (MHESI)",
+    award: "Passed IDEA Track & Funding (150,000 THB)",
+    description:
+      "Passed the IDEA track of the TED Youth Startup 2026 program, which supports and develops new entrepreneurs using innovation to drive business. Awarded 150,000 THB in funding to develop our prototype and prove our business concept, marking a significant milestone that prepares us for larger funding tracks in the future.",
+    thumbnailImage: "images/achievements/achievements25/achievements25_0.jpg",
+    images: [],
     validUntil: "",
     link: "",
   },
