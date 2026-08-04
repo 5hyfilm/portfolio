@@ -41,7 +41,7 @@ export const achievementsData: Achievement[] = [
     description:
       "Selected as one of the Final 62 teams nationwide in the S-Impact 2026 program, an intensive incubation initiative for social enterprises. Completed all requirements in the Incubation Program organized by the National Innovation Agency (NIA), receiving specialized knowledge, expert mentoring, and networking opportunities to systematically scale a wheelchair accessibility solution into a sustainable social enterprise.",
     thumbnailImage: "images/achievements/achievement26/achievement26_0.jpg",
-    images: [],
+    images: ["images/achievements/achievement26/achievement26_1.jpg"],
     validUntil: "",
     link: "images/achievements/achievement26/achievement26_cer.pdf",
   },
