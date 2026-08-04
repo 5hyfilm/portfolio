@@ -80,15 +80,14 @@ export default function Projects() {
           </div>
 
           {/* แก้ไขจาก <img> เป็น <Image /> */}
-          <div className="relative mb-4 h-64 w-full overflow-hidden rounded-2xl border border-gray-200 bg-gray-50 md:h-80">
+          <div className="relative mb-4 h-64 w-full overflow-hidden rounded-2xl border border-gray-200 bg-white md:h-80">
             <Image
               src={getImagePath(project.image)}
               alt={project.title}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover"
+              className="object-contain p-2"
             />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
           </div>
 
           <p className="text-gray-700 md:text-base">{project.description}</p>

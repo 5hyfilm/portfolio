@@ -166,16 +166,15 @@ const AchievementModal = ({ achievement, onClose }: AchievementModalProps) => {
           {/* Image Gallery */}
           {achievement.images && achievement.images.length > 0 && (
             <div className="relative my-6">
-              <div className="relative h-64 w-full overflow-hidden rounded-2xl border border-gray-200 bg-gray-50 md:h-80 shadow-inner">
+              <div className="relative h-64 w-full overflow-hidden rounded-2xl border border-gray-200 bg-white md:h-80 shadow-inner">
                 <Image
                   src={getImagePath(achievement.images[currentImageIndex])}
                   alt={`${achievement.title} - Image ${currentImageIndex + 1}`}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-300"
+                  className="object-contain p-2 transition-transform duration-300"
                   priority={currentImageIndex === 0}
                 />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
               </div>
 
               {achievement.images.length > 1 && (
@@ -208,7 +207,7 @@ const AchievementModal = ({ achievement, onClose }: AchievementModalProps) => {
                     <button
                       key={index}
                       onClick={() => setCurrentImageIndex(index)}
-                      className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border transition-all duration-200
+                      className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border bg-white transition-all duration-200
                                 ${
                                   currentImageIndex === index
                                     ? "ring-2 ring-violet-600 border-transparent scale-95"
@@ -221,7 +220,7 @@ const AchievementModal = ({ achievement, onClose }: AchievementModalProps) => {
                           alt={`Thumbnail ${index + 1}`}
                           fill
                           sizes="64px"
-                          className="object-cover"
+                          className="object-contain p-1"
                         />
                       </div>
                     </button>

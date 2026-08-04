@@ -97,16 +97,15 @@ export default function Events() {
           </div>
 
           {/* แก้ไขจาก <img> เป็น <Image /> */}
-          <div className="relative mb-4 h-64 w-full overflow-hidden rounded-2xl border border-gray-200 bg-gray-50 md:h-80">
+          <div className="relative mb-4 h-64 w-full overflow-hidden rounded-2xl border border-gray-200 bg-white md:h-80">
             <Image
               src={getImagePath(event.image)}
               alt={event.title}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover"
+              className="object-contain p-2"
               priority
             />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
           </div>
 
           <div className="flex flex-wrap gap-4 text-sm text-gray-700">
