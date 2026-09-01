@@ -6,14 +6,17 @@ export const achievementsData: Achievement[] = [
   {
     id: 24,
     title: "S-Impact 2026: Social Enterprise Acceleration Program",
-    category: "recognition",
+    category: "award",
     date: "5 August 2026",
-    organization: "S-Impact",
-    award: "Selected as one of the Final 15 Teams to pitch to NIA",
+    organization: "S-Impact & NIA",
+    award: "BEST IMPACT STAR Award (from Top 15 Finalist Teams)",
     description:
-      "Selected as one of the Final 15 teams nationwide to pitch directly to the National Innovation Agency (NIA) in the S-Impact 2026 program, an intensive social enterprise acceleration initiative. Received expert mentoring and strategic partnership opportunities to systematically scale a wheelchair accessibility solution into a sustainable, robust social enterprise.",
+      "Selected as one of the Final 15 teams nationwide to advance into the S-Impact 2026 Social Enterprise Acceleration Program, and subsequently competed in the final pitching round at Demo Day (SCBX NEXT TECH, Siam Paragon) to win the prestigious 'BEST IMPACT STAR' Award. Pitched directly to the National Innovation Agency (NIA) committee, receiving expert mentoring and strategic partnership opportunities to systematically scale GOOSEWAY's wheelchair accessibility solution into a sustainable, high-impact social enterprise.",
     thumbnailImage: "images/achievements/achievement24/achievement24_0.jpg",
-    images: ["images/achievements/achievement24/achievement24_1.jpg"],
+    images: [
+      "images/achievements/achievement24/achievement24_1.jpg",
+      "images/achievements/achievement24/achievement24_2.jpg",
+    ],
     validUntil: "",
     link: "",
   },
