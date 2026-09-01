@@ -5,7 +5,8 @@ import { useState, useMemo } from "react";
 import Image from "next/image";
 import { projectsData } from "../../data/projects";
 import { Project } from "../../types/projects";
-import { ExternalLinkIcon } from "../../components/ui/Icons";
+import { ExternalLinkIcon, ZoomInIcon } from "../../components/ui/Icons";
+import ImageViewerModal from "../../components/ui/ImageViewerModal";
 
 // Helper function เพื่อจัดการ image path ให้ถูกต้องสำหรับ Next.js Image
 const getImagePath = (imagePath: string): string => {
@@ -29,112 +30,140 @@ export default function Projects() {
   }: {
     project: Project;
     onClose: () => void;
-  }) => (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      <button
-        type="button"
-        aria-label="Close"
-        onClick={onClose}
-        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
-      />
+  }) => {
+    const [isZoomOpen, setIsZoomOpen] = useState(false);
 
-      <div className="relative w-full max-w-3xl overflow-hidden rounded-2xl border border-white/10 bg-white shadow-2xl">
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-violet-50 via-white to-white" />
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-violet-700 via-fuchsia-700 to-amber-500 opacity-80" />
+    return (
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <button
+          type="button"
+          aria-label="Close"
+          onClick={onClose}
+          className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+        />
 
-        <div className="relative max-h-[90vh] overflow-y-auto p-6 md:p-8">
-          <div className="flex items-start justify-between gap-4">
-            <div className="min-w-0">
-              <h2 className="truncate text-2xl font-semibold tracking-tight text-gray-950 md:text-3xl">
-                {project.title}
-              </h2>
-            </div>
-            <button
-              type="button"
-              onClick={onClose}
-              className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 shadow-sm transition hover:bg-gray-50 focus:outline-none focus:ring-4 focus:ring-violet-100"
-              aria-label="Close modal"
-            >
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
+        <div className="relative w-full max-w-3xl overflow-hidden rounded-2xl border border-white/10 bg-white shadow-2xl">
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-violet-50 via-white to-white" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-violet-700 via-fuchsia-700 to-amber-500 opacity-80" />
+
+          <div className="relative max-h-[90vh] overflow-y-auto p-6 md:p-8">
+            <div className="flex items-start justify-between gap-4">
+              <div className="min-w-0">
+                <h2 className="truncate text-2xl font-semibold tracking-tight text-gray-950 md:text-3xl">
+                  {project.title}
+                </h2>
+              </div>
+              <button
+                type="button"
+                onClick={onClose}
+                className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 shadow-sm transition hover:bg-gray-50 focus:outline-none focus:ring-4 focus:ring-violet-100"
+                aria-label="Close modal"
               >
-                <path
-                  d="M18 6 6 18"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M6 6l12 12"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </button>
-          </div>
-
-          {/* แก้ไขจาก <img> เป็น <Image /> */}
-          <div className="relative mb-4 h-64 w-full overflow-hidden rounded-2xl border border-gray-200 bg-white md:h-80">
-            <Image
-              src={getImagePath(project.image)}
-              alt={project.title}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-contain p-2"
-            />
-          </div>
-
-          <p className="text-gray-700 md:text-base">{project.description}</p>
-
-          <div className="mb-4">
-            <h3 className="mt-6 text-sm font-semibold tracking-wide text-gray-900">
-              TECHNOLOGIES
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {project.technologies.map((tech, index) => (
-                <span
-                  key={index}
-                  className="rounded-full border border-gray-200 bg-gray-50 px-3 py-1.5 text-xs font-medium text-gray-700 md:text-sm"
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
                 >
-                  {tech}
-                </span>
-              ))}
+                  <path
+                    d="M18 6 6 18"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M6 6l12 12"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </button>
             </div>
-          </div>
 
-          <div className="flex gap-4">
-            {project.demoLink !== "-" && (
-              <a
-                href={project.demoLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl bg-gray-950 px-4 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-violet-200"
+            {/* Project Image with Zoom Button */}
+            <div
+              onClick={() => setIsZoomOpen(true)}
+              className="group relative my-4 h-64 w-full cursor-zoom-in overflow-hidden rounded-2xl border border-gray-200 bg-white md:h-80 shadow-inner"
+            >
+              <Image
+                src={getImagePath(project.image)}
+                alt={project.title}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-contain p-2 transition-transform duration-300 group-hover:scale-[1.02]"
+              />
+
+              {/* Floating Zoom Button */}
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsZoomOpen(true);
+                }}
+                className="absolute top-3 right-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-black/60 hover:bg-black/85 backdrop-blur-md px-3 py-1.5 text-xs font-semibold text-white shadow-lg transition-all duration-200 hover:scale-105 active:scale-95 border border-white/20"
               >
-                <ExternalLinkIcon className="h-4 w-4" />
-                View Demo
-              </a>
-            )}
-            {project.githubLink && (
-              <a
-                href={project.githubLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-gray-900 shadow-sm transition hover:bg-gray-50 focus:outline-none focus:ring-4 focus:ring-violet-100"
-              >
-                View Code
-              </a>
-            )}
+                <ZoomInIcon className="h-3.5 w-3.5" />
+                <span>Zoom</span>
+              </button>
+            </div>
+
+            <p className="text-gray-700 md:text-base">{project.description}</p>
+
+            <div className="mb-4">
+              <h3 className="mt-6 text-sm font-semibold tracking-wide text-gray-900">
+                TECHNOLOGIES
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {project.technologies.map((tech, index) => (
+                  <span
+                    key={index}
+                    className="rounded-full border border-gray-200 bg-gray-50 px-3 py-1.5 text-xs font-medium text-gray-700 md:text-sm"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              {project.demoLink !== "-" && (
+                <a
+                  href={project.demoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-xl bg-gray-950 px-4 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-violet-200"
+                >
+                  <ExternalLinkIcon className="h-4 w-4" />
+                  View Demo
+                </a>
+              )}
+              {project.githubLink && (
+                <a
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-gray-900 shadow-sm transition hover:bg-gray-50 focus:outline-none focus:ring-4 focus:ring-violet-100"
+                >
+                  View Code
+                </a>
+              )}
+            </div>
           </div>
         </div>
+
+        {/* Fullscreen Image Zoom Lightbox */}
+        <ImageViewerModal
+          isOpen={isZoomOpen}
+          onClose={() => setIsZoomOpen(false)}
+          images={project.image}
+          title={project.title}
+        />
       </div>
-    </div>
-  );
+    );
+  };
 
   return (
     <div className="min-h-screen px-4 py-6 md:px-10 md:py-10">

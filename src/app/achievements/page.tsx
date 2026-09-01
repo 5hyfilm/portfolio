@@ -20,7 +20,9 @@ import {
   CertificateIcon,
   StarIcon,
   TrophyIcon,
+  ZoomInIcon,
 } from "../../components/ui/Icons";
+import ImageViewerModal from "../../components/ui/ImageViewerModal";
 
 // Helper function เพื่อจัดการ image path ให้ถูกต้องสำหรับ Next.js Image
 const getImagePath = (imagePath: string): string => {
@@ -62,6 +64,7 @@ const getCategoryIconNode = (category: AchievementCategory) => {
 // Achievement Modal Component
 const AchievementModal = ({ achievement, onClose }: AchievementModalProps) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isZoomOpen, setIsZoomOpen] = useState(false);
 
   const nextImage = () => {
     if (achievement.images) {
@@ -166,15 +169,31 @@ const AchievementModal = ({ achievement, onClose }: AchievementModalProps) => {
           {/* Image Gallery */}
           {achievement.images && achievement.images.length > 0 && (
             <div className="relative my-6">
-              <div className="relative h-64 w-full overflow-hidden rounded-2xl border border-gray-200 bg-white md:h-80 shadow-inner">
+              <div
+                onClick={() => setIsZoomOpen(true)}
+                className="group relative h-64 w-full cursor-zoom-in overflow-hidden rounded-2xl border border-gray-200 bg-white md:h-80 shadow-inner"
+              >
                 <Image
                   src={getImagePath(achievement.images[currentImageIndex])}
                   alt={`${achievement.title} - Image ${currentImageIndex + 1}`}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-contain p-2 transition-transform duration-300"
+                  className="object-contain p-2 transition-transform duration-300 group-hover:scale-[1.02]"
                   priority={currentImageIndex === 0}
                 />
+
+                {/* Floating Zoom Button */}
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsZoomOpen(true);
+                  }}
+                  className="absolute top-3 right-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-black/60 hover:bg-black/85 backdrop-blur-md px-3 py-1.5 text-xs font-semibold text-white shadow-lg transition-all duration-200 hover:scale-105 active:scale-95 border border-white/20"
+                >
+                  <ZoomInIcon className="h-3.5 w-3.5" />
+                  <span>Zoom</span>
+                </button>
               </div>
 
               {achievement.images.length > 1 && (
@@ -279,6 +298,18 @@ const AchievementModal = ({ achievement, onClose }: AchievementModalProps) => {
           )}
         </div>
       </div>
+
+      {/* Fullscreen Image Zoom Lightbox */}
+      {achievement.images && (
+        <ImageViewerModal
+          isOpen={isZoomOpen}
+          onClose={() => setIsZoomOpen(false)}
+          images={achievement.images}
+          initialIndex={currentImageIndex}
+          title={achievement.title}
+          onIndexChange={(idx) => setCurrentImageIndex(idx)}
+        />
+      )}
     </div>
   );
 };

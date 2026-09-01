@@ -326,3 +326,53 @@ export function FileTextIcon(props: IconProps) {
   );
 }
 
+export function ZoomInIcon(props: IconProps) {
+  return (
+    <BaseIcon {...props}>
+      <circle cx="11" cy="11" r="8" stroke="currentColor" strokeWidth="2" />
+      <path
+        d="m21 21-4.3-4.3M11 8v6M8 11h6"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </BaseIcon>
+  );
+}
+
+export function ZoomOutIcon(props: IconProps) {
+  return (
+    <BaseIcon {...props}>
+      <circle cx="11" cy="11" r="8" stroke="currentColor" strokeWidth="2" />
+      <path
+        d="m21 21-4.3-4.3M8 11h6"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </BaseIcon>
+  );
+}
+
+export function ResetZoomIcon(props: IconProps) {
+  return (
+    <BaseIcon {...props}>
+      <path
+        d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M3 3v5h5"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </BaseIcon>
+  );
+}
+
+
