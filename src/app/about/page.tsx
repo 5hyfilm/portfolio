@@ -7,12 +7,19 @@ export default function About() {
   const skills = {
     frontend: ["HTML", "CSS", "JavaScript", "React", "Next.js", "Tailwind CSS"],
     backend: ["Node.js", "Python", "SQL", "MongoDB"],
+    aiTools: [
+      "Codex",
+      "Claude Code",
+      "Antigravity",
+      "n8n",
+      "PyTorch",
+      "TensorFlow",
+    ],
     tools: [
       "Git",
-      "Microsoft Azure",
-      "TensorFlow",
-      "Figma",
       "VS Code",
+      "Microsoft Azure",
+      "Figma",
       "Mermaid",
       "Microsoft Office 365",
     ],
@@ -22,7 +29,7 @@ export default function About() {
     {
       degree: "Bachelor in Computer Engineering",
       school: "Chulalongkorn University",
-      year: "2021-present",
+      year: "2021-2025",
       description: "Core computer science fundamentals and programming with a full scholarship from JSTP",
     },
     {
@@ -123,7 +130,7 @@ export default function About() {
                 </div>
               </div>
 
-              <div className="mt-6 grid gap-6 md:grid-cols-3">
+              <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                 <div>
                   <h3 className="text-sm font-semibold tracking-wide text-gray-900">
                     FRONTEND
@@ -158,7 +165,23 @@ export default function About() {
 
                 <div>
                   <h3 className="text-sm font-semibold tracking-wide text-gray-900">
-                    TOOLS
+                    AI & AGENTIC TOOLS
+                  </h3>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {skills.aiTools.map((skill) => (
+                      <span
+                        key={skill}
+                        className="rounded-full border border-gray-200 bg-gray-50 px-3 py-1.5 text-xs font-medium text-gray-700 md:text-sm"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-sm font-semibold tracking-wide text-gray-900">
+                    TOOLS & PLATFORMS
                   </h3>
                   <div className="mt-3 flex flex-wrap gap-2">
                     {skills.tools.map((skill) => (
