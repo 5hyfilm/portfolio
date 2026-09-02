@@ -1,29 +1,32 @@
 // src/app/page.tsx
 "use client";
 
-import { useState, useEffect } from "react";
-import CinematicIntro from "../components/ui/CinematicIntro";
+// Kurohitsugi Cinematic Intro (Saved and commented out for now)
+// import { useState, useEffect } from "react";
+// import CinematicIntro from "../components/ui/CinematicIntro";
 
 export default function Home() {
-  const [showIntro, setShowIntro] = useState(true);
+  // [Kurohitsugi Intro Effect - Commented out for now]
+  // const [showIntro, setShowIntro] = useState(true);
 
   // Lock body scroll and navigation interactions while the cinematic intro plays
-  useEffect(() => {
-    if (showIntro) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [showIntro]);
+  // useEffect(() => {
+  //   if (showIntro) {
+  //     document.body.style.overflow = "hidden";
+  //   } else {
+  //     document.body.style.overflow = "";
+  //   }
+  //   return () => {
+  //     document.body.style.overflow = "";
+  //   };
+  // }, [showIntro]);
 
   return (
     <>
-      {showIntro && (
+      {/* Kurohitsugi Cinematic Intro (Disabled for now) */}
+      {/* {showIntro && (
         <CinematicIntro onComplete={() => setShowIntro(false)} />
-      )}
+      )} */}
       <div className="min-h-screen bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 relative overflow-hidden">
       {/* Custom animations */}
       <style jsx>{`
